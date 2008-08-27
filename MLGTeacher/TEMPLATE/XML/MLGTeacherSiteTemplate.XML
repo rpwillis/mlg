@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<portal xmlns="PortalTemplate.xsd">
+  <web name="MLG Teacher Site" siteDefinition="MLGTeacher#0" 
+     displayName="$Resources:MLGTeacher_onet,Teacher_site_name;" description="">
+    <webs>
+      <web name="$Resources:MLGTeacher_onet,Staffrooms_site_name;" siteDefinition="MLGStaffrooms#0" 
+         displayName="$Resources:MLGTeacher_onet,Staffrooms_site_name;" description="" />
+    </webs>
+  </web>
+</portal>

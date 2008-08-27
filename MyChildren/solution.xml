@@ -1,0 +1,11 @@
+﻿<solution  id="bf8d9c07-a688-4083-8f9e-2d2a0f9f911c" name="MLG2007.WebParts.MyChildren" >
+  <features>
+    <feature  id="d208b435-7bf9-41b1-8ced-ee8a1565550f" name="MyChildren" title="MyChildren" description="" version="1.0.0.0" scope="Site" hidden="False" defaultresourcefile="core" >
+      <element  id="d208b435-7bf9-41b1-8ced-ee8a1565550f" title="MyChildren Web Part" description="" importerrormessage="Cannot import MyChildren Web Part." />
+    </feature>
+  </features>
+  <templates>
+  </templates>
+  <sitedefinitions>
+  </sitedefinitions>
+</solution>

@@ -1,0 +1,6 @@
+﻿<Feature  Title="My Planner" Id="6e1445f0-19fb-439b-b6f0-9fe10b905091" Description="" Version="1.0.0.0" Scope="Site" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="MyPlanner.dwp" />
+  </ElementManifests>
+</Feature>

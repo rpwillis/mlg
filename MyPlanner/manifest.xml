@@ -1,0 +1,27 @@
+﻿<Solution SolutionId="39e2bfc0-cd3a-466c-b9f8-70ec98635a12" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MyPlanner\feature.xml" />
+  </FeatureManifests>
+  <Assemblies>
+    <Assembly Location="MLG2007.WebParts.MyPlanner.dll" DeploymentTarget="GlobalAssemblyCache" >
+      <SafeControls>
+        <SafeControl Assembly="MLG2007.WebParts.MyPlanner.dll, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5" Namespace="MLG2007.WebParts.MyPlanner" TypeName="MyPlanner" Safe="True" />
+      </SafeControls>
+    </Assembly>
+    <Assembly Location="MLG2007.Helper.Calendar.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+    <Assembly Location="MLG2007.Helper.ListSearch.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+    <Assembly Location="MLG2007.Helper.CalendarStore.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+    <Assembly Location="MLG2007.Helper.SharePoint.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+    <Assembly Location="MLG2007.Helper.SharePointLearningKit.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+    <Assembly Location="MLG2007.Helper.Exchange.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+    <Assembly Location="MLG2007.Helper.UserPreferences.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+
+  </Assemblies>
+</Solution>

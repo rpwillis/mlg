@@ -1,0 +1,45 @@
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Default" Url="$Resources:cmscore,List_Pages_UrlName;" Path="">
+    <File Url="default.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="$Resources:MLGCustom_onet,Module_File_Property_Value_Site_Home;" />
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="1">
+        <![CDATA[ 
+        <?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>My Sites</Title>
+  <FrameType>Default</FrameType>
+  <Description />
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Left</ZoneID>
+  <PartOrder>1</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+  <Assembly>MLG2007.WebParts.MySites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5520f5f952bc2d7</Assembly>
+  <TypeName>MLG2007.WebParts.MySites.MySites</TypeName>
+  <StartSite xmlns="MLG2007.WebParts.MySites"></StartSite>
+  <PageSize xmlns="MLG2007.WebParts.MySites">10</PageSize>
+  <UnitName xmlns="MLG2007.WebParts.MySites">Sites</UnitName>Module_File_Property_Value_Site_Home
+</WebPart>
+        ]]>
+      </AllUsersWebPart>
+    </File>
+  </Module>
+  <Module Name="Remainder" Url="" Path="">
+  </Module>  
+</Elements>

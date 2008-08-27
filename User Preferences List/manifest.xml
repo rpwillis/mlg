@@ -1,0 +1,5 @@
+﻿<Solution SolutionId="586182e8-d53c-11db-8314-0800200c9a66" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="UserPreferencesList\feature.xml" />
+  </FeatureManifests>
+</Solution>

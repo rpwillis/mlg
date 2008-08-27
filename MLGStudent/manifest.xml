@@ -1,0 +1,13 @@
+﻿<Solution SolutionId="03d3a6b1-d212-44a8-9333-4daaa803a55a" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MLGStudentfeature\feature.xml" />
+  </FeatureManifests>
+  <SiteDefinitionManifests>
+    <SiteDefinitionManifest Location="MLGStudent">
+      <WebTempFile Location="1033\xml\webtempMLGStudent.xml" />
+    </SiteDefinitionManifest>
+  </SiteDefinitionManifests>
+  <RootFiles>
+    <RootFile Location="Resources\MLGStudent_onet.resx"/>
+  </RootFiles>
+</Solution>

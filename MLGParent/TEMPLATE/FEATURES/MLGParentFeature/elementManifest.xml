@@ -1,0 +1,238 @@
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Home" Url="$Resources:cmscore,List_Pages_UrlName;" Path="">
+    <File Url="Planner.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="$Resources:MLGParent_onet,Module_file_property_Name_Default;" />
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="1">
+        <![CDATA[      
+      <?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>My Children</Title>
+  <FrameType>Default</FrameType>
+  <Description />
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Right</ZoneID>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+  <Assembly>MLG2007.WebParts.MyChildren, Version=1.0.1.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+  <TypeName>MLG2007.WebParts.MyChildren.MyChildren</TypeName>
+  <ADEntryPoint xmlns="MyChildren"></ADEntryPoint>
+  <ADChildAttribute xmlns="MyChildren">otheripphone</ADChildAttribute>
+  <PictureLibraryUrl xmlns="MyChildren">../../Students Picture Library</PictureLibraryUrl>
+  <PictureLibraryTitle xmlns="MyChildren">Students Picture Library</PictureLibraryTitle>
+  <DefaultPictureURL xmlns="MyChildren">../../Students Picture Library/DefaultChild.jpg</DefaultPictureURL>
+  <PageSize xmlns="MyChildren">5</PageSize>
+  <StudentsSiteURL xmlns="MyChildren">../../students</StudentsSiteURL>
+  <ShowErrors xmlns="MyChildren">false</ShowErrors>
+</WebPart>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="1">
+        <![CDATA[    
+     <?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>My Planner</Title>
+  <FrameType>Default</FrameType>
+  <Description />
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Left</ZoneID>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+   <Assembly>MLG2007.WebParts.MyPlanner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+  <TypeName>MLG2007.WebParts.MyPlanner.MyPlanner</TypeName>
+  <ExchangeUrl xmlns="MLG2007.WebParts.MyPlanner"></ExchangeUrl>
+  <IsParentMode xmlns="MLG2007.WebParts.MyPlanner">true</IsParentMode>
+  <ExchangeDomain xmlns="MLG2007.WebParts.MyPlanner"></ExchangeDomain>
+  <UserPreferencesStoreUrl xmlns="MLG2007.WebParts.MyPlanner">../../Lists/User%20Preferences%20Store/AllItems.aspx</UserPreferencesStoreUrl>
+  <CalendarsListUrl xmlns="MLG2007.WebParts.MyPlanner">../../Lists/Planner%20Calendars%20Store/AllItems.aspx</CalendarsListUrl>
+  <PlannerRole xmlns="MLG2007.WebParts.MyPlanner">Parents</PlannerRole>
+  <DNSName xmlns="MLG2007.WebParts.MyPlanner">lpsharepoint</DNSName>
+  <ShowSLK xmlns="MLG2007.WebParts.MyPlanner">true</ShowSLK>
+  <ShowPersonalCalendar xmlns="MLG2007.WebParts.MyPlanner">true</ShowPersonalCalendar>
+  <SharePointCalendarIDList xmlns="MLG2007.WebParts.MyPlanner" />
+  <ExchangeCalendarIDList xmlns="MLG2007.WebParts.MyPlanner" />
+</WebPart>
+      ]]>
+      </AllUsersWebPart>
+    </File>
+    <File Url="Assignments.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="$Resources:MLGParent_onet,Module_file_property_Name_Assignments;" />
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="1">
+        <![CDATA[      
+       <?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>My Children</Title>
+  <FrameType>Default</FrameType>
+  <Description />
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Right</ZoneID>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+  <Assembly>MLG2007.WebParts.MyChildren, Version=1.0.1.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+  <TypeName>MLG2007.WebParts.MyChildren.MyChildren</TypeName>
+  <ADEntryPoint xmlns="MyChildren"></ADEntryPoint>
+  <ADChildAttribute xmlns="MyChildren">otheripphone</ADChildAttribute>
+  <PictureLibraryUrl xmlns="MyChildren">../../Students Picture Library</PictureLibraryUrl>
+  <PictureLibraryTitle xmlns="MyChildren">Students Picture Library</PictureLibraryTitle>
+  <DefaultPictureURL xmlns="MyChildren">../../Students Picture Library/DefaultChild.jpg</DefaultPictureURL>
+  <PageSize xmlns="MyChildren">5</PageSize>
+  <StudentsSiteURL xmlns="MyChildren">../../students</StudentsSiteURL>
+  <ShowErrors xmlns="MyChildren">false</ShowErrors>
+</WebPart>
+        ]]>
+    </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="1">
+        <![CDATA[
+      <?xml version="1.0" encoding="utf-8" ?> 
+      <webParts>
+      <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+      <metaData>  <type name="Microsoft.SharePointLearningKit.WebParts.AssignmentListWebPart, Microsoft.SharePointLearningKit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94" /> 
+      <importErrorMessage>Cannot import this Web Part.</importErrorMessage> 
+      </metaData>
+      <data>
+      <properties>
+      <property name="Title" type="string">Child Assignments</property> 
+      </properties>
+      </data>
+      </webPart>
+      </webParts> 
+        ]]>
+      </AllUsersWebPart>
+      
+    </File>
+    <File Url="Classes.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="$Resources:MLGParent_onet,Module_file_property_Name_Classes;" />
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="1">
+        <![CDATA[      
+     <?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>My Children</Title>
+  <FrameType>Default</FrameType>
+  <Description />
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Right</ZoneID>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+  <Assembly>MLG2007.WebParts.MyChildren, Version=1.0.1.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+  <TypeName>MLG2007.WebParts.MyChildren.MyChildren</TypeName>
+  <ADEntryPoint xmlns="MyChildren"></ADEntryPoint>
+  <ADChildAttribute xmlns="MyChildren">otheripphone</ADChildAttribute>
+  <PictureLibraryUrl xmlns="MyChildren">../../Students Picture Library</PictureLibraryUrl>
+  <PictureLibraryTitle xmlns="MyChildren">Students Picture Library</PictureLibraryTitle>
+  <DefaultPictureURL xmlns="MyChildren">../../Students Picture Library/DefaultChild.jpg</DefaultPictureURL>
+  <PageSize xmlns="MyChildren">5</PageSize>
+  <StudentsSiteURL xmlns="MyChildren">../../students</StudentsSiteURL>
+  <ShowErrors xmlns="MyChildren">false</ShowErrors>
+</WebPart>
+        ]]>
+      </AllUsersWebPart>
+      
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="1">
+        <![CDATA[      
+
+      <?xml version="1.0" encoding="utf-8"?>
+      <WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+        <Title>Child Classes</Title>
+        <FrameType>Default</FrameType>
+        <Description />
+        <IsIncluded>true</IsIncluded>
+        <ZoneID>Left</ZoneID>
+        <PartOrder>1</PartOrder>
+        <FrameState>Normal</FrameState>
+        <Height />
+        <Width />
+        <AllowRemove>true</AllowRemove>
+        <AllowZoneChange>true</AllowZoneChange>
+        <AllowMinimize>true</AllowMinimize>
+        <AllowConnect>true</AllowConnect>
+        <AllowEdit>true</AllowEdit>
+        <AllowHide>true</AllowHide>
+        <IsVisible>true</IsVisible>
+        <DetailLink />
+        <HelpLink />
+        <HelpMode>Modeless</HelpMode>
+        <Dir>Default</Dir>
+        <PartImageSmall />
+        <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+        <PartImageLarge />
+        <IsIncludedFilter />
+        <Assembly>MLG2007.WebParts.MySites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5520f5f952bc2d7</Assembly>
+        <TypeName>MLG2007.WebParts.MySites.MySites</TypeName>
+        <StartSite xmlns="MLG2007.WebParts.MySites"></StartSite>
+        <PageSize xmlns="MLG2007.WebParts.MySites">10</PageSize>
+        <UnitName xmlns="MLG2007.WebParts.MySites">classes</UnitName>
+      </WebPart>
+      ]]>
+      </AllUsersWebPart>
+    </File>
+  </Module>
+  <Module Name="Remainder" Url="" Path="">
+  </Module>
+</Elements>

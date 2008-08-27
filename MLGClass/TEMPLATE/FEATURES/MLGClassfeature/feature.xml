@@ -1,0 +1,7 @@
+﻿<Feature  Title="$Resources:MLGClass_onet,Feature_Title_MLG_Class;" Id="89e75934-bd48-490a-a177-d2a709365ec3" Description="$Resources:MLGClass_onet,Feature_Description_MLG_Class;" Version="1.0.0.0" Scope="Web" Hidden="TRUE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="assignments.aspx" />
+    <ElementFile Location="default.aspx" />
+  </ElementManifests>
+</Feature>

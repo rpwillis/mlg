@@ -1,0 +1,9 @@
+﻿<Feature  Title="$Resources:MLGTeacher_onet,Feature_Title_MLGTeacher;" Id="16a3e8fd-e0f3-4cf1-adc7-939df29f2f88" Description="$Resources:MLGTeacher_onet,Feature_Description_MLGTeacher;" Version="1.0.0.0" Scope="Web" Hidden="TRUE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="Assignments.aspx" />
+    <ElementFile Location="Classes.aspx" />
+    <ElementFile Location="Planner.aspx" />
+  </ElementManifests>
+  
+</Feature>

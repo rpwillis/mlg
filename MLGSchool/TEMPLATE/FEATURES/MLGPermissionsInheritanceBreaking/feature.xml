@@ -1,0 +1,12 @@
+﻿<Feature  Title="MLG Permissions Inheritance Breaker"
+          Id="F1F754C9-3729-45e7-B099-E77334AFFBC3" 
+          Description="" 
+          Version="1.0.0.0" 
+          Scope="Web" 
+        Hidden="TRUE" 
+    DefaultResourceFile="core"
+    ReceiverAssembly="MLGSchool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c7d4cffb638b1cb3" 
+  ReceiverClass="MLG.MLG" xmlns="http://schemas.microsoft.com/sharepoint/"
+   />
+
+

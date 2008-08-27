@@ -1,0 +1,40 @@
+;
+.Set CabinetNameTemplate=MLG2007.LGUtilities.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\ShowEvent.aspx"	"layouts\1033\LGUtilities\ShowEvent.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\ShowEvent.aspx.resx"	"layouts\1033\LGUtilities\ShowEvent.aspx.resx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\ShowExchange.aspx"	"layouts\1033\LGUtilities\ShowExchange.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\ShowMore.aspx"	"layouts\1033\LGUtilities\ShowMore.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\showSlkdetails.aspx"	"layouts\1033\LGUtilities\showSlkdetails.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\Web.config"	"layouts\1033\LGUtilities\Web.config"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\App_LocalResources\ShowEvent.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\ShowEvent.aspx.resx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\App_LocalResources\ShowExchange.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\ShowExchange.aspx.resx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\App_LocalResources\ShowMore.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\ShowMore.aspx.resx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\App_LocalResources\showSlkdetails.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\showSlkdetails.aspx.resx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\Assignments.gif"	"layouts\1033\LGUtilities\images\Assignments.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\Assignments_dn.gif"	"layouts\1033\LGUtilities\images\Assignments_dn.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\blank.gif"	"layouts\1033\LGUtilities\images\blank.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\btn_dn.gif"	"layouts\1033\LGUtilities\images\btn_dn.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\btn_up.gif"	"layouts\1033\LGUtilities\images\btn_up.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\calendar.gif"	"layouts\1033\LGUtilities\images\calendar.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\calendar_dn.gif"	"layouts\1033\LGUtilities\images\calendar_dn.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\cnspub16.gif"	"layouts\1033\LGUtilities\images\cnspub16.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\gosearch.gif"	"layouts\1033\LGUtilities\images\gosearch.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\helpicon.gif"	"layouts\1033\LGUtilities\images\helpicon.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\Menu1.gif"	"layouts\1033\LGUtilities\images\Menu1.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\menudark.gif"	"layouts\1033\LGUtilities\images\menudark.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\nextbuttonltr.gif"	"layouts\1033\LGUtilities\images\nextbuttonltr.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\prevbuttonltr.gif"	"layouts\1033\LGUtilities\images\prevbuttonltr.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\Row_bg.gif"	"layouts\1033\LGUtilities\images\Row_bg.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\titlegraphic.gif"	"layouts\1033\LGUtilities\images\titlegraphic.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\images\whitearrow.gif"	"layouts\1033\LGUtilities\images\whitearrow.gif"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\scripts\scripts.js"	"layouts\1033\LGUtilities\scripts\scripts.js"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\styles\CustomStyles.css"	"layouts\1033\LGUtilities\styles\CustomStyles.css"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\styles\dropdown.css"	"layouts\1033\LGUtilities\styles\dropdown.css"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\manifest.xml"	manifest.xml
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LPUtilitiesInstallerHelper\bin\Release\pre\bin\MLG2007.LGUtilities.dll"	MLG2007.LGUtilities.dll
+;*** <the end>

@@ -1,0 +1,11 @@
+﻿<solution  id="a1406e2d-6d2e-4823-bef5-20dc51fc55d6" name="MLG2007.WebParts.MySites" >
+  <features>
+    <feature  id="6d19703c-f590-46b0-99ae-5755103e43ab" name="MySites" title="MySites" description="" version="1.0.0.0" scope="Site" hidden="False" defaultresourcefile="core" >
+      <element  id="6d19703c-f590-46b0-99ae-5755103e43ab" title="MySites Web Part" description="" importerrormessage="Cannot import MySites Web Part." />
+    </feature>
+  </features>
+  <templates>
+  </templates>
+  <sitedefinitions>
+  </sitedefinitions>
+</solution>

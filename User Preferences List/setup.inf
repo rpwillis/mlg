@@ -1,0 +1,25 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:26 2007           **
+;**                                                                **
+;** MakeCAB Version: 5.2.3790.0                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,MLGUserPreferencesList.wsp
+[file list]
+1,1,UserPreferencesList\feature.xml,676
+1,1,UserPreferencesList\ListTemplates\elementManifest.xml,349
+1,1,UserPreferencesList\UserPreferencesList\AllItems.aspx,2646
+1,1,UserPreferencesList\UserPreferencesList\DispForm.aspx,3185
+1,1,UserPreferencesList\UserPreferencesList\EditForm.aspx,3185
+1,1,UserPreferencesList\UserPreferencesList\NewForm.aspx,3185
+1,1,UserPreferencesList\UserPreferencesList\schema.xml,189394
+1,1,manifest.xml,241
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:26 2007           **
+;**                                                                **
+;*** END ************************************************************

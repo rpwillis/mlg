@@ -1,0 +1,17 @@
+﻿<Feature  Title="$Resources:MLGSchool_Onet,Feature_Title_MLGSchool;" Id="b8a0cfa0-1e5c-4dee-a96f-952e70858a55" Description="$Resources:MLGSchool_Onet,Feature_Description_MLGSchool;" Version="1.0.0.0" Scope="Web" Hidden="TRUE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="default.aspx" />
+    <ElementFile Location="MLGSchool.master" />
+    <ElementFile Location="search.aspx" />
+    <ElementFile Location="DOCTEMP\A\defaultchild.jpg" />
+    <ElementFile Location="DOCTEMP\A\Schoolbanner.gif" />
+    <ElementFile Location="DOCTEMP\A\Schoollogo.gif" />
+    <ElementFile Location="DOCTEMP\A\w\defaultchild_jpg.jpg" />
+    <ElementFile Location="DOCTEMP\A\w\Schoolbanner_gif.jpg" />
+    <ElementFile Location="DOCTEMP\A\w\SchoolLogo_gif.jpg" />
+    <ElementFile Location="DOCTEMP\A\t\defaultchild_jpg.jpg" />
+    <ElementFile Location="DOCTEMP\A\t\Schoolbanner_gif.jpg" />
+    <ElementFile Location="DOCTEMP\A\t\SchoolLogo_gif.jpg" />
+  </ElementManifests>
+</Feature>

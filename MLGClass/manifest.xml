@@ -1,0 +1,18 @@
+﻿<Solution SolutionId="eb0a904d-a581-4049-92d6-bc6051cd618f" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MLGClassfeature\feature.xml" />
+  </FeatureManifests>
+  <SiteDefinitionManifests>
+    <SiteDefinitionManifest Location="MLGClass">
+      <WebTempFile Location="1033\xml\webtempMLGClass.xml" />
+    </SiteDefinitionManifest>
+  </SiteDefinitionManifests>
+  <TemplateFiles>
+    <TemplateFile Location="images\mlgclass.png"/>
+    <TemplateFile Location="XML\MLGClassSiteTemplate.XML"/>
+    <TemplateFile Location="1033\XML\webtempMLGClassSite.xml"/>
+  </TemplateFiles>
+  <RootFiles>
+    <RootFile Location="Resources\MLGClass_onet.resx"/>
+  </RootFiles>
+</Solution>

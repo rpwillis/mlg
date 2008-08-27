@@ -1,0 +1,107 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B19B915B-B20E-47EC-B0FE-E2CAB08576D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MLGSchool</RootNamespace>
+    <AssemblyName>MLGSchool</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Properties\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Security, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelperClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CreateCabDDF.vbs" />
+    <None Include="Properties\key.snk" />
+    <None Include="TEMPLATE\FEATURES\MLGSchoolFeature\MLGSchool.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\MLGSchool.png" />
+    <Content Include="manifest.xml" />
+    <Content Include="TEMPLATE\1033\XML\webtempMLGSchool.xml" />
+    <Content Include="TEMPLATE\1033\XML\webtempMLGSchoolPortal.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGPermissionsInheritanceBreaking\feature.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchool\xml\onet.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\default.aspx" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\defaultchild.jpg" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\Schoolbanner.gif" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\Schoollogo.gif" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\defaultchild_jpg.jpg" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\Schoolbanner_gif.jpg" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\SchoolLogo_gif.jpg" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\defaultchild_jpg.jpg" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\Schoolbanner_gif.jpg" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\SchoolLogo_gif.jpg" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\elementManifest.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\feature.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGSchoolFeature\search.aspx" />
+    <Content Include="TEMPLATE\XML\MLGSchoolPortalSiteTemplate.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MLGSchool_onet.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CONFIG\" />
+    <Folder Include="DLLS\GAC\" />
+    <Folder Include="TEMPLATE\LAYOUTS\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>cd "$(ProjectDir)"
+CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
+
+cd "$(ProjectDir)"
+makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
+
+
+
+

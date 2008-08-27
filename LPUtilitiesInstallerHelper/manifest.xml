@@ -1,0 +1,28 @@
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="B367C96D-2076-4e06-A9C4-5EF4E904FBA6">
+  <Assemblies>
+    <Assembly DeploymentTarget="GlobalAssemblyCache" Location="MLG2007.LGUtilities.dll" />
+  </Assemblies>
+  <TemplateFiles>
+    <TemplateFile Location="layouts\1033\LGUtilities\ShowEvent.aspx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\ShowEvent.aspx.resx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\ShowExchange.aspx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\ShowMore.aspx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\showSlkdetails.aspx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\Web.config" />
+    <TemplateFile Location="layouts\1033\LGUtilities\App_LocalResources\ShowEvent.aspx.resx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\App_LocalResources\ShowMore.aspx.resx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\App_LocalResources\ShowExchange.aspx.resx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\App_LocalResources\showSlkdetails.aspx.resx" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\Assignments.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\Assignments_dn.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\blank.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\calendar.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\calendar_dn.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\Menu1.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\menudark.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\images\whitearrow.gif" />
+    <TemplateFile Location="layouts\1033\LGUtilities\styles\CustomStyles.css" />
+    <TemplateFile Location="layouts\1033\LGUtilities\styles\dropdown.css" />
+    <TemplateFile Location="layouts\1033\LGUtilities\scripts\scripts.js" />
+  </TemplateFiles>
+</Solution>

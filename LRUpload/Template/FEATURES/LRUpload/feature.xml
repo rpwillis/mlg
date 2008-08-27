@@ -1,0 +1,6 @@
+﻿<Feature  Title="Learning Resources Upload" Id="284f3af4-b728-4464-8896-0da1c198ec79" Description="" Version="1.0.0.0" Scope="Site" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="LRUpload.dwp" />
+  </ElementManifests>
+</Feature>

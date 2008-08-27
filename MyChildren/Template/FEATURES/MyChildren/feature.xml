@@ -1,0 +1,6 @@
+﻿<Feature  Title="My Children" Id="d208b435-7bf9-41b1-8ced-ee8a1565550f" Description="" Version="1.0.0.0" Scope="Site" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="MyChildren.dwp" />
+  </ElementManifests>
+</Feature>

@@ -1,0 +1,20 @@
+;
+.Set CabinetNameTemplate=MLG2007.WebParts.MyPlanner.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\TEMPLATE\FEATURES\MyPlanner\elementManifest.xml"	"MyPlanner\elementManifest.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\TEMPLATE\FEATURES\MyPlanner\feature.xml"	"MyPlanner\feature.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\TEMPLATE\FEATURES\MyPlanner\MyPlanner.dwp"	"MyPlanner\MyPlanner.dwp"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\manifest.xml"	manifest.xml
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.WebParts.MyPlanner.dll"	MLG2007.WebParts.MyPlanner.dll
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.Helper.Calendar.dll"	MLG2007.Helper.Calendar.dll
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.Helper.ListSearch.dll"	MLG2007.Helper.ListSearch.dll
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.Helper.CalendarStore.dll"	MLG2007.Helper.CalendarStore.dll
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.Helper.SharePoint.dll"	MLG2007.Helper.SharePoint.dll
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.Helper.SharePointLearningKit.dll"	MLG2007.Helper.SharePointLearningKit.dll
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.Helper.Exchange.dll"	MLG2007.Helper.Exchange.dll
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MyPlanner\bin\Release\MLG2007.Helper.UserPreferences.dll"	MLG2007.Helper.UserPreferences.dll
+;*** <the end>

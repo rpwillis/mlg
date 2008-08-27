@@ -1,0 +1,10 @@
+﻿<Feature  Title="Calendar List" Id="ff20ec55-eb68-4e80-8b35-eda65f624051" Description="" Version="1.0.0.0" Scope="Web" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="ListTemplates\elementManifest.xml" />
+    <ElementFile Location="CalendarList\schema.xml" />
+    <ElementFile Location="CalendarList\AllItems.aspx" />
+    <ElementFile Location="CalendarList\dispform.aspx" />
+    <ElementFile Location="CalendarList\editform.aspx" />
+    <ElementFile Location="CalendarList\newform.aspx" />
+  </ElementManifests>
+</Feature>

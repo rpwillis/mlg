@@ -1,0 +1,11 @@
+﻿<solution  id="4c661238-5386-4f9f-b192-1eeb9982304c" name="MLG2007.WebParts.MyPlanner" >
+  <features>
+    <feature  id="6e1445f0-19fb-439b-b6f0-9fe10b905091" name="MyPlanner" title="MyPlanner" description="" version="1.0.0.0" scope="Site" hidden="False" defaultresourcefile="core" >
+      <element  id="6e1445f0-19fb-439b-b6f0-9fe10b905091" title="MyPlanner Web Part" description="" importerrormessage="Cannot import MyPlanner Web Part." />
+    </feature>
+  </features>
+  <templates>
+  </templates>
+  <sitedefinitions>
+  </sitedefinitions>
+</solution>

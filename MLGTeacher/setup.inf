@@ -1,0 +1,28 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:40 2007           **
+;**                                                                **
+;** MakeCAB Version: 5.2.3790.0                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,MLGTeacher.wsp
+[file list]
+1,1,1033\XML\webtempMLGTeacher.xml,270
+1,1,1033\XML\webtempMLGTeacherSite.xml,762
+1,1,MLGTeacher\xml\onet.xml,7243
+1,1,MLGTeacherfeature\Assignments.aspx,3381
+1,1,MLGTeacherfeature\Classes.aspx,3637
+1,1,MLGTeacherfeature\elementManifest.xml,8587
+1,1,MLGTeacherfeature\feature.xml,567
+1,1,MLGTeacherfeature\Planner.aspx,3380
+1,1,XML\MLGTeacherSiteTemplate.XML,460
+1,1,manifest.xml,705
+1,1,resources\MLGTeacher_onet.resx,7044
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:40 2007           **
+;**                                                                **
+;*** END ************************************************************

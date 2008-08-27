@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<portal xmlns="PortalTemplate.xsd">
+  <web name="School" siteDefinition="MLGSchool#0" 
+     displayName="$Resources:MLGSchool_onet,sub_School;" description="">
+    <webs>
+      <web name="$Resources:MLGSchool_onet,sub_News;" siteDefinition="SPSNHOME#0" displayName="$Resources:MLGSchool_onet,sub_News;" description="" />
+      <web name="$Resources:MLGSchool_onet,sub_Teachers;" siteDefinition="MLGTeacherSite#0"            displayName="$Resources:MLGSchool_onet,sub_Teachers;" description="" />
+      <web name="$Resources:MLGSchool_onet,sub_Students;" siteDefinition="MLGStudent#0" displayName="$Resources:MLGSchool_onet,sub_Students;" description="" />
+      <web name="$Resources:MLGSchool_onet,sub_Parents;" siteDefinition="MLGParent#0" displayName="$Resources:MLGSchool_onet,sub_Parents;" description="" />
+      <web name="$Resources:MLGSchool_onet,sub_Collaboration;" siteDefinition="MLGCustom#0" displayName="$Resources:MLGSchool_onet,sub_Collaboration;" description="" />
+      <web name="$Resources:MLGSchool_onet,sub_Classes;" siteDefinition="MLGCustom#0"            displayName="$Resources:MLGSchool_onet,sub_Classes;" description="" />
+    </webs>
+  </web>
+</portal>

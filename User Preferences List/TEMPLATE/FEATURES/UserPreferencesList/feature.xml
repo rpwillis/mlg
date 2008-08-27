@@ -1,0 +1,10 @@
+﻿<Feature  Title="User Preferences List" Id="423541da-d53c-11db-8314-0800200c9a66" Description="" Version="1.0.0.0" Scope="Web" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="ListTemplates\elementManifest.xml" />
+    <ElementFile Location="UserPreferencesList\schema.xml" />
+    <ElementFile Location="UserPreferencesList\AllItems.aspx" />
+    <ElementFile Location="UserPreferencesList\dispform.aspx" />
+    <ElementFile Location="UserPreferencesList\editform.aspx" />
+    <ElementFile Location="UserPreferencesList\newform.aspx" />
+  </ElementManifests>
+</Feature>

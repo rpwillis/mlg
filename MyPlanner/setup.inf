@@ -1,0 +1,29 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:30 2007           **
+;**                                                                **
+;** MakeCAB Version: 5.2.3790.0                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,MLG2007.WebParts.MyPlanner.wsp
+[file list]
+1,1,MyPlanner\elementManifest.xml,210
+1,1,MyPlanner\feature.xml,372
+1,1,MyPlanner\MyPlanner.dwp,1876
+1,1,manifest.xml,1445
+1,1,MLG2007.WebParts.MyPlanner.dll,49152
+1,1,MLG2007.Helper.Calendar.dll,49152
+1,1,MLG2007.Helper.ListSearch.dll,77824
+1,1,MLG2007.Helper.CalendarStore.dll,36864
+1,1,MLG2007.Helper.SharePoint.dll,20480
+1,1,MLG2007.Helper.SharePointLearningKit.dll,24576
+1,1,MLG2007.Helper.Exchange.dll,28672
+1,1,MLG2007.Helper.UserPreferences.dll,24576
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:30 2007           **
+;**                                                                **
+;*** END ************************************************************

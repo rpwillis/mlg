@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+	<Title>MyPlanner</Title>
+	<FrameType>Default</FrameType>
+	<Description />
+	<IsIncluded>true</IsIncluded>
+	<ZoneID>Left</ZoneID>
+	<PartOrder>1</PartOrder>
+	<FrameState>Normal</FrameState>
+	<Height />
+	<Width />
+	<AllowRemove>true</AllowRemove>
+	<AllowZoneChange>true</AllowZoneChange>
+	<AllowMinimize>true</AllowMinimize>
+	<AllowConnect>true</AllowConnect>
+	<AllowEdit>true</AllowEdit>
+	<AllowHide>true</AllowHide>
+	<IsVisible>true</IsVisible>
+	<DetailLink />
+	<HelpLink />
+	<HelpMode>Modeless</HelpMode>
+	<Dir>Default</Dir>
+	<PartImageSmall />
+	<MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+	<PartImageLarge />
+	<IsIncludedFilter />
+	<Assembly>MLG2007.WebParts.MyPlanner, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+	<TypeName>MLG2007.WebParts.MyPlanner.MyPlanner</TypeName>
+	<ExchangeUrl xmlns="MLG2007.WebParts.MyPlanner"></ExchangeUrl>
+	<ExchangeDomain xmlns="MLG2007.WebParts.MyPlanner"></ExchangeDomain>
+	<UserPreferencesStoreUrl xmlns="MLG2007.WebParts.MyPlanner">../../Lists/User%20Preferences%20Store/AllItems.aspx</UserPreferencesStoreUrl>
+	<CalendarsListUrl xmlns="MLG2007.WebParts.MyPlanner">../../Lists/Planner%20Calendars%20Store/AllItems.aspx</CalendarsListUrl>
+	<PlannerRole xmlns="MLG2007.WebParts.MyPlanner">Teacher</PlannerRole>
+	<ShowSLK xmlns="MLG2007.WebParts.MyPlanner">true</ShowSLK>
+	<DNSName xmlns="MLG2007.WebParts.MyPlanner"></DNSName>
+	<ShowPersonalCalendar xmlns="MLG2007.WebParts.MyPlanner">true</ShowPersonalCalendar>
+	<SharePointCalendarIDList xmlns="MLG2007.WebParts.MyPlanner" />
+	<ExchangeCalendarIDList xmlns="MLG2007.WebParts.MyPlanner" />
+</WebPart>

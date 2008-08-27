@@ -1,0 +1,6 @@
+﻿<Feature  Title="$Resources:MLGCustom_onet,Feature_Title_MLGCustom;" Id="f159c8f6-b0f1-4fbf-9c4a-a5afdc3d9436" Description="$Resources:MLGCustom_onet,Feature_Description_MLGCustom;" Version="1.0.0.0" Scope="Web" Hidden="TRUE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="default.aspx" />
+  </ElementManifests>
+</Feature>

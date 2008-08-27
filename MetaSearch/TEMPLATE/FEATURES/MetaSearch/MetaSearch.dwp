@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>Learning Resources Search</Title>
+  <FrameType>Default</FrameType>
+  <Description />
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>TopZone</ZoneID>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+  <Assembly>MLG2007.WebParts.MetaSearch, Version=1.0.1.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+  <TypeName>MLG2007.WebParts.MetaSearch.MetaSearch</TypeName>
+  <SourceDocumentLibrary xmlns="MetaSearch"></SourceDocumentLibrary>
+  <ExcludedContentTypes xmlns="MetaSearch"></ExcludedContentTypes>
+  <ExcludedFields xmlns="MetaSearch"></ExcludedFields>
+  <ShowErrors xmlns="MetaSearch">true</ShowErrors>
+  <NumberofResults xmlns="MetaSearch">10</NumberofResults>
+</WebPart>

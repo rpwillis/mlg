@@ -1,0 +1,144 @@
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance FeatureId="00BFEA71-E717-4E80-AA17-D0C71B360101" TemplateType="101" Title="$Resources:MLGSchool_Onet,ListInstance_Title_Learning_Objects_Repository;" Url="Learning Objects" QuickLaunchUrl="Learning%20Objects/Forms/AllItems.aspx" />
+  <ListInstance FeatureId="00BFEA71-D1CE-42de-9C63-A44004CE0104" TemplateType="104" Title="$Resources:MLGSchool_Onet,ListInstance_Title_Announcements;" Url="Lists/Announcements" />
+  <ListInstance FeatureId="00BFEA71-2062-426C-90BF-714C59600103" TemplateType="103" Title="$Resources:MLGSchool_Onet,ListInstance_Title_School_Links;" Url="Lists/Links" />
+  <ListInstance FeatureId="00bfea71-52d4-45b3-b544-b1c71b620109" TemplateType="109" Title="$Resources:MLGSchool_Onet,ListInstance_Title_Picture_Library;" Url="Picture Library" />
+  <ListInstance FeatureId="00bfea71-52d4-45b3-b544-b1c71b620109" TemplateType="109" Title="$Resources:MLGSchool_Onet,ListInstance_Title_Students_Picture_Library" Url="Students Picture Library" Description="Holds all students' pictures" />
+  <ListInstance FeatureId="00bfea71-de22-43b2-a848-c05709900100" TemplateType="100" Title="$Resources:MLGSchool_Onet,ListInstance_Title_Custom_List" Url="Lists/Custom List" />
+  <ListInstance FeatureId="00bfea71-1e1d-4562-b56a-f05371bb0115" TemplateType="115" Title="$Resources:MLGSchool_Onet,ListInstance_Title_Forms" Url="Forms" QuickLaunchUrl="Forms/Forms/AllItems.aspx" />
+  <ListInstance FeatureId="ff20ec55-eb68-4e80-8b35-eda65f624051" TemplateType="100" Title="$Resources:MLGSchool_Onet,ListInstance_Title_Calendar_List" Url="Lists/Planner Calendars Store" />
+  <ListInstance FeatureId="423541da-d53c-11db-8314-0800200c9a66" TemplateType="100" Title="$Resources:MLGSchool_Onet,ListInstance_Title_User_Preferences" Url="Lists/User Preferences Store" />  
+  <Module Name="Home" Url="$Resources:cmscore,List_Pages_UrlName;" Path="">
+    <File Url="default.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="$Resources:MLGSchool_Onet,Module_File_Property_Value_School_Home" />
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="1">
+        <![CDATA[
+  <?xml version="1.0" encoding="utf-8"?><WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>Content Editor</Title>
+  <FrameType>None</FrameType>
+  <Description>Use for formatted text, tables, and images.</Description>
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Left</ZoneID>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge>/_layouts/images/mscontl.gif</PartImageLarge>
+  <IsIncludedFilter />
+  <Assembly>Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+  <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
+  <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+  <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" >&lt;div class="ms-pagetitle"&gt;Welcome to our school&lt;/div&gt;</Content>
+  <PartStorage xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" /></WebPart>]]>      </AllUsersWebPart>
+      <View List="Lists/Announcements" BaseViewID="0" WebPartZoneID="Left" WebPartOrder="2" Type="HTML" />
+      <View List="Lists/Links" BaseViewID="0" WebPartZoneID="Right" WebPartOrder="1" Type="HTML" />
+      <View List="Lists/Custom List" BaseViewID="0" WebPartZoneID="Left" WebPartOrder="3" Type="HTML" />
+    </File>
+    <File Url="search.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Search" />
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="1">
+        <![CDATA[
+         <?xml version="1.0" encoding="utf-8" ?> 
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>Advanced Search</Title> 
+  <FrameType>Default</FrameType> 
+  <Description>Used for parameterized searches based on properties and combinations of words.</Description> 
+  <FrameState>Normal</FrameState> 
+  <AllowRemove>true</AllowRemove> 
+  <AllowZoneChange>true</AllowZoneChange> 
+  <AllowMinimize>true</AllowMinimize> 
+  <IsVisible>true</IsVisible> 
+  <Assembly>Microsoft.Office.Server.Search, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly> 
+  <TypeName>Microsoft.Office.Server.Search.WebControls.AdvancedSearchBox</TypeName> 
+  <TextQuerySectionLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" _locID="WP_ASB_TextSectionLabel">Find documents with...</TextQuerySectionLabelText> 
+  <ShowAndQueryTextBox xmlns="urn:schemas-microsoft-com:AdvancedSearchBox">true</ShowAndQueryTextBox> 
+  <AndQueryTextBoxLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" /> 
+  <ShowPhraseQueryTextBox xmlns="urn:schemas-microsoft-com:AdvancedSearchBox">true</ShowPhraseQueryTextBox> 
+  <PhraseQueryTextBoxLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" /> 
+  <ShowOrQueryTextBox xmlns="urn:schemas-microsoft-com:AdvancedSearchBox">true</ShowOrQueryTextBox> 
+  <OrQueryTextBoxLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" /> 
+  <ShowNotQueryTextBox xmlns="urn:schemas-microsoft-com:AdvancedSearchBox">true</ShowNotQueryTextBox> 
+  <NotQueryTextBoxLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" /> 
+  <ScopeSectionLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" _locID="WP_ASB_ScopeSectionLabel">Narrow the search...</ScopeSectionLabelText> 
+  <ScopeLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" /> 
+  <ShowLanguageOptions xmlns="urn:schemas-microsoft-com:AdvancedSearchBox">true</ShowLanguageOptions> 
+  <LanguagesLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" /> 
+  <ShowResultTypePicker xmlns="urn:schemas-microsoft-com:AdvancedSearchBox">true</ShowResultTypePicker> 
+  <ResultTypeLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" /> 
+  <ShowPropertiesSection xmlns="urn:schemas-microsoft-com:AdvancedSearchBox">true</ShowPropertiesSection> 
+  <PropertiesSectionLabelText xmlns="urn:schemas-microsoft-com:AdvancedSearchBox" _locID="WP_ASB_PropertiesSectionLabel">Add property restrictions...</PropertiesSectionLabelText> 
+  </WebPart>
+          ]]>
+      </AllUsersWebPart>     
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="2">
+        <![CDATA[
+  <?xml version="1.0" encoding="utf-8" ?> 
+  <webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+  <metaData>
+  <type name="Microsoft.Office.Server.Search.WebControls.CoreResultsWebPart, Microsoft.Office.Server.Search,Version=12.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" /> 
+  <importErrorMessage>Cannot import this Web Part.</importErrorMessage> 
+  </metaData>
+  <data>
+  <properties>
+  <property name="Title" type="string">Search Results</property> 
+  <property name="Description" type="string">This web part displays the search results and the properties associated with them.</property> 
+  <property name="ChromeType">Default</property> 
+  <property name="AllowMinimize" type="bool">true</property> 
+  <property name="AllowClose" type="bool">true</property> 
+  <property name="Hidden" type="bool">false</property> 
+  <property name="ScopeID" type="int">1</property> 
+  </properties>
+  </data>
+  </webPart>
+  </webParts>
+  ]]>   </AllUsersWebPart>
+      
+    </File>
+  </Module>
+  <Module Name="PictureLibrary" List="109" Url="Picture Library" Path="DOCTEMP\A">
+    <File Url="SchoolLogo.gif" Type="GhostableInLibrary" />
+    <File Url="SchoolBanner.gif" Type="GhostableInLibrary" />
+  </Module>
+  <Module Name="PictureLibrary1" List="109" Url="Picture Library/_t" Path="DOCTEMP\A\t">
+    <File Url="SchoolLogo_gif.jpg" />
+    <File Url="SchoolBanner_gif.jpg" />
+  </Module>
+  <Module Name="PictureLibrary2" List="109" Url="Picture Library/_w" Path="DOCTEMP\A\w">
+    <File Url="SchoolLogo_gif.jpg" />
+    <File Url="SchoolBanner_gif.jpg" />
+  </Module>
+  <Module Name="StudentsPictureLibrary" List="109" Url="Students Picture Library" Path="DOCTEMP\A">
+    <File Url="DefaultChild.jpg" Type="GhostableInLibrary" />
+  </Module>
+  <Module Name="StudentsPictureLibrary1" List="109" Url="Students Picture Library/_t" Path="DOCTEMP\A\t">
+    <File Url="DefaultChild_jpg.jpg" />
+  </Module>
+  <Module Name="StudentsPictureLibrary2" List="109" Url="Students Picture Library/_w" Path="DOCTEMP\A\w">
+    <File Url="DefaultChild_jpg.jpg" />
+  </Module>
+  <Module Name="Remainder" Url="" Path="">
+    <File Url="MLGSchool.master" />
+    <File Url="DOCTEMP/A/defaultchild.jpg" />
+    <File Url="DOCTEMP/A/Schoolbanner.gif" />
+    <File Url="DOCTEMP/A/Schoollogo.gif" />
+    <File Url="DOCTEMP/A/w/defaultchild_jpg.jpg" />
+    <File Url="DOCTEMP/A/w/Schoolbanner_gif.jpg" />
+    <File Url="DOCTEMP/A/w/SchoolLogo_gif.jpg" />
+    <File Url="DOCTEMP/A/t/defaultchild_jpg.jpg" />
+    <File Url="DOCTEMP/A/t/Schoolbanner_gif.jpg" />
+    <File Url="DOCTEMP/A/t/SchoolLogo_gif.jpg" />
+  </Module>
+</Elements>

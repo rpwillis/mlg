@@ -1,0 +1,12 @@
+﻿<Solution SolutionId="3ff5cbe6-4b1d-4b29-8ed7-e50bca2b4af8" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MySites\feature.xml" />
+  </FeatureManifests>
+  <Assemblies>
+    <Assembly Location="MLG2007.WebParts.MySites.dll" DeploymentTarget="GlobalAssemblyCache" >
+      <SafeControls>
+        <SafeControl Assembly="MLG2007.WebParts.MySites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a5520f5f952bc2d7" Namespace="MLG2007.WebParts.MySites" TypeName="MySites" Safe="True" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+</Solution>

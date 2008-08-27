@@ -1,0 +1,257 @@
+.MonthHead {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: white
+}
+.MonthHead A:hover {
+	COLOR: white
+}
+.MonthHead A:link {
+	COLOR: white
+}
+.MonthHead A:visited {
+	COLOR: white
+}
+
+
+.ShowMoreHead {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: black
+}
+.Day {
+	BORDER-RIGHT: #6f9dd9 1px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; VERTICAL-ALIGN: top; BORDER-LEFT: #6f9dd9 1px solid; PADDING-TOP: 1px; BACKGROUND-COLOR: #ffffff;width:130px;
+}
+.CurrDay {
+	BORDER-RIGHT: #6f9dd9 1px solid; BORDER-TOP: #6f9dd9 1px solid; BACKGROUND-IMAGE: url(/_layouts/1033/LgUtilities/images/calnumBttntoday.gif); BORDER-LEFT: #6f9dd9 1px solid; BORDER-BOTTOM: #6f9dd9 1px solid; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #ffda8a
+}
+
+.CurrDay DIV {
+	BORDER-RIGHT: #ffa521 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffa521 1px solid; PADDING-LEFT: 4px; FONT-WEIGHT: bold; PADDING-BOTTOM: 0px; BORDER-LEFT: #ffa521 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #ffa521 1px solid
+}
+
+.CurrDayover {
+BORDER-RIGHT: #83b0ec 1px solid; BORDER-TOP: #83b0ec 1px solid; BORDER-LEFT: #83b0ec 1px solid; CURSOR: pointer; BORDER-BOTTOM: #83b0ec 1px solid; BACKGROUND-COLOR: #ffe1bb; TEXT-ALIGN: left
+}
+.CurrDayover DIV 
+{
+BORDER-RIGHT: #ffa521 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffa521 1px solid; PADDING-LEFT: 4px; FONT-WEIGHT: bold; PADDING-BOTTOM: 0px; BORDER-LEFT: #ffa521 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #ffa521 1px solid
+}
+
+.BottomCal
+{
+	BORDER-RIGHT: #6f9dd9 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 1px; BORDER-LEFT: #6f9dd9 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #83b0ec 1px solid; BACKGROUND-COLOR: #ffffff
+
+}
+
+.DayHead {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: normal; PADDING-BOTTOM: 2px; COLOR: #7f7f7f; PADDING-TOP: 2px; BACKGROUND-COLOR: #e3efff;Text-align:center;
+}
+.TopDay
+{
+	BORDER-RIGHT: #6f9dd9 1px solid; BORDER-TOP: #6f9dd9 1px solid; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/_layouts/1033/LgUtilities/images/calnumBttn.gif); BORDER-LEFT: #6f9dd9 1px solid; COLOR: #000000; BORDER-BOTTOM: #6f9dd9 1px solid; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #d6e8ff; TEXT-ALIGN: left;width:130px!important;
+}
+
+.TopDayover {
+	BORDER-RIGHT: #6f9dd9 1px solid; BORDER-TOP: #6f9dd9 1px solid; BACKGROUND-IMAGE: url(/_layouts/1033/LgUtilities/images/calnumBttnover.gif); BORDER-LEFT: #6f9dd9 1px solid; CURSOR: pointer; BORDER-BOTTOM: #6f9dd9 1px solid; BACKGROUND-COLOR: #ebf3ff; TEXT-ALIGN: left;FONT-WEIGHT: bold;
+}
+
+.DayOM {
+	BORDER-RIGHT: #6f9dd9 1px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; VERTICAL-ALIGN: top; BORDER-LEFT: #6f9dd9 1px solid; PADDING-TOP: 1px; BACKGROUND-COLOR: #e3efff;width:130px;
+}
+.Appointment {
+	DISPLAY: block; FONT-SIZE: 8pt; COLOR: black; HEIGHT: 18px; 
+	margin:0px;
+	padding:0px;
+}
+.ClassServerAssignment {
+	BACKGROUND-COLOR: #b7f09b;
+	border:solid 1px #8DC473;
+}
+
+.ClassServerAssignmenthover {
+	BACKGROUND-COLOR: #CEF2BC;
+	border:solid 1px #8DC473;
+}
+.SPSEvents {
+	BACKGROUND-COLOR: #bfcfee
+}
+.ExchangeAppointment {
+	BACKGROUND-COLOR: #eee89d;
+	border:solid 1px #D0CA7D;
+	
+}
+.Day a
+{
+	color:#003399!important;
+	text-decoration:none!important;
+	
+}
+.ExchangeAppointmentHover {
+	BACKGROUND-COLOR: #FAF7D2;
+	border:solid 1px #D0CA7D;
+	
+}
+.MyTeamsDiv {
+	PADDING-RIGHT: 20px; DISPLAY: none
+}
+.MyTeamsTop {
+	PADDING-RIGHT: 20px
+}
+.MyTeamsToggle {
+	CURSOR: hand
+}
+.ms-cal {
+	TABLE-LAYOUT: fixed; CURSOR: default; FONT-FAMILY: Verdana; BORDER-COLLAPSE: collapse
+}
+
+
+.ms-cal th {
+	border:solid 1px red;
+	width:10px!important;
+	text-align:left;
+	
+	
+}
+.ms-calHead {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 2px; BORDER-TOP: medium none; PADDING-LEFT: 2px; FONT-SIZE: 16pt; PADDING-BOTTOM: 2px; BORDER-LEFT: medium none; COLOR: white; PADDING-TOP: 2px; BORDER-BOTTOM: medium none; FONT-FAMILY: Arial; BACKGROUND-COLOR: #2254b1; TEXT-ALIGN: center
+}
+.ms-calhead A {
+	TEXT-DECORATION: none
+}
+.ms-calhead A hover {
+	COLOR: red
+}
+
+
+.ms-cal-blankimage {
+	VISIBILITY: hidden; WIDTH: 7px; HEIGHT: 76px;
+}
+
+
+.ms-cal-week {
+	BORDER-RIGHT: #6f9dd9 1px solid; BORDER-TOP: #6f9dd9 1px solid; BACKGROUND-IMAGE: url(/_layouts/1033/LgUtilities/images/weekbox.gif); BORDER-LEFT: #6f9dd9 1px solid; BORDER-BOTTOM: #6f9dd9 1px solid; BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #c2dcff
+}
+
+.ms-cal-weekempty {
+	FONT-SIZE: 2px; WIDTH: 18px; BACKGROUND-COLOR: #e3efff
+}
+.ms-cal-weekB {
+	BORDER-RIGHT: #6f9dd9 1px solid; BORDER-TOP: #6f9dd9 1px solid; BACKGROUND-IMAGE: url(/_layouts/1033/LgUtilities/images/weekbox.gif); BORDER-LEFT: #6f9dd9 1px solid; BORDER-BOTTOM: #6f9dd9 1px solid; BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #c2dcff
+}
+
+.ms-calheader {
+	BACKGROUND-COLOR: #e3efff
+}
+
+.ms-cal-navheader {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; PADDING-BOTTOM: 10px; COLOR: #000000; PADDING-TOP: 10px; FONT-FAMILY: Tahoma
+}
+
+DIV.ms-cal-navheader A IMG {
+	BORDER-RIGHT: #83b0ec 1px solid; BORDER-TOP: #83b0ec 1px solid; BACKGROUND-IMAGE: url(/_layouts/1033/LgUtilities/images/listheadergrad.gif); VERTICAL-ALIGN: middle; BORDER-LEFT: #83b0ec 1px solid; BORDER-BOTTOM: #83b0ec 1px solid; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #ffffff
+}
+
+
+.ms-cal-weekedge {
+	FONT-SIZE: 2px; WIDTH: 4px; BACKGROUND-COLOR: #e3efff
+}
+
+.ms-cal-weekselected {
+	BORDER-RIGHT: #83b0ec 1px solid; BORDER-TOP: #83b0ec 1px solid; BORDER-LEFT: #83b0ec 1px solid; CURSOR: pointer; BORDER-BOTTOM: #83b0ec 1px solid; BACKGROUND-COLOR: #e3efff
+}
+
+.ms-cal-blankimage {
+	VISIBILITY: hidden; WIDTH: 7px; HEIGHT: 76px
+}
+
+.ms-cal-weekbox {
+	WIDTH: 15px
+}
+
+.MainBtns
+{
+	background-image:url(/_layouts/1033/LgUtilities/images/Assignments.gif);
+	width:81px;
+	height:22px;
+	
+}
+
+/*
+.BtnAssignments
+{
+	background-image:url(Assignments.gif);
+	width:80px;
+	height:22px;
+	font-family:Tahoma;
+	font-size:11px;
+	color:#254473;
+	
+}
+
+.BtnAssignments_dn
+{
+	background-image:url(Assignments_dn.gif);
+	width:80px;
+	height:22px;
+	font-family:Tahoma;
+	font-size:11px;
+	color:#254473;
+	
+}*/
+
+.Btn_up
+{
+	/*background:url(/_layouts/1033/LgUtilities/images/btn_up.gif) no-repeat center;
+	border:0px;
+	width:75px;*/
+	/*height:21px;
+	font-family:Tahoma;
+	font-size:10px;
+	color:#254473;
+	text-align:left;*/
+	    /*  FONT-SIZE: 10px; background-color: #BCC4CC; color:#62696F; FONT-FAMILY: Tahoma; HEIGHT: 21px; border:solid 2px #9195A0; font-weight:bold;
+      width:95px;	*/
+	                    FONT-SIZE: 10px; background-color: #afd2ff; color:#192571;  FONT-FAMILY: Tahoma; FoNT-Size:8pt; HEIGHT: 21px; width:95px;        
+	
+}
+
+.Btn_dn
+{
+	/*background:url(/_layouts/1033/LgUtilities/images/btn_dn.gif) no-repeat center;
+	border:0px;
+	width:75px;*/
+	/*height:21px;
+	font-family:Tahoma;
+	font-size:10px;
+	color:#254473;
+	text-align:left;*/
+	/*FONT-SIZE: 10px; background-color: #a5b0b9; color:#62696F; FONT-FAMILY: Tahoma; HEIGHT: 21px; border:solid 2px #9195A0;font-weight:bold;
+      width:95px;*/
+	FONT-SIZE: 10px; background-color: #afd2ff; color:#192571; FONT-FAMILY: Tahoma;FoNT-Size:8pt; HEIGHT: 21px; border:solid 1px #83boec; 
+      width:95px;                  
+
+	
+}
+
+.RowHeading
+{
+	HEIGHT: 100%;
+	
+	background-image:url(/_layouts/1033/LgUtilities/images/row_bg.gif);
+	background-repeat:repeat-x;
+	height:26px;
+	
+}
+
+
+.calendar_titleareaframe
+{
+	BACKGROUND-COLOR: #FFEAAD;
+	
+}
+
+.contB {
+	BORDER-TOP: #8ebbf5 1px solid; WIDTH: 100%; BORDER-BOTTOM: #8ebbf5 1px solid
+}
+
+.ms-cal-defaultbgcolor {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/_layouts/1033/LgUtilities/images/alldayDefault.gif); PADDING-BOTTOM: 4px; CURSOR: pointer; PADDING-TOP: 4px; BACKGROUND-REPEAT: repeat-x; TEXT-OVERFLOW: ellipsis; BACKGROUND-COLOR: #e3efff; TEXT-ALIGN: center
+}
+

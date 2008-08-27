@@ -1,0 +1,17 @@
+﻿<Solution SolutionId="d14a928f-4a1f-446f-a91e-f1aff87143c7" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MLGCustomfeature\feature.xml" />
+    <FeatureManifest Location="MLGStaffRoomsFeature\feature.xml" />
+  </FeatureManifests>
+  <SiteDefinitionManifests>
+    <SiteDefinitionManifest Location="MLGCustom">
+      <WebTempFile Location="1033\xml\webtempMLGCustom.xml" />
+    </SiteDefinitionManifest>
+    <SiteDefinitionManifest Location="MLGStaffrooms">
+      <WebTempFile Location="1033\xml\webtempMLGStaffrooms.xml" />
+    </SiteDefinitionManifest>
+  </SiteDefinitionManifests>
+  <RootFiles>
+    <RootFile Location="Resources\MLGCustom_onet.resx"/>
+  </RootFiles>
+</Solution>

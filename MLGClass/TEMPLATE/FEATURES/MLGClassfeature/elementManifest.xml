@@ -1,0 +1,113 @@
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance FeatureId="00BFEA71-E717-4E80-AA17-D0C71B360101" TemplateType="101" Title="$Resources:MLGClass_onet,Listinstance_Title_Shared_Document;" Url="Shared Documents" QuickLaunchUrl="Shared Documents/Forms/AllItems.aspx" />
+  <ListInstance FeatureId="00BFEA71-2062-426C-90BF-714C59600103" TemplateType="103" Title="$Resources:MLGClass_onet,Listinstance_Title_Links;" Url="Lists/Links" />
+  <ListInstance FeatureId="00BFEA71-6A49-43FA-B535-D15C05500108" TemplateType="108" Title="$Resources:MLGClass_onet,Listinstance_Title_Discussion;" Url="Lists/General Discussion" QuickLaunchUrl="Lists/General Discussion/AllItems.aspx" />
+  <Module Name="Home" Url="$Resources:cmscore,List_Pages_UrlName;" Path="">
+    <File Url="default.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="$Resources:MLGClass_onet,Module_file_property_Name_Home;" />
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="2">
+        <![CDATA[
+<?xml version="1.0" encoding="utf-8"?><WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>My Contacts</Title>
+  <FrameType>Default</FrameType>
+  <Description>Displays your contacts using Outlook Web Access for Microsoft Exchange Server 2003 or later.</Description>
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Left</ZoneID>
+  <PartOrder>2</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge>/_layouts/images/wp_pers.gif</PartImageLarge>
+  <IsIncludedFilter />
+  <Assembly>Microsoft.SharePoint.Portal, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+  <TypeName>Microsoft.SharePoint.Portal.WebControls.OWAContactsPart</TypeName>
+  <ExchangeAutodiscoveryInitialized xmlns="urn:schemas-microsoft-com:owapart">true</ExchangeAutodiscoveryInitialized>
+  <MailboxName xmlns="urn:schemas-microsoft-com:owapart">Administrator@mlg2007.dev</MailboxName>
+</WebPart>]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="1">
+        <![CDATA[
+<?xml version="1.0" encoding="utf-8"?><WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>Content Editor</Title>
+  <FrameType>None</FrameType>
+  <Description>Use for formatted text, tables, and images.</Description>
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Left</ZoneID>
+  <PartOrder>1</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge>/_layouts/images/mscontl.gif</PartImageLarge>
+  <IsIncludedFilter />
+  <Assembly>Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+  <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
+  <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+  <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+  <PartStorage xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+</WebPart>]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Right" WebPartOrder="1">
+        <![CDATA[
+       <WebPart xmlns="http://schemas.microsoft.com/WebPart/v2">
+                      <Assembly>Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+                      <TypeName>Microsoft.SharePoint.WebPartPages.MembersWebPart</TypeName>
+                      <Title>$Resources:wp_Members;</Title>
+                      <Description>$Resources:wp_Members_Desc;</Description>
+                      <FrameType>Default</FrameType>
+                      <IsVisible>true</IsVisible>
+                      </WebPart>
+          ]]>
+      </AllUsersWebPart>
+    </File>
+    <File Url="assignments.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="$Resources:MLGClass_onet,Module_file_property_Name_Assignments;" />
+      <AllUsersWebPart WebPartZoneID="Left" WebPartOrder="1">
+        <![CDATA[
+      <?xml version="1.0" encoding="utf-8" ?> 
+      <webParts>
+      <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+      <metaData>  <type name="Microsoft.SharePointLearningKit.WebParts.AssignmentListWebPart, Microsoft.SharePointLearningKit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94" /> 
+      <importErrorMessage>Cannot import this Web Part.</importErrorMessage> 
+      </metaData>
+      <data>
+      <properties>
+      <property name="Title" type="string">Assignments</property> 
+      </properties>
+      </data>
+      </webPart>
+      </webParts>  
+                      
+      
+        ]]>
+      </AllUsersWebPart>
+    </File>
+  </Module>
+  <Module Name="Remainder" Url="" Path="">
+  </Module>
+</Elements>

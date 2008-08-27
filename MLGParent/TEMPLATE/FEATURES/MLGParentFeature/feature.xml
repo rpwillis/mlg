@@ -1,0 +1,8 @@
+﻿<Feature  Title="$Resources:MLGParent_onet,Feature_Title_MLGParent;" Id="67a67830-9d8b-4abf-8a16-6da8a96895f8" Description="$Resources:MLGParent_onet,Feature_Description_MLGParent;" Version="1.0.0.0" Scope="Web" Hidden="TRUE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="Assignments.aspx" />
+    <ElementFile Location="Classes.aspx" />
+    <ElementFile Location="Planner.aspx" />
+  </ElementManifests>
+</Feature>

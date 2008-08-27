@@ -1,0 +1,11 @@
+;
+.Set CabinetNameTemplate=MasterpageSetter.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MasterInheritanceFeature\TEMPLATE\FEATURES\MLGMasterPageSetter\feature.xml"	"MLGMasterPageSetter\feature.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MasterInheritanceFeature\manifest.xml"	manifest.xml
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MasterInheritanceFeature\bin\Release\MLG2007.Helper.MasterpageSetter.dll"	MLG2007.Helper.MasterpageSetter.dll
+;*** <the end>

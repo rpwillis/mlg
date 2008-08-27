@@ -1,0 +1,12 @@
+﻿<Solution SolutionId="19b328d3-3efa-4145-bcd4-8298dae65022" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MetaSearch\feature.xml" />
+  </FeatureManifests>
+  <Assemblies>
+    <Assembly Location="MLG2007.WebParts.MetaSearch.dll" DeploymentTarget="GlobalAssemblyCache" >
+      <SafeControls>
+        <SafeControl Assembly="MLG2007.WebParts.MetaSearch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5" Namespace="MLG2007.WebParts.MetaSearch" TypeName="MetaSearch" Safe="True" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+</Solution>

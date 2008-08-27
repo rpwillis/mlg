@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.Fields">
+    <Position X="4.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Helper\Constants.cs</FileName>
+      <HashCode>AAAAAAAAIAAAIAAAAAAAAQAAAAAAABAEAAAAAAAQAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.Styles">
+    <Position X="1.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Helper\Constants.cs</FileName>
+      <HashCode>BAAAAAAAAgAAAAAAQAAAHAAAAAAAAEAABQAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.SearchResultItemSettings">
+    <Position X="1" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Helper\SearchResultItemSettings.cs</FileName>
+      <HashCode>AACAIAAAACAAAAAAAgQAAAIEAAAAABAAAAAAAAAAgCA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="actionsLinkText" Hidden="true" />
+      <Field Name="contentType" Hidden="true" />
+      <Field Name="documentLibrary" Hidden="true" />
+      <Field Name="keywords" Hidden="true" />
+      <Field Name="listID" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.SearchResultItemTemplate" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Helper\SearchResultItemTemplate.cs</FileName>
+      <HashCode>CAAABgAQAgAAAAAAIAAAAAAAAACAAAAEgAAAAAAAECQ=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="ActionsLinkID" Hidden="true" />
+      <Field Name="DetailsCellID" Hidden="true" />
+      <Field Name="DocIconID" Hidden="true" />
+      <Field Name="ELearningActionsUrl" Hidden="true" />
+      <Field Name="FileLinkID" Hidden="true" />
+      <Field Name="settings" Hidden="true" />
+      <Field Name="SummaryControlHTML" Hidden="true" />
+      <Field Name="SummaryControlID" Hidden="true" />
+      <Field Name="TextlabelID" Hidden="true" />
+      <Field Name="TitleLinkID" Hidden="true" />
+    </Members>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.QueryHelper.ContainsQueryField">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Helper\QueryHelper\ContainsQueryField.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.QueryHelper.EqualsQueryField">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Helper\QueryHelper\EqualsQueryField.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.QueryHelper.QueryFieldBase">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Helper\QueryHelper\QueryFieldBase.cs</FileName>
+      <HashCode>AIAACAAAAIAAAAAAgBAAAIAAAASQAAAAABAAgAIAAAg=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="fieldName" Hidden="true" />
+      <Field Name="FieldRefTemplateXml" Hidden="true" />
+      <Field Name="queryValue" Hidden="true" />
+      <Field Name="showInView" Hidden="true" />
+      <Field Name="ValueTemplateXml" Hidden="true" />
+      <Field Name="xmlCharacters" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.QueryHelper.QueryManager">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Helper\QueryHelper\QueryManager.cs</FileName>
+      <HashCode>AACAgAEGAAAAAQEAAAABAEgAAAQAAAgAAAAIAQAAAEA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="AndEndTag" Hidden="true" />
+      <Field Name="AndStartTag" Hidden="true" />
+      <Field Name="fields" Hidden="true" />
+      <Field Name="query" Hidden="true" />
+      <Field Name="queryFields" Hidden="true" />
+      <Field Name="viewFields" Hidden="true" />
+      <Field Name="WhereEndTag" Hidden="true" />
+      <Field Name="WhereStartTag" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Helper.QueryHelper.ViewOnlyField">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Helper\QueryHelper\ViewOnlyField.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.MetaSearch">
+    <Position X="9.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>MetaSearch.cs</FileName>
+      <HashCode>AGADQAohkgASEBACVBSIQGgGAQILuYgABAQJMBAggWY=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Field Name="ContentTypeListID" Hidden="true" />
+      <Field Name="ContentTypeSearchTableID" Hidden="true" />
+      <Field Name="ContentTypeViewStateKey" Hidden="true" />
+      <Field Name="ctypeid" Hidden="true" />
+      <Field Name="errorLabel" Hidden="true" />
+      <Field Name="EvenFieldsTableID" Hidden="true" />
+      <Field Name="excludedContentTypes" Hidden="true" />
+      <Field Name="excludedFields" Hidden="true" />
+      <Field Name="FieldsTableID" Hidden="true" />
+      <Field Name="FormPanelID" Hidden="true" />
+      <Field Name="numberofResults" Hidden="true" />
+      <Field Name="OddFieldsTableID" Hidden="true" />
+      <Field Name="ResultsGridID" Hidden="true" />
+      <Field Name="rm" Hidden="true" />
+      <Field Name="SearchButtonID" Hidden="true" />
+      <Field Name="SearchFieldPrefix" Hidden="true" />
+      <Field Name="searchFormTable" Hidden="true" />
+      <Field Name="showErrors" Hidden="true" />
+      <Field Name="sourceDocumentLibrary" Hidden="true" />
+      <Field Name="StatisticsCellID" Hidden="true" />
+      <Field Name="StatisticsLabelID" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="MLG2007.WebParts.MetaSearch.Strings" Collapsed="true">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAIAFQAQAgSAAEEFBEAgACQAEggIBAGgICFCgIIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

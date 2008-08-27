@@ -1,0 +1,20 @@
+;
+.Set CabinetNameTemplate=MLGClass.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\1033\XML\webtempMLGClass.xml"	"1033\XML\webtempMLGClass.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\1033\XML\webtempMLGClassSite.xml"	"1033\XML\webtempMLGClassSite.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\FEATURES\MLGClass\xml\onet.xml"	"MLGClass\xml\onet.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\FEATURES\MLGClassfeature\assignments.aspx"	"MLGClassfeature\assignments.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\FEATURES\MLGClassfeature\default.aspx"	"MLGClassfeature\default.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\FEATURES\MLGClassfeature\elementManifest.xml"	"MLGClassfeature\elementManifest.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\FEATURES\MLGClassfeature\feature.xml"	"MLGClassfeature\feature.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\TEMPLATE\XML\MLGClassSiteTemplate.XML"	"XML\MLGClassSiteTemplate.XML"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\images\mlgclass.jpg"	"Images\mlgclass.jpg"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\images\MLGClass.png"	"Images\MLGClass.png"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\manifest.xml"	manifest.xml
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGClass\MLGClass_onet.resx"	resources\MLGClass_onet.resx
+;*** <the end>

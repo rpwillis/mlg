@@ -1,0 +1,19 @@
+;
+.Set CabinetNameTemplate=MLGTeacher.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\1033\XML\webtempMLGTeacher.xml"	"1033\XML\webtempMLGTeacher.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\1033\XML\webtempMLGTeacherSite.xml"	"1033\XML\webtempMLGTeacherSite.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\FEATURES\MLGTeacher\xml\onet.xml"	"MLGTeacher\xml\onet.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\FEATURES\MLGTeacherfeature\Assignments.aspx"	"MLGTeacherfeature\Assignments.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\FEATURES\MLGTeacherfeature\Classes.aspx"	"MLGTeacherfeature\Classes.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\FEATURES\MLGTeacherfeature\elementManifest.xml"	"MLGTeacherfeature\elementManifest.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\FEATURES\MLGTeacherfeature\feature.xml"	"MLGTeacherfeature\feature.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\FEATURES\MLGTeacherfeature\Planner.aspx"	"MLGTeacherfeature\Planner.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\TEMPLATE\XML\MLGTeacherSiteTemplate.XML"	"XML\MLGTeacherSiteTemplate.XML"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\manifest.xml"	manifest.xml
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGTeacher\MLGTeacher_onet.resx"	resources\MLGTeacher_onet.resx
+;*** <the end>

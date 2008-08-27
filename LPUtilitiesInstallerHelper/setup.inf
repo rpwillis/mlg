@@ -1,0 +1,49 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:19 2007           **
+;**                                                                **
+;** MakeCAB Version: 5.2.3790.0                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,MLG2007.LGUtilities.wsp
+[file list]
+1,1,layouts\1033\LGUtilities\ShowEvent.aspx,9370
+1,1,layouts\1033\LGUtilities\ShowEvent.aspx.resx,5430
+1,1,layouts\1033\LGUtilities\ShowExchange.aspx,9269
+1,1,layouts\1033\LGUtilities\ShowMore.aspx,1025
+1,1,layouts\1033\LGUtilities\showSlkdetails.aspx,9774
+1,1,layouts\1033\LGUtilities\Web.config,6416
+1,1,layouts\1033\LGUtilities\App_LocalResources\ShowEvent.aspx.resx,10928
+1,1,layouts\1033\LGUtilities\App_LocalResources\ShowExchange.aspx.resx,11702
+1,1,layouts\1033\LGUtilities\App_LocalResources\ShowMore.aspx.resx,11034
+1,1,layouts\1033\LGUtilities\App_LocalResources\showSlkdetails.aspx.resx,11450
+1,1,layouts\1033\LGUtilities\images\Assignments.gif,850
+1,1,layouts\1033\LGUtilities\images\Assignments_dn.gif,844
+1,1,layouts\1033\LGUtilities\images\blank.gif,43
+1,1,layouts\1033\LGUtilities\images\btn_dn.gif,728
+1,1,layouts\1033\LGUtilities\images\btn_up.gif,758
+1,1,layouts\1033\LGUtilities\images\calendar.gif,863
+1,1,layouts\1033\LGUtilities\images\calendar_dn.gif,836
+1,1,layouts\1033\LGUtilities\images\cnspub16.gif,608
+1,1,layouts\1033\LGUtilities\images\gosearch.gif,19933
+1,1,layouts\1033\LGUtilities\images\helpicon.gif,1025
+1,1,layouts\1033\LGUtilities\images\Menu1.gif,68
+1,1,layouts\1033\LGUtilities\images\menudark.gif,68
+1,1,layouts\1033\LGUtilities\images\nextbuttonltr.gif,78
+1,1,layouts\1033\LGUtilities\images\prevbuttonltr.gif,76
+1,1,layouts\1033\LGUtilities\images\Row_bg.gif,70
+1,1,layouts\1033\LGUtilities\images\titlegraphic.gif,1299
+1,1,layouts\1033\LGUtilities\images\whitearrow.gif,68
+1,1,layouts\1033\LGUtilities\scripts\scripts.js,16575
+1,1,layouts\1033\LGUtilities\styles\CustomStyles.css,7943
+1,1,layouts\1033\LGUtilities\styles\dropdown.css,3692
+1,1,manifest.xml,1998
+1,1,MLG2007.LGUtilities.dll,220160
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:19 2007           **
+;**                                                                **
+;*** END ************************************************************

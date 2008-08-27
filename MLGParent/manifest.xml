@@ -1,0 +1,13 @@
+﻿<Solution SolutionId="f15f0694-43a7-4483-abd7-2ecc4fb6592f" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MLGParentfeature\feature.xml" />
+  </FeatureManifests>
+  <SiteDefinitionManifests>
+    <SiteDefinitionManifest Location="MLGParent">
+      <WebTempFile Location="1033\xml\webtempMLGParent.xml" />
+    </SiteDefinitionManifest>
+  </SiteDefinitionManifests>
+  <RootFiles>
+    <RootFile Location="Resources\MLGParent_onet.resx"/>
+  </RootFiles>
+</Solution>

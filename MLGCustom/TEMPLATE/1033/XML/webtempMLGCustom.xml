@@ -1,0 +1,5 @@
+﻿<Templates xmlns:ows="Microsoft SharePoint">
+  <Template Name="MLGCustom" ID="10205" >
+    <Configuration ID="0" Title="MLG Site Container" Description="" Hidden="true" ImageUrl="/_layouts/images/stsprev.png" DisplayCategory="E-Learning" />
+  </Template>
+</Templates>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<portal xmlns="PortalTemplate.xsd">
+  <web name="Class" siteDefinition="MLGClass#0" 
+     displayName="$Resources:MLGClass_onet,Portal_Web_Display_Name_Class;" description="">
+    <webs>
+      <web name="$Resources:MLGClass_onet,Portal_Web_Name_Wiki;" siteDefinition="Wiki#0" 
+         displayName="$Resources:MLGClass_onet,Portal_Web_Name_Wiki;" description="" />
+    </webs>
+  </web>
+</portal>

@@ -1,0 +1,14 @@
+﻿<Solution SolutionId="277373dc-b0e3-484b-be0d-5b28093cd960" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="LRUpload\feature.xml" />
+  </FeatureManifests>
+  <Assemblies>
+    <Assembly Location="MLG2007.WebParts.LRUpload.dll" DeploymentTarget="GlobalAssemblyCache" >
+      <SafeControls>
+        <SafeControl Assembly="MLG2007.WebParts.LRUpload, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5" Namespace="MLG2007.WebParts.LRUpload" TypeName="LRUpload" Safe="True" />
+      </SafeControls>
+    </Assembly>
+    <Assembly Location="Microsoft.LearningComponents.Compression.dll" DeploymentTarget="GlobalAssemblyCache" >
+    </Assembly>
+  </Assemblies>
+</Solution>

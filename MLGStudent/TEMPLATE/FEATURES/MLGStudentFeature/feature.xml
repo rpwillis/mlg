@@ -1,0 +1,8 @@
+﻿<Feature  Title="$Resources:MLGStudent_onet,feature_Title_MLGStudent;" Id="029d4fa3-179c-443b-ace1-eaa2260be8a8" Description="$Resources:MLGStudent_onet,feature_Description_MLGStudent;" Version="1.0.0.0" Scope="Web" Hidden="TRUE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="elementManifest.xml" />
+    <ElementFile Location="Assignments.aspx" />
+    <ElementFile Location="Classes.aspx" />
+    <ElementFile Location="Planner.aspx" />
+  </ElementManifests>
+</Feature>

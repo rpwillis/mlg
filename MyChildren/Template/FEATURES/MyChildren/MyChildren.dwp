@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>My Children</Title>
+  <FrameType>Default</FrameType>
+  <Description />
+  <IsIncluded>true</IsIncluded>
+  <ZoneID>Right</ZoneID>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <Height />
+  <Width />
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <DetailLink />
+  <HelpLink />
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+  <Assembly>MLG2007.WebParts.MyChildren, Version=1.0.1.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+  <TypeName>MLG2007.WebParts.MyChildren.MyChildren</TypeName>
+  <ADEntryPoint xmlns="MyChildren"></ADEntryPoint>
+  <ADChildAttribute xmlns="MyChildren">otheripphone</ADChildAttribute>
+  <PictureLibraryUrl xmlns="MyChildren">../../Students Picture Library</PictureLibraryUrl>
+  <PictureLibraryTitle xmlns="MyChildren">Students Picture Library</PictureLibraryTitle>
+  <DefaultPictureURL xmlns="MyChildren">../../Students Picture Library/DefaultChild.jpg</DefaultPictureURL>
+  <PageSize xmlns="MyChildren">5</PageSize>
+  <StudentsSiteURL xmlns="MyChildren">../../students</StudentsSiteURL>
+  <ShowErrors xmlns="MyChildren">false</ShowErrors>
+</WebPart>

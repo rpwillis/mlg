@@ -1,0 +1,5 @@
+﻿<Templates xmlns:ows="Microsoft SharePoint">
+  <Template Name="MLGStudent" ID="10203" >
+    <Configuration ID="0" Title="MLG Student" Description="" Hidden="TRUE" ImageUrl="/_layouts/images/stsprev.png" DisplayCategory="E-Learning" />
+  </Template>
+</Templates>

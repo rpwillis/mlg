@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- _lcid="1033" _version="12.0.4518" _dal="1" -->
+<!-- _LocalBinding -->
+<Templates xmlns:ows="Microsoft SharePoint">
+ <Template Name="School Portal Site" ID="10207">
+    <Configuration ID="0" Title="School Portal Site" Hidden="FALSE" ImageUrl="/_layouts/images/MLGSchool.png" Description="Create a school site with all associated sub sites."
+        ProvisionAssembly="Microsoft.SharePoint.Publishing, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"
+        ProvisionClass="Microsoft.SharePoint.Publishing.PortalProvisioningProvider"
+        ProvisionData="xml\\MLGSchoolPortalSiteTemplate.XML"
+    RootWebOnly="FALSE" DisplayCategory="E-Learning">
+    </Configuration>
+  </Template>
+</Templates>

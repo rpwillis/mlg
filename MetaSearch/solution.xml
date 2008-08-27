@@ -1,0 +1,11 @@
+﻿<solution  id="36c52073-77d8-4dae-b935-ac577708775e" name="MLG2007.WebParts.MetaSearch" >
+  <features>
+    <feature  id="3d4e6c42-b231-4079-996d-38f637a2e690" name="MetaSearch" title="MetaSearch" description="" version="1.0.0.0" scope="Site" hidden="False" defaultresourcefile="core" >
+      <element  id="3d4e6c42-b231-4079-996d-38f637a2e690" title="MetaSearch Web Part" description="" importerrormessage="Cannot import MetaSearch Web Part." />
+    </feature>
+  </features>
+  <templates>
+  </templates>
+  <sitedefinitions>
+  </sitedefinitions>
+</solution>

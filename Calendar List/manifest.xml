@@ -1,0 +1,5 @@
+﻿<Solution SolutionId="a47ff836-7e56-4e63-b571-61e867fb8664" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="CalendarList\feature.xml" />
+  </FeatureManifests>
+</Solution>

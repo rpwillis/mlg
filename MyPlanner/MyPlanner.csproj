@@ -1,0 +1,140 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E762D078-5C46-49E0-92C2-44AF55BF5B6F}</ProjectGuid>
+    <ProjectTypeGuids>{9E5D3E2D-E4E2-418e-8D80-2F0DA9A94F9A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MLG2007.WebParts.MyPlanner</RootNamespace>
+    <AssemblyName>MLG2007.WebParts.MyPlanner</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>Properties\Temporary.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>URL</StartAction>
+    <StartURL>http://$(ComputerName)/</StartURL>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>URL</StartAction>
+    <StartURL>http://$(ComputerName)/</StartURL>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.LearningComponents.Compression, Version=1.0.0.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94, processorArchitecture=x86">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Myplanner.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Temporary.snk" />
+    <None Include="TEMPLATE\FEATURES\MyPlanner\MyPlanner.dwp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calander\Calander.csproj">
+      <Project>{2FE23FFC-A4E8-4E79-948E-A95C63156CE4}</Project>
+      <Name>Calander</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ListSearch\ListSearch.csproj">
+      <Project>{C5AC75E3-BF94-4F3B-B02E-FC2EDCEEB598}</Project>
+      <Name>ListSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.MLG.WebParts.MyPlanner.CalendarStore\PlannerData.CalendarStore.csproj">
+      <Project>{2819CE75-9DA9-4CDE-BDC9-CBA6C08F859B}</Project>
+      <Name>PlannerData.CalendarStore</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannerData.Exch\PlannerData.Exch.csproj">
+      <Project>{A4ACDFAB-8449-4CE2-94BD-BD60F5445205}</Project>
+      <Name>PlannerData.Exch</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannerData.SLK\PlannerData.SLK.csproj">
+      <Project>{BF362B6A-E1E6-4019-B8B4-3D4C7228ED8C}</Project>
+      <Name>PlannerData.SLK</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannerData.SPS\PlannerData.SPS.csproj">
+      <Project>{02240C2D-D887-47F7-B20F-A968662CCF50}</Project>
+      <Name>PlannerData.SPS</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannerData.UserPreferences\PlannerData.UserPreferences.csproj">
+      <Project>{788A02D4-FE5D-46DA-8ADD-01C34796ADD1}</Project>
+      <Name>PlannerData.UserPreferences</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CreateCabDDF.vbs" />
+    <Content Include="manifest.xml" />
+    <Content Include="DLLs\Microsoft.LearningComponents.Compression.dll" />
+    <Content Include="TEMPLATE\FEATURES\MyPlanner\elementManifest.xml" />
+    <Content Include="TEMPLATE\FEATURES\MyPlanner\feature.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>copy "$(SolutionDir)ListSearch\bin\$(ConfigurationName)\MLG2007.Helper.ListSearch.dll" "$(TargetDir)"
+cd "$(ProjectDir)"
+CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
+
+cd "$(ProjectDir)"
+makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
+
+
+
+

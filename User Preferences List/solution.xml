@@ -1,0 +1,11 @@
+﻿<solution  id="74cc109b-afaf-4db2-b8b4-70ed2fc1b217" name="User Preferences List" >
+  <features>
+    <feature  id="d8adae49-e94f-4ed8-9037-4c186defdcf8" name="User Preferences" title="User Preferences" description="" version="1.0.0.0" scope="Web" hidden="False" defaultresourcefile="core" >
+      <elementmanifest id="d8adae49-e94f-4ed8-9037-4c186defdcf8" title="User Preferences" description="" type="100" basetype="0" onquicklaunch="True" securitybits="11" sequence="410" image="/_layouts/images/itgen.gif" />
+    </feature>
+  </features>
+  <templates>
+  </templates>
+  <sitedefinitions>
+  </sitedefinitions>
+</solution>

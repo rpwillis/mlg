@@ -1,0 +1,69 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A48504A-1A27-470A-ADD3-617D3C2C8C8E}</ProjectGuid>
+    <ProjectTypeGuids>{9E5D3E2D-E4E2-418e-8D80-2F0DA9A94F9A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>User_Preferences_List</RootNamespace>
+    <AssemblyName>User Preferences List</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>URL</StartAction>
+    <StartURL>http://$(ComputerName)/</StartURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>URL</StartAction>
+    <StartURL>http://$(ComputerName)/</StartURL>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent>cd "$(ProjectDir)"
+CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
+
+cd "$(ProjectDir)"
+makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio />
+  </ProjectExtensions>
+  <ItemGroup>
+    <Content Include="CreateCabDDF.vbs" />
+    <Content Include="manifest.xml" />
+    <Content Include="TEMPLATE\FEATURES\UserPreferencesList\feature.xml" />
+    <Content Include="TEMPLATE\FEATURES\UserPreferencesList\ListTemplates\elementManifest.xml" />
+    <Content Include="TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\AllItems.aspx" />
+    <Content Include="TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\DispForm.aspx" />
+    <Content Include="TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\EditForm.aspx" />
+    <Content Include="TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\NewForm.aspx" />
+    <Content Include="TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\schema.xml" />
+  </ItemGroup>
+</Project>
+
+
+
+

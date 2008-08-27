@@ -1,0 +1,16 @@
+;
+.Set CabinetNameTemplate=MLGUserPreferencesList.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\TEMPLATE\FEATURES\UserPreferencesList\feature.xml"	"UserPreferencesList\feature.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\TEMPLATE\FEATURES\UserPreferencesList\ListTemplates\elementManifest.xml"	"UserPreferencesList\ListTemplates\elementManifest.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\AllItems.aspx"	"UserPreferencesList\UserPreferencesList\AllItems.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\DispForm.aspx"	"UserPreferencesList\UserPreferencesList\DispForm.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\EditForm.aspx"	"UserPreferencesList\UserPreferencesList\EditForm.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\NewForm.aspx"	"UserPreferencesList\UserPreferencesList\NewForm.aspx"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\TEMPLATE\FEATURES\UserPreferencesList\UserPreferencesList\schema.xml"	"UserPreferencesList\UserPreferencesList\schema.xml"
+"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\User Preferences List\manifest.xml"	manifest.xml
+;*** <the end>

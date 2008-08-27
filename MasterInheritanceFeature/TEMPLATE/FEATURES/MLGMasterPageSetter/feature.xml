@@ -1,0 +1,12 @@
+﻿<Feature  Title="MLG Master Page Setter Feature"
+          Id="F1F754C9-3729-45e7-B099-E77334AFFBD5" 
+          Description="" 
+          Version="1.0.0.0" 
+          Scope="Web" 
+        Hidden="TRUE" 
+    DefaultResourceFile="core"
+    ReceiverAssembly="MLG2007.Helper.MasterpageSetter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b0713c5511b329d0" 
+  ReceiverClass="MasterPageSetter.MasterInheritanceFeature" xmlns="http://schemas.microsoft.com/sharepoint/"
+   />
+
+

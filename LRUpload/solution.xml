@@ -1,0 +1,11 @@
+﻿<solution  id="77a5d4b4-19b5-4760-97f5-581237a08690" name="MLG2007.WebParts.LRUpload" >
+  <features>
+    <feature  id="284f3af4-b728-4464-8896-0da1c198ec79" name="LRUpload" title="LRUpload" description="" version="1.0.0.0" scope="Site" hidden="False" defaultresourcefile="core" >
+      <element  id="284f3af4-b728-4464-8896-0da1c198ec79" title="LRUpload Web Part" description="" importerrormessage="Cannot import LRUpload Web Part." />
+    </feature>
+  </features>
+  <templates>
+  </templates>
+  <sitedefinitions>
+  </sitedefinitions>
+</solution>

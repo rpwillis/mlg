@@ -1,0 +1,12 @@
+﻿<Solution SolutionId="224eb8cb-1d43-406e-b777-12aa2db481e6" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MLGMasterPageSetter\feature.xml" />
+  </FeatureManifests>
+  <Assemblies>
+    <Assembly Location="MLG2007.Helper.MasterpageSetter.dll" DeploymentTarget="GlobalAssemblyCache" >
+      <SafeControls>
+        <SafeControl Assembly="MLG2007.Helper.MasterpageSetter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b0713c5511b329d0" Namespace="MasterPageSetter" TypeName="MasterInheritanceFeature" Safe="True" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+</Solution>

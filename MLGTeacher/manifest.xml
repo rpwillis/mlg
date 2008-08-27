@@ -1,0 +1,17 @@
+﻿<Solution SolutionId="3542a4f8-2327-4ce2-9a13-ae9af9e13cb3" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MLGTeacherfeature\feature.xml" />
+  </FeatureManifests>
+  <SiteDefinitionManifests>
+    <SiteDefinitionManifest Location="MLGTeacher">
+      <WebTempFile Location="1033\xml\webtempMLGTeacher.xml" />
+    </SiteDefinitionManifest>
+  </SiteDefinitionManifests>
+  <TemplateFiles>
+    <TemplateFile Location="XML\MLGTeacherSiteTemplate.XML"/>
+    <TemplateFile Location="1033\XML\webtempMLGTeacherSite.xml"/>
+  </TemplateFiles>
+  <RootFiles>
+    <RootFile Location="Resources\MLGTeacher_onet.resx"/>
+  </RootFiles>
+</Solution>

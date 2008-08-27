@@ -1,0 +1,80 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26CFB27B-1822-4ACF-8893-BB794C259793}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LPUtilitiesInstallerHelper</RootNamespace>
+    <AssemblyName>LPUtilitiesInstallerHelper</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CreateCabDDF.vbs" />
+    <Content Include="FixASPXPages.vbs" />
+    <Content Include="manifest.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727"\aspnet_compiler.exe -v /LPUtilities -p "$(ProjectDir)..\_layouts\1033\LPUtilities" -u -f -c "$(ProjectDir)bin\$(Configuration)\pre" -aptca -keyfile "$(ProjectDir)key.snk"
+
+"C:\Program Files\MSBuild\Microsoft\WebDeployment\v8.0"\aspnet_merge.exe "$(ProjectDir)bin\$(Configuration)\pre" -keyfile "$(ProjectDir)key.snk" -o MLG2007.LGUtilities -r -copyattrs 
+
+cd "$(ProjectDir)"
+
+FixASPXPages.vbs  "$(ProjectDir)bin\$(Configuration)\pre"
+
+CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
+
+cd "$(ProjectDir)"
+makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
+
+
+
+

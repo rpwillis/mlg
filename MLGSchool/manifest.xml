@@ -1,0 +1,26 @@
+﻿<Solution SolutionId="224eb8cb-1d43-406e-b777-12aa2db481e3" xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <FeatureManifests>
+    <FeatureManifest Location="MLGSchoolFeature\feature.xml" />
+    <FeatureManifest Location="MLGPermissionsInheritanceBreaking\feature.xml" />
+  </FeatureManifests>
+  <Assemblies>
+    <Assembly Location="MLGSchool.dll" DeploymentTarget="GlobalAssemblyCache" >
+      <SafeControls>
+        <SafeControl Assembly="MLGSchool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c7d4cffb638b1cb3" Namespace="MLG" TypeName="MLG" Safe="True" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <SiteDefinitionManifests>
+    <SiteDefinitionManifest Location="MLGSchool">
+      <WebTempFile Location="1033\xml\webtempMLGSchool.xml" />
+    </SiteDefinitionManifest>
+  </SiteDefinitionManifests>
+  <TemplateFiles>
+    <TemplateFile Location="images\mlgschool.png"/>
+    <TemplateFile Location="XML\MLGSchoolPortalSiteTemplate.XML"/>
+    <TemplateFile Location="1033\XML\webtempMLGSchoolPortal.xml"/>
+  </TemplateFiles>
+  <RootFiles>
+    <RootFile Location="Resources\MLGSchool_onet.resx"/>
+  </RootFiles>
+</Solution>

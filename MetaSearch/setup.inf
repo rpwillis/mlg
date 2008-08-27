@@ -1,0 +1,22 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:49 2007           **
+;**                                                                **
+;** MakeCAB Version: 5.2.3790.0                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,MLG2007.WebParts.MetaSearch.wsp
+[file list]
+1,1,MetaSearch\elementManifest.xml,211
+1,1,MetaSearch\feature.xml,388
+1,1,MetaSearch\MetaSearch.dwp,1418
+1,1,manifest.xml,631
+1,1,MLG2007.WebParts.MetaSearch.dll,49152
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Tue Jun 19 12:20:49 2007           **
+;**                                                                **
+;*** END ************************************************************
