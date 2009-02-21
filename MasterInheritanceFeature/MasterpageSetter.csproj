@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -7,6 +7,7 @@
     <ProjectGuid>{7C16FB1D-135D-44B5-B90E-6D93DD056178}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RootNamespace>MasterPageSetter</RootNamespace>
     <AssemblyName>MLG2007.Helper.MasterpageSetter</AssemblyName>
     <SignAssembly>true</SignAssembly>
@@ -19,6 +20,11 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,13 +73,6 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>cd "$(ProjectDir)"
-CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
-
-cd "$(ProjectDir)"
 makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
   </PropertyGroup>
 </Project>
-
-
-
-

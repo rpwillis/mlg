@@ -17,7 +17,6 @@ using Microsoft.SharePoint.Security;
 
 namespace MasterPageSetter
 {
-    [CLSCompliant(false)]
     [Guid("F1F754C9-3729-45e7-B099-E77334AFFBD5")]
     partial class MasterInheritanceFeature : SPFeatureReceiver
     {
@@ -28,22 +27,14 @@ namespace MasterPageSetter
         [SharePointPermission(SecurityAction.LinkDemand, ObjectModel = true)]
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
-
             SPWeb web = properties.Feature.Parent as SPWeb;
-
-            //get the site collection URL
-            string siteCollectionURL = web.Site.Url;
-
-            //temp variable that will holds the School Site URL
-            string schoolWebURL = null;
 
             //if the web of type MLGSchool, set its MasterURL and Custom MasterURl
             if (string.Compare(web.WebTemplate, "MLGSchool", true) == 0)
             {
-                schoolWebURL = web.Url;
                 try
                 {
-                    string masterURL = schoolWebURL.Substring(siteCollectionURL.Length) + masterPageName;
+                    string masterURL = web.ServerRelativeUrl + masterPageName;
                     web.MasterUrl = masterURL;
                     web.CustomMasterUrl = masterURL;
                     web.Update();
