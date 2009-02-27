@@ -1,0 +1,1 @@
+"C:\Program Files\Common Files\Microsoft Shared\web server extensions\12\BIN\stsadm" -o upgradesolution -name MLG2007.WebParts.LRUpload.wsp -filename MLG2007.WebParts.LRUpload.wsp -immediate -allowgacdeployment

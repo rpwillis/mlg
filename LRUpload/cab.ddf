@@ -5,10 +5,10 @@
 .Set UniqueFiles='ON'
 .Set Cabinet=on
 .Set DiskDirectory1=.
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LRUpload\Template\FEATURES\LRUpload\elementManifest.xml"	"LRUpload\elementManifest.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LRUpload\Template\FEATURES\LRUpload\feature.xml"	"LRUpload\feature.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LRUpload\Template\FEATURES\LRUpload\LRUpload.dwp"	"LRUpload\LRUpload.dwp"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LRUpload\manifest.xml"	manifest.xml
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LRUpload\bin\Release\MLG2007.WebParts.LRUpload.dll"	MLG2007.WebParts.LRUpload.dll
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\LRUpload\DLLs\Microsoft.LearningComponents.Compression.dll"	Microsoft.LearningComponents.Compression.dll
+"C:\working\lg\LRUpload\Template\FEATURES\LRUpload\elementManifest.xml"	"LRUpload\elementManifest.xml"
+"C:\working\lg\LRUpload\Template\FEATURES\LRUpload\feature.xml"	"LRUpload\feature.xml"
+"C:\working\lg\LRUpload\Template\FEATURES\LRUpload\LRUpload.dwp"	"LRUpload\LRUpload.dwp"
+"C:\working\lg\LRUpload\manifest.xml"	manifest.xml
+"C:\working\lg\LRUpload\bin\Debug\MLG2007.WebParts.LRUpload.dll"	MLG2007.WebParts.LRUpload.dll
+"C:\working\lg\LRUpload\DLLs\Microsoft.LearningComponents.Compression.dll"	Microsoft.LearningComponents.Compression.dll
 ;*** <the end>

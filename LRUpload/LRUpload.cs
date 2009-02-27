@@ -300,7 +300,8 @@ WebPartStorage(Storage.Shared)]
                            }
 
                           
-                           destinationUrl = SourceDocumentLibrary.TrimEnd('/') + "/" + Path.GetFileName(fullFilePath);
+                           destinationUrl = Path.GetFileName(fullFilePath);
+                           //destinationUrl = SourceDocumentLibrary.TrimEnd('/') + "/" + Path.GetFileName(fullFilePath);
 
                            overWrite = ((CheckBox)this.FindControl(CheckOverrideID)).Checked;
                            //Check if existing files exist
