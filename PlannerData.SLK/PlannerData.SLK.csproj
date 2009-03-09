@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -19,6 +19,11 @@
     </SccProvider>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Properties\keypair.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,23 +44,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.LearningComponents, Version=1.0.799.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.LearningComponents, Version=1.3.1.0, Culture=neutral, PublicKeyToken=24e5ae139825747e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\MLC_SLK\Microsoft.LearningComponents.dll</HintPath>
+      <HintPath>..\lib\Microsoft.LearningComponents.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.LearningComponents.Compression, Version=1.0.0.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94, processorArchitecture=x86" />
-    <Reference Include="Microsoft.LearningComponents.SharePoint, Version=1.0.799.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.LearningComponents.Compression, Version=1.3.1.0, Culture=neutral, PublicKeyToken=24e5ae139825747e, processorArchitecture=x86" />
+    <Reference Include="Microsoft.LearningComponents.SharePoint, Version=1.3.1.0, Culture=neutral, PublicKeyToken=24e5ae139825747e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\MLC_SLK\Microsoft.LearningComponents.SharePoint.dll</HintPath>
+      <HintPath>..\lib\Microsoft.LearningComponents.SharePoint.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.LearningComponents.Storage, Version=1.0.799.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.LearningComponents.Storage, Version=1.3.1.0, Culture=neutral, PublicKeyToken=24e5ae139825747e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\MLC_SLK\Microsoft.LearningComponents.Storage.dll</HintPath>
+      <HintPath>..\lib\Microsoft.LearningComponents.Storage.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SharePointLearningKit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.SharePointLearningKit, Version=1.3.1.0, Culture=neutral, PublicKeyToken=24e5ae139825747e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\MLC_SLK\Microsoft.SharePointLearningKit.dll</HintPath>
+      <HintPath>..\lib\Microsoft.SharePointLearningKit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -89,7 +94,3 @@
   </Target>
   -->
 </Project>
-
-
-
-

@@ -1,8 +1,8 @@
 ;*** BEGIN **********************************************************
 ;**                                                                **
-;** Automatically generated on: Tue Jun 19 12:20:30 2007           **
+;** Automatically generated on: Fri Feb 27 04:29:30 2009           **
 ;**                                                                **
-;** MakeCAB Version: 5.2.3790.0                     **
+;** MakeCAB Version: 6.0.6001.18000                                 **
 ;**                                                                **
 ;*** BEGIN **********************************************************
 [disk list]
@@ -18,12 +18,12 @@
 1,1,MLG2007.Helper.Calendar.dll,49152
 1,1,MLG2007.Helper.ListSearch.dll,77824
 1,1,MLG2007.Helper.CalendarStore.dll,36864
-1,1,MLG2007.Helper.SharePoint.dll,20480
-1,1,MLG2007.Helper.SharePointLearningKit.dll,24576
-1,1,MLG2007.Helper.Exchange.dll,28672
-1,1,MLG2007.Helper.UserPreferences.dll,24576
+1,1,MLG2007.Helper.SharePoint.dll,10240
+1,1,MLG2007.Helper.SharePointLearningKit.dll,13824
+1,1,MLG2007.Helper.Exchange.dll,14848
+1,1,MLG2007.Helper.UserPreferences.dll,11264
 ;*** END ************************************************************
 ;**                                                                **
-;** Automatically generated on: Tue Jun 19 12:20:30 2007           **
+;** Automatically generated on: Fri Feb 27 04:29:30 2009           **
 ;**                                                                **
 ;*** END ************************************************************

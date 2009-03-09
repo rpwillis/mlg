@@ -1,0 +1,44 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <OutputType>Library</OutputType>
+        <AssemblyName>MLGStudent</AssemblyName>
+        <SharePointReferencePath>../lib/</SharePointReferencePath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="manifest.xml" />
+        <Content Include="TEMPLATE\1033\XML\webtempMLGStudent.xml" />
+        <Content Include="TEMPLATE\FEATURES\MLGStudentFeature\Assignments.aspx" />
+        <Content Include="TEMPLATE\FEATURES\MLGStudentFeature\Classes.aspx" />
+        <Content Include="TEMPLATE\FEATURES\MLGStudentFeature\Planner.aspx" />
+        <Content Include="TEMPLATE\FEATURES\MLGStudentFeature\elementManifest.xml" />
+        <Content Include="TEMPLATE\FEATURES\MLGStudentFeature\feature.xml" />
+        <Content Include="TEMPLATE\FEATURES\MLGStudent\xml\onet.xml" />
+    </ItemGroup>
+    <ItemGroup>
+    </ItemGroup>
+
+    <Target Name="Build" DependsOnTargets="MakeWsp"/>
+
+    <Target Name="MakeWsp">
+        <Exec Command="makecab /F cab.ddf "/>
+    </Target>
+</Project>

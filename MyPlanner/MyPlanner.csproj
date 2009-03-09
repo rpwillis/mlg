@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -21,6 +21,9 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>C:\working\lg\Backup1\MyPlanner\</UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,9 +48,6 @@
     <StartURL>http://$(ComputerName)/</StartURL>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.LearningComponents.Compression, Version=1.0.0.0, Culture=neutral, PublicKeyToken=abc4ed181d6d6a94, processorArchitecture=x86">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
@@ -112,7 +112,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CreateCabDDF.vbs" />
     <Content Include="manifest.xml" />
     <Content Include="DLLs\Microsoft.LearningComponents.Compression.dll" />
     <Content Include="TEMPLATE\FEATURES\MyPlanner\elementManifest.xml" />
@@ -123,8 +122,6 @@
     <PreBuildEvent>
     </PreBuildEvent>
     <PostBuildEvent>copy "$(SolutionDir)ListSearch\bin\$(ConfigurationName)\MLG2007.Helper.ListSearch.dll" "$(TargetDir)"
-cd "$(ProjectDir)"
-CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
 
 cd "$(ProjectDir)"
 makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
@@ -134,7 +131,3 @@ makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
     </VisualStudio>
   </ProjectExtensions>
 </Project>
-
-
-
-

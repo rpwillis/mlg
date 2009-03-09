@@ -231,7 +231,7 @@ namespace MLG2007.Helper.SharePointLearningKit
             }
             catch (Exception exception)
             {
-                ErrorDescription = "Instructor Assignment Retreival" + exception.Message;
+                ErrorDescription = "Instructor Assignment Retrieval" + exception.Message;
                 HasError = true;
             }
         }
@@ -292,7 +292,7 @@ namespace MLG2007.Helper.SharePointLearningKit
             catch (Exception exception)
             {
                 HasError = true;
-                ErrorDescription = "Learner Assignment Retreival :" + exception.Message;
+                ErrorDescription = "Learner Assignment Retrieval :" + exception.Message;
             }
         }
 
@@ -309,7 +309,8 @@ namespace MLG2007.Helper.SharePointLearningKit
                 SPSecurity.RunWithElevatedPrivileges(new SPSecurity.CodeToRunElevated(delegate
                                 {
                                     assignmentIdentifier = new LearnerAssignmentItemIdentifier(assignmentId);
-                                    assignmentsProperties = slkStore.GetLearnerAssignmentProperties(assignmentIdentifier, SlkRole.Learner);
+                                    Guid learnerAssignmentGuid = slkStore.GetLearnerAssignmentGuidId(assignmentIdentifier);
+                                    assignmentsProperties = slkStore.GetLearnerAssignmentProperties(learnerAssignmentGuid, SlkRole.Learner);
 
                                     if (assignmentsProperties != null)
                                     {
@@ -330,7 +331,7 @@ namespace MLG2007.Helper.SharePointLearningKit
             catch (Exception excption)
             {
                 HasError = true;
-                ErrorDescription = "Learner Assignment Retreival :" + excption.Message;
+                ErrorDescription = "Learner Assignment Retrieval :" + excption.Message;
             }
 
             return assignmentObject;
@@ -367,7 +368,7 @@ namespace MLG2007.Helper.SharePointLearningKit
             catch (Exception excption)
             {
                 HasError = true;
-                ErrorDescription = "Learner Assignment Retreival :" + excption.Message;
+                ErrorDescription = "Learner Assignment Retrieval :" + excption.Message;
             }
 
             return assignmentObject;
@@ -399,16 +400,12 @@ namespace MLG2007.Helper.SharePointLearningKit
             {
                 case LearnerAssignmentState.Active:
                     return "Active";
-                    break;
                 case LearnerAssignmentState.Completed:
                     return "Completed";
-                    break;
                 case LearnerAssignmentState.Final:
                     return "Final";
-                    break;
                 case LearnerAssignmentState.NotStarted:
                     return "Not Started";
-                    break;
             }
             return "Not determined";
         }

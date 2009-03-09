@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaSearch", "MetaSearch\MetaSearch.csproj", "{243F5A79-91DE-47A8-A185-CE168A2321D8}"
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
@@ -19,76 +19,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyChildren", "MyChildren\My
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLGSchool", "MLGSchool\MLGSchool.csproj", "{B19B915B-B20E-47EC-B0FE-E2CAB08576D8}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLGTeacher", "MLGTeacher\MLGTeacher.csproj", "{D1716627-9156-43F6-B917-2DABE0415EB6}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLGCustom", "MLGCustom\MLGCustom.csproj", "{0E84D927-94E9-40D4-B97C-F8AA9FC8304E}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLGParent", "MLGParent\MLGParent.csproj", "{0AD165C1-B4CF-471D-9CB0-17D4C883D6C7}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLGStudent", "MLGStudent\MLGStudent.csproj", "{F14343B5-DA46-40CF-89DA-7B5665D0A0E6}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLGClass", "MLGClass\MLGClass.csproj", "{4169E309-42B7-4361-A29F-A90832471A28}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calander", "Calander\Calander.csproj", "{2FE23FFC-A4E8-4E79-948E-A95C63156CE4}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerData.CalendarStore", "Microsoft.MLG.WebParts.MyPlanner.CalendarStore\PlannerData.CalendarStore.csproj", "{2819CE75-9DA9-4CDE-BDC9-CBA6C08F859B}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerData.Exch", "PlannerData.Exch\PlannerData.Exch.csproj", "{A4ACDFAB-8449-4CE2-94BD-BD60F5445205}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerData.SLK", "PlannerData.SLK\PlannerData.SLK.csproj", "{BF362B6A-E1E6-4019-B8B4-3D4C7228ED8C}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerData.SPS", "PlannerData.SPS\PlannerData.SPS.csproj", "{02240C2D-D887-47F7-B20F-A968662CCF50}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListSearch", "ListSearch\ListSearch.csproj", "{C5AC75E3-BF94-4F3B-B02E-FC2EDCEEB598}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPlanner", "MyPlanner\MyPlanner.csproj", "{E762D078-5C46-49E0-92C2-44AF55BF5B6F}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -133,19 +85,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LRUpload", "LRUpload\LRUplo
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LGUtilitiesInstallerHelper", "LPUtilitiesInstallerHelper\LGUtilitiesInstallerHelper.csproj", "{26CFB27B-1822-4ACF-8893-BB794C259793}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{9240F099-D687-441B-9CF2-F57EA189249A} = {9240F099-D687-441B-9CF2-F57EA189249A}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlannerData.UserPreferences", "PlannerData.UserPreferences\PlannerData.UserPreferences.csproj", "{788A02D4-FE5D-46DA-8ADD-01C34796ADD1}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User Preferences List", "User Preferences List\User Preferences List.csproj", "{6A48504A-1A27-470A-ADD3-617D3C2C8C8E}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -154,10 +98,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User Preferences List", "Us
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterpageSetter", "MasterInheritanceFeature\MasterpageSetter.csproj", "{7C16FB1D-135D-44B5-B90E-6D93DD056178}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

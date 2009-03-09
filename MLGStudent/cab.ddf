@@ -1,17 +1,17 @@
 ;
-.Set CabinetNameTemplate=MLGStudent.wsp
+.Set CabinetNameTemplate=release/MLGStudent.wsp
 .set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
 .Set CompressionType=MSZIP;** All files are compressed in cabinet files
 .Set UniqueFiles='ON'
 .Set Cabinet=on
 .Set DiskDirectory1=.
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\TEMPLATE\1033\XML\webtempMLGStudent.xml"	"1033\XML\webtempMLGStudent.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\TEMPLATE\FEATURES\MLGStudent\xml\onet.xml"	"MLGStudent\xml\onet.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\TEMPLATE\FEATURES\MLGStudentFeature\Assignments.aspx"	"MLGStudentFeature\Assignments.aspx"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\TEMPLATE\FEATURES\MLGStudentFeature\Classes.aspx"	"MLGStudentFeature\Classes.aspx"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\TEMPLATE\FEATURES\MLGStudentFeature\elementManifest.xml"	"MLGStudentFeature\elementManifest.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\TEMPLATE\FEATURES\MLGStudentFeature\feature.xml"	"MLGStudentFeature\feature.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\TEMPLATE\FEATURES\MLGStudentFeature\Planner.aspx"	"MLGStudentFeature\Planner.aspx"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\manifest.xml"	manifest.xml
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGStudent\MLGStudent_onet.resx"	resources\MLGStudent_onet.resx
+"TEMPLATE\1033\XML\webtempMLGStudent.xml"	"1033\XML\webtempMLGStudent.xml"
+"TEMPLATE\FEATURES\MLGStudent\xml\onet.xml"	"MLGStudent\xml\onet.xml"
+"TEMPLATE\FEATURES\MLGStudentFeature\Assignments.aspx"	"MLGStudentFeature\Assignments.aspx"
+"TEMPLATE\FEATURES\MLGStudentFeature\Classes.aspx"	"MLGStudentFeature\Classes.aspx"
+"TEMPLATE\FEATURES\MLGStudentFeature\elementManifest.xml"	"MLGStudentFeature\elementManifest.xml"
+"TEMPLATE\FEATURES\MLGStudentFeature\feature.xml"	"MLGStudentFeature\feature.xml"
+"TEMPLATE\FEATURES\MLGStudentFeature\Planner.aspx"	"MLGStudentFeature\Planner.aspx"
+"manifest.xml"	manifest.xml
+"MLGStudent_onet.resx"	resources\MLGStudent_onet.resx
 ;*** <the end>

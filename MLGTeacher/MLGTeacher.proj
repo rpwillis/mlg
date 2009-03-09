@@ -1,0 +1,46 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <OutputType>Library</OutputType>
+        <AssemblyName>MLGTeacher</AssemblyName>
+        <SharePointReferencePath>../lib/</SharePointReferencePath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="manifest.xml" />
+        <Content Include="TEMPLATE\1033\XML\webtempMLGTeacher.xml" />
+        <Content Include="TEMPLATE\1033\XML\webtempMLGTeacherSite.xml" />
+        <Content Include="TEMPLATE\FEATURES\MLGTeacherfeature\Assignments.aspx" />
+        <Content Include="TEMPLATE\FEATURES\MLGTeacherfeature\Classes.aspx" />
+        <Content Include="TEMPLATE\FEATURES\MLGTeacherfeature\Planner.aspx" />
+        <Content Include="TEMPLATE\FEATURES\MLGTeacherfeature\elementManifest.xml" />
+        <Content Include="TEMPLATE\FEATURES\MLGTeacherfeature\feature.xml" />
+        <Content Include="TEMPLATE\FEATURES\MLGTeacher\xml\onet.xml" />
+        <Content Include="TEMPLATE\XML\MLGTeacherSiteTemplate.XML" />
+    </ItemGroup>
+    <ItemGroup>
+    </ItemGroup>
+
+    <Target Name="Build" DependsOnTargets="MakeWsp"/>
+
+    <Target Name="MakeWsp">
+        <Exec Command="makecab /F cab.ddf "/>
+    </Target>
+</Project>
