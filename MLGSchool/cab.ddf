@@ -1,32 +1,32 @@
 ;
-.Set CabinetNameTemplate=MLGSchool.wsp
+.Set CabinetNameTemplate=release\MLGSchool.wsp
 .set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
 .Set CompressionType=MSZIP;** All files are compressed in cabinet files
 .Set UniqueFiles='ON'
 .Set Cabinet=on
 .Set DiskDirectory1=.
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\1033\XML\webtempMLGSchool.xml"	"1033\XML\webtempMLGSchool.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\1033\XML\webtempMLGSchoolPortal.xml"	"1033\XML\webtempMLGSchoolPortal.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGPermissionsInheritanceBreaking\feature.xml"	"MLGPermissionsInheritanceBreaking\feature.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchool\xml\onet.xml"	"MLGSchool\xml\onet.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\default.aspx"	"MLGSchoolFeature\default.aspx"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\elementManifest.xml"	"MLGSchoolFeature\elementManifest.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\feature.xml"	"MLGSchoolFeature\feature.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\MLGSchool.master"	"MLGSchoolFeature\MLGSchool.master"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\search.aspx"	"MLGSchoolFeature\search.aspx"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\defaultchild.jpg"	"MLGSchoolFeature\DOCTEMP\A\defaultchild.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\Schoolbanner.gif"	"MLGSchoolFeature\DOCTEMP\A\Schoolbanner.gif"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\Schoollogo.gif"	"MLGSchoolFeature\DOCTEMP\A\Schoollogo.gif"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\defaultchild_jpg.jpg"	"MLGSchoolFeature\DOCTEMP\A\t\defaultchild_jpg.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\Schoolbanner_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\t\Schoolbanner_gif.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\SchoolLogo_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\t\SchoolLogo_gif.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\defaultchild_jpg.jpg"	"MLGSchoolFeature\DOCTEMP\A\w\defaultchild_jpg.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\Schoolbanner_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\w\Schoolbanner_gif.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\SchoolLogo_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\w\SchoolLogo_gif.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\TEMPLATE\XML\MLGSchoolPortalSiteTemplate.XML"	"XML\MLGSchoolPortalSiteTemplate.XML"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\images\mlgschool.jpg"	"Images\mlgschool.jpg"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\images\MLGSchool.png"	"Images\MLGSchool.png"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\manifest.xml"	manifest.xml
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\MLGSchool_onet.resx"	resources\MLGSchool_onet.resx
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MLGSchool\bin\Release\MLGSchool.dll"	MLGSchool.dll
+"TEMPLATE\1033\XML\webtempMLGSchool.xml"	"1033\XML\webtempMLGSchool.xml"
+"TEMPLATE\1033\XML\webtempMLGSchoolPortal.xml"	"1033\XML\webtempMLGSchoolPortal.xml"
+"TEMPLATE\FEATURES\MLGPermissionsInheritanceBreaking\feature.xml"	"MLGPermissionsInheritanceBreaking\feature.xml"
+"TEMPLATE\FEATURES\MLGSchool\xml\onet.xml"	"MLGSchool\xml\onet.xml"
+"TEMPLATE\FEATURES\MLGSchoolFeature\default.aspx"	"MLGSchoolFeature\default.aspx"
+"TEMPLATE\FEATURES\MLGSchoolFeature\elementManifest.xml"	"MLGSchoolFeature\elementManifest.xml"
+"TEMPLATE\FEATURES\MLGSchoolFeature\feature.xml"	"MLGSchoolFeature\feature.xml"
+"TEMPLATE\FEATURES\MLGSchoolFeature\MLGSchool.master"	"MLGSchoolFeature\MLGSchool.master"
+"TEMPLATE\FEATURES\MLGSchoolFeature\search.aspx"	"MLGSchoolFeature\search.aspx"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\defaultchild.jpg"	"MLGSchoolFeature\DOCTEMP\A\defaultchild.jpg"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\Schoolbanner.gif"	"MLGSchoolFeature\DOCTEMP\A\Schoolbanner.gif"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\Schoollogo.gif"	"MLGSchoolFeature\DOCTEMP\A\Schoollogo.gif"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\defaultchild_jpg.jpg"	"MLGSchoolFeature\DOCTEMP\A\t\defaultchild_jpg.jpg"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\Schoolbanner_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\t\Schoolbanner_gif.jpg"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\t\SchoolLogo_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\t\SchoolLogo_gif.jpg"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\defaultchild_jpg.jpg"	"MLGSchoolFeature\DOCTEMP\A\w\defaultchild_jpg.jpg"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\Schoolbanner_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\w\Schoolbanner_gif.jpg"
+"TEMPLATE\FEATURES\MLGSchoolFeature\DOCTEMP\A\w\SchoolLogo_gif.jpg"	"MLGSchoolFeature\DOCTEMP\A\w\SchoolLogo_gif.jpg"
+"TEMPLATE\XML\MLGSchoolPortalSiteTemplate.XML"	"XML\MLGSchoolPortalSiteTemplate.XML"
+"images\mlgschool.jpg"	"Images\mlgschool.jpg"
+"images\MLGSchool.png"	"Images\MLGSchool.png"
+"manifest.xml"	manifest.xml
+"MLGSchool_onet.resx"	resources\MLGSchool_onet.resx
+"bin\Release\MLGSchool.dll"	MLGSchool.dll
 ;*** <the end>

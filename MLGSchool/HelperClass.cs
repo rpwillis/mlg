@@ -16,7 +16,6 @@ using Microsoft.SharePoint.Security;
 
 namespace MLG
 {
-    [CLSCompliant(false)]
     [Guid("F1F754C9-3729-45e7-B099-E77334AFFBC3")]
     partial class MLG : SPFeatureReceiver
     {
@@ -55,9 +54,9 @@ namespace MLG
             web.Update();
 
             //add the site groups
-            web.SiteGroups.Add(web.ParentWeb.Title+" "+web.Title + visitor, web.Site.Owner, null, "Use this group to give people read permissions to the SharePoint site: " + web.Title);
-            web.SiteGroups.Add(web.ParentWeb.Title+" "+web.Title + member, web.Site.Owner, null, "Use this group to give people contribute permissions to the SharePoint site: " + web.Title);
-            web.SiteGroups.Add(web.ParentWeb.Title+" "+web.Title + owner, web.Site.Owner, web.Site.Owner, "Use this group to give people full control permissions to the SharePoint site: "+web.Title);
+            AddGroup(web, visitor, "Use this group to give people read permissions to the SharePoint site: ");
+            AddGroup(web, member, "Use this group to give people contribute permissions to the SharePoint site: ");
+            AddGroup(web, owner, "Use this group to give people full control permissions to the SharePoint site: ");
             
             //add the site groups to the cross site groups
             web.Roles[readPer].AddGroup(web.SiteGroups[web.ParentWeb.Title+" "+web.Title + visitor]);
@@ -72,6 +71,17 @@ namespace MLG
             //update the web object
             web.Update();
 
+        }
+
+        static void AddGroup(SPWeb web, string groupPartialName, string description)
+        {
+            string name = web.ParentWeb.Title + " " + web.Title + groupPartialName;
+            //Only create the group if it doesn't already exist.
+            SPGroupCollection existing = web.SiteGroups.GetCollection(new string[] {name});
+            if (existing.Count == 0)
+            {
+                web.SiteGroups.Add(name, web.Site.Owner, null, description + web.Title);
+            }
         }
 
         [SharePointPermission(SecurityAction.LinkDemand, ObjectModel = true)]
