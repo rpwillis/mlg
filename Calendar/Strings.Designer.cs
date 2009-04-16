@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MLG2007.Helper.Exchange {
+namespace MLG2007.Helper.Calendar {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MLG2007.Helper.Exchange {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MLG2007.Helper.Exchange.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MLG2007.Helper.Calendar.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,74 @@ namespace MLG2007.Helper.Exchange {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ExchangeError.
+        ///   Looks up a localized string similar to All events on this day.
         /// </summary>
-        internal static string ErrExchError {
+        internal static string AllEvents {
             get {
-                return ResourceManager.GetString("ErrExchError", resourceCulture);
+                return ResourceManager.GetString("AllEvents", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid email address or Exchange URL.
+        ///   Looks up a localized string similar to Sun.
         /// </summary>
-        internal static string ErrInvalidAddress {
+        internal static string Day0 {
             get {
-                return ResourceManager.GetString("ErrInvalidAddress", resourceCulture);
+                return ResourceManager.GetString("Day0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mon.
+        /// </summary>
+        internal static string Day1 {
+            get {
+                return ResourceManager.GetString("Day1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tue.
+        /// </summary>
+        internal static string Day2 {
+            get {
+                return ResourceManager.GetString("Day2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wed.
+        /// </summary>
+        internal static string Day3 {
+            get {
+                return ResourceManager.GetString("Day3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thu.
+        /// </summary>
+        internal static string Day4 {
+            get {
+                return ResourceManager.GetString("Day4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fri.
+        /// </summary>
+        internal static string Day5 {
+            get {
+                return ResourceManager.GetString("Day5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sat.
+        /// </summary>
+        internal static string Day6 {
+            get {
+                return ResourceManager.GetString("Day6", resourceCulture);
             }
         }
     }

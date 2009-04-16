@@ -1,0 +1,20 @@
+;
+.Set CabinetNameTemplate=release\MLGSiteContainer.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"TEMPLATE\1033\XML\webtempMLGCustom.xml"	"1033\XML\webtempMLGCustom.xml"
+"TEMPLATE\1033\XML\webtempMLGStaffrooms.xml"	"1033\XML\webtempMLGStaffrooms.xml"
+"TEMPLATE\FEATURES\MLGCustom\xml\onet.xml"	"MLGCustom\xml\onet.xml"
+"TEMPLATE\FEATURES\MLGCustomfeature\default.aspx"	"MLGCustomfeature\default.aspx"
+"TEMPLATE\FEATURES\MLGCustomfeature\elementManifest.xml"	"MLGCustomfeature\elementManifest.xml"
+"TEMPLATE\FEATURES\MLGCustomfeature\feature.xml"	"MLGCustomfeature\feature.xml"
+"TEMPLATE\FEATURES\MLGStaffrooms\xml\onet.xml"	"MLGStaffrooms\xml\onet.xml"
+"TEMPLATE\FEATURES\MLGStaffRoomsFeature\elementManifest.xml"	"MLGStaffRoomsFeature\elementManifest.xml"
+"TEMPLATE\FEATURES\MLGStaffRoomsFeature\feature.xml"	"MLGStaffRoomsFeature\feature.xml"
+"TEMPLATE\FEATURES\MLGStaffRoomsFeature\staffrooms.aspx"	"MLGStaffRoomsFeature\staffrooms.aspx"
+"manifest.xml"	manifest.xml
+"MLGCustom_onet.resx"	resources\MLGCustom_onet.resx
+;*** <the end>

@@ -1,0 +1,22 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <Import Project="../MLG.targets"/>
+
+    <PropertyGroup>
+        <MakeSolution>false</MakeSolution>
+        <RootNamespace>MLG2007.Helper.SharePointLearningKit</RootNamespace>
+        <AssemblyName>MLG2007.Helper.SharePointLearningKit</AssemblyName>
+        <AssemblyOriginatorKeyFile>properties\keypair.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.SharePointLearningKit.dll" />
+        <Reference Include="Microsoft.LearningComponents.Storage.dll" />
+        <Reference Include="..\Calendar\bin\$(Configuration)\MLG2007.Helper.Calendar.dll" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Assignment.cs" />
+        <Compile Include="Common.cs" />
+        <Compile Include="Data.cs" />
+    </ItemGroup>
+
+</Project>

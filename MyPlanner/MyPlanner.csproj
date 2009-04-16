@@ -113,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="manifest.xml" />
-    <Content Include="DLLs\Microsoft.LearningComponents.Compression.dll" />
     <Content Include="TEMPLATE\FEATURES\MyPlanner\elementManifest.xml" />
     <Content Include="TEMPLATE\FEATURES\MyPlanner\feature.xml" />
   </ItemGroup>
@@ -121,10 +120,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>copy "$(SolutionDir)ListSearch\bin\$(ConfigurationName)\MLG2007.Helper.ListSearch.dll" "$(TargetDir)"
-
-cd "$(ProjectDir)"
-makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

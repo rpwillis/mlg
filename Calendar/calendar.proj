@@ -1,0 +1,19 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <Import Project="../MLG.targets"/>
+
+    <PropertyGroup>
+        <MakeSolution>false</MakeSolution>
+        <RootNamespace>MLG2007.Helper.Calendar</RootNamespace>
+        <AssemblyName>MLG2007.Helper.Calendar</AssemblyName>
+        <AssemblyOriginatorKeyFile>Properties\keypair.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="..\PlannerData.CalendarStore\bin\$(Configuration)\MLG2007.Helper.CalendarStore.dll" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Appointments.cs" />
+        <Compile Include="Calendar.cs" />
+    </ItemGroup>
+
+</Project>

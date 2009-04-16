@@ -54,7 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CreateCabDDF.vbs" />
     <None Include="Properties\key.snk" />
     <None Include="TEMPLATE\FEATURES\MLGSchoolFeature\MLGSchool.master" />
   </ItemGroup>
@@ -100,7 +99,6 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>
-cd "$(ProjectDir)"
-makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

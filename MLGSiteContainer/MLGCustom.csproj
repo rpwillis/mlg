@@ -4,13 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{788A02D4-FE5D-46DA-8ADD-01C34796ADD1}</ProjectGuid>
+    <ProjectGuid>{0E84D927-94E9-40D4-B97C-F8AA9FC8304E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MLG2007.Helper.UserPreferences</RootNamespace>
-    <AssemblyName>MLG2007.Helper.UserPreferences</AssemblyName>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Test.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>MLGCustom</RootNamespace>
+    <AssemblyName>MLGCustom</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -43,19 +41,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserPreferences.cs" />
-    <Compile Include="UserPreferencesStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Test.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="manifest.xml" />
+    <Content Include="TEMPLATE\1033\XML\webtempMLGStaffrooms.xml" />
+    <Content Include="TEMPLATE\1033\XML\webtempMLGCustom.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGStaffrooms\xml\onet.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGCustom\xml\onet.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGCustomfeature\default.aspx">
+    </Content>
+    <Content Include="TEMPLATE\FEATURES\MLGCustomfeature\elementManifest.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGCustomfeature\feature.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGStaffRoomsFeature\elementManifest.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGStaffRoomsFeature\feature.xml" />
+    <Content Include="TEMPLATE\FEATURES\MLGStaffRoomsFeature\staffrooms.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MLGCustom_onet.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CONFIG\" />
+    <Folder Include="DLLS\GAC\" />
+    <Folder Include="TEMPLATE\LAYOUTS\" />
+    <Folder Include="TEMPLATE\XML\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -65,4 +85,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
 </Project>

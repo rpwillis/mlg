@@ -1,0 +1,40 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <Import Project="../MLG.targets"/>
+
+    <PropertyGroup>
+        <RootNamespace>MLG2007.WebParts.MyPlanner</RootNamespace>
+        <AssemblyName>MLG2007.WebParts.MyPlanner</AssemblyName>
+        <AssemblyOriginatorKeyFile>Properties\temporary.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.SharePointLearningKit.dll" />
+        <Reference Include="..\Calendar\bin\$(Configuration)\MLG2007.Helper.Calendar.dll" />
+        <Reference Include="..\PlannerData.CalendarStore\bin\$(Configuration)\MLG2007.Helper.CalendarStore.dll" />
+        <Reference Include="..\ListSearch\bin\$(Configuration)\MLG2007.Helper.ListSearch.dll" />
+        <Reference Include="..\PlannerData.Exch\bin\$(Configuration)\MLG2007.Helper.Exchange.dll" />
+        <Reference Include="..\PlannerData.SLK\bin\$(Configuration)\MLG2007.Helper.SharePointLearningKit.dll" />
+        <Reference Include="..\PlannerData.SPS\bin\$(Configuration)\MLG2007.Helper.SharePoint.dll" />
+        <Reference Include="..\PlannerData.UserPreferences\bin\$(Configuration)\MLG2007.Helper.UserPreferences.dll" />
+
+        <ReferenceProjects Include="PlannerData.CalendarStore.proj" />
+        <ReferenceProjects Include="Calendar.proj" />
+        <ReferenceProjects Include="ListSearch.proj" />
+        <ReferenceProjects Include="PlannerData.Exch.proj" />
+        <ReferenceProjects Include="PlannerData.SLK.proj" />
+        <ReferenceProjects Include="PlannerData.SPS.proj" />
+        <ReferenceProjects Include="PlannerData.UserPreferences.proj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Myplanner.cs" />
+        <Compile Include="AppPages\*.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="manifest.xml" />
+        <Content Include="TEMPLATE\FEATURES\MLGMasterPageSetter\feature.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Properties\key.snk" />
+    </ItemGroup>
+
+</Project>

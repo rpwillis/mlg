@@ -1,0 +1,16 @@
+;
+.Set CabinetNameTemplate=MLGCalendarList.wsp
+.set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
+.Set CompressionType=MSZIP;** All files are compressed in cabinet files
+.Set UniqueFiles='ON'
+.Set Cabinet=on
+.Set DiskDirectory1=.
+"TEMPLATE\FEATURES\CalendarList\feature.xml"	"CalendarList\feature.xml"
+"TEMPLATE\FEATURES\CalendarList\CalendarList\AllItems.aspx"	"CalendarList\CalendarList\AllItems.aspx"
+"TEMPLATE\FEATURES\CalendarList\CalendarList\dispform.aspx"	"CalendarList\CalendarList\dispform.aspx"
+"TEMPLATE\FEATURES\CalendarList\CalendarList\editform.aspx"	"CalendarList\CalendarList\editform.aspx"
+"TEMPLATE\FEATURES\CalendarList\CalendarList\newform.aspx"	"CalendarList\CalendarList\newform.aspx"
+"TEMPLATE\FEATURES\CalendarList\CalendarList\schema.xml"	"CalendarList\CalendarList\schema.xml"
+"TEMPLATE\FEATURES\CalendarList\ListTemplates\elementManifest.xml"	"CalendarList\ListTemplates\elementManifest.xml"
+"manifest.xml"	manifest.xml
+;*** <the end>

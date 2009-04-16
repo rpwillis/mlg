@@ -1,5 +1,5 @@
 ;
-.Set CabinetNameTemplate=MLG2007.WebParts.MyPlanner.wsp
+.Set CabinetNameTemplate=bin\MLG2007.WebParts.MyPlanner.wsp
 .set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
 .Set CompressionType=MSZIP;** All files are compressed in cabinet files
 .Set UniqueFiles='ON'
@@ -10,11 +10,41 @@
 "TEMPLATE\FEATURES\MyPlanner\MyPlanner.dwp"	"MyPlanner\MyPlanner.dwp"
 "manifest.xml"	manifest.xml
 "bin\Release\MLG2007.WebParts.MyPlanner.dll"	MLG2007.WebParts.MyPlanner.dll
-"bin\Release\MLG2007.Helper.Calendar.dll"	MLG2007.Helper.Calendar.dll
-"bin\Release\MLG2007.Helper.ListSearch.dll"	MLG2007.Helper.ListSearch.dll
-"bin\Release\MLG2007.Helper.CalendarStore.dll"	MLG2007.Helper.CalendarStore.dll
-"bin\Release\MLG2007.Helper.SharePoint.dll"	MLG2007.Helper.SharePoint.dll
-"bin\Release\MLG2007.Helper.SharePointLearningKit.dll"	MLG2007.Helper.SharePointLearningKit.dll
-"bin\Release\MLG2007.Helper.Exchange.dll"	MLG2007.Helper.Exchange.dll
-"bin\Release\MLG2007.Helper.UserPreferences.dll"	MLG2007.Helper.UserPreferences.dll
+"..\Calendar\bin\Release\MLG2007.Helper.Calendar.dll"	MLG2007.Helper.Calendar.dll
+"..\ListSearch\bin\Release\MLG2007.Helper.ListSearch.dll"	MLG2007.Helper.ListSearch.dll
+"..\PlannerData.CalendarStore\bin\Release\MLG2007.Helper.CalendarStore.dll"	MLG2007.Helper.CalendarStore.dll
+"..\PlannerData.SPS\bin\Release\MLG2007.Helper.SharePoint.dll"	MLG2007.Helper.SharePoint.dll
+"..\PlannerData.SLK\bin\Release\MLG2007.Helper.SharePointLearningKit.dll"	MLG2007.Helper.SharePointLearningKit.dll
+"..\PlannerData.Exch\bin\Release\MLG2007.Helper.Exchange.dll"	MLG2007.Helper.Exchange.dll
+"..\PlannerData.UserPreferences\bin\Release\MLG2007.Helper.UserPreferences.dll"	MLG2007.Helper.UserPreferences.dll
+"layouts\ShowEvent.aspx"	"layouts\1033\LGUtilities\ShowEvent.aspx"
+"layouts\ShowEvent.aspx.resx"	"layouts\1033\LGUtilities\ShowEvent.aspx.resx"
+"layouts\ShowExchange.aspx"	"layouts\1033\LGUtilities\ShowExchange.aspx"
+"layouts\ShowMore.aspx"	"layouts\1033\LGUtilities\ShowMore.aspx"
+"layouts\showSlkdetails.aspx"	"layouts\1033\LGUtilities\showSlkdetails.aspx"
+"layouts\Web.config"	"layouts\1033\LGUtilities\Web.config"
+"layouts\App_LocalResources\ShowEvent.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\ShowEvent.aspx.resx"
+"layouts\App_LocalResources\ShowExchange.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\ShowExchange.aspx.resx"
+"layouts\App_LocalResources\ShowMore.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\ShowMore.aspx.resx"
+"layouts\App_LocalResources\showSlkdetails.aspx.resx"	"layouts\1033\LGUtilities\App_LocalResources\showSlkdetails.aspx.resx"
+"layouts\images\Assignments.gif"	"layouts\1033\LGUtilities\images\Assignments.gif"
+"layouts\images\Assignments_dn.gif"	"layouts\1033\LGUtilities\images\Assignments_dn.gif"
+"layouts\images\blank.gif"	"layouts\1033\LGUtilities\images\blank.gif"
+"layouts\images\btn_dn.gif"	"layouts\1033\LGUtilities\images\btn_dn.gif"
+"layouts\images\btn_up.gif"	"layouts\1033\LGUtilities\images\btn_up.gif"
+"layouts\images\calendar.gif"	"layouts\1033\LGUtilities\images\calendar.gif"
+"layouts\images\calendar_dn.gif"	"layouts\1033\LGUtilities\images\calendar_dn.gif"
+"layouts\images\cnspub16.gif"	"layouts\1033\LGUtilities\images\cnspub16.gif"
+"layouts\images\gosearch.gif"	"layouts\1033\LGUtilities\images\gosearch.gif"
+"layouts\images\helpicon.gif"	"layouts\1033\LGUtilities\images\helpicon.gif"
+"layouts\images\Menu1.gif"	"layouts\1033\LGUtilities\images\Menu1.gif"
+"layouts\images\menudark.gif"	"layouts\1033\LGUtilities\images\menudark.gif"
+"layouts\images\nextbuttonltr.gif"	"layouts\1033\LGUtilities\images\nextbuttonltr.gif"
+"layouts\images\prevbuttonltr.gif"	"layouts\1033\LGUtilities\images\prevbuttonltr.gif"
+"layouts\images\Row_bg.gif"	"layouts\1033\LGUtilities\images\Row_bg.gif"
+"layouts\images\titlegraphic.gif"	"layouts\1033\LGUtilities\images\titlegraphic.gif"
+"layouts\images\whitearrow.gif"	"layouts\1033\LGUtilities\images\whitearrow.gif"
+"layouts\scripts\scripts.js"	"layouts\1033\LGUtilities\scripts\scripts.js"
+"layouts\styles\CustomStyles.css"	"layouts\1033\LGUtilities\styles\CustomStyles.css"
+"layouts\styles\dropdown.css"	"layouts\1033\LGUtilities\styles\dropdown.css"
 ;*** <the end>

@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MLG2007.Helper.MasterpageSetter</name>
+    </assembly>
+    <members>
+        <member name="T:MLG2007.Helper.MasterpageSetter.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.DetailedErrorMessage">
+            <summary>
+              Looks up a localized string similar to An unexpected error has occurred and returned with the following message {0}  Please contact your administrator..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.ExcludedContentTypesCat">
+            <summary>
+              Looks up a localized string similar to Upload Settings.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.ExcludedContentTypesDesc">
+            <summary>
+              Looks up a localized string similar to Holds a comma separated list of content types that are not populated for the user to search in..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.ExcludedContentTypesTitle">
+            <summary>
+              Looks up a localized string similar to Excluded Content Types.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.FileAlreadyExists">
+            <summary>
+              Looks up a localized string similar to A file with the same name already exists.  To overwrite the file check overwrite existing files option..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.FileUploaded">
+            <summary>
+              Looks up a localized string similar to File uploaded successfully..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.InvalidCharsInFile">
+            <summary>
+              Looks up a localized string similar to The file name contains invalid characters.  Please use a different name.  Common invalid characters include the following: # % &amp; * : &lt; &gt; ? / { | }.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.InvalidDocumentLibrary">
+            <summary>
+              Looks up a localized string similar to The configured document library is invalid.  Please contact the administrator..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.InvalidFile">
+            <summary>
+              Looks up a localized string similar to The file cannot be uploaded.  Please verify that the file path is correct or the file is compressed in a valid zip format..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.InvalidPackage">
+            <summary>
+              Looks up a localized string similar to Metadata file does not exist in the package.  Please make sure that the package is valid..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.MaximumFileSizeReached">
+            <summary>
+              Looks up a localized string similar to The learning resource cannot be uploaded because it exceeds the maximum length allowed by the Web administrator. Please try again with less data..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.MultipleContentTypesHeader">
+            <summary>
+              Looks up a localized string similar to Please select a content type.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.NoContentTypesAttached">
+            <summary>
+              Looks up a localized string similar to No content types attached to the document library..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.NoPermissions">
+            <summary>
+              Looks up a localized string similar to You do not have the necessary permissions for {0} at {1}.  Please request from the site administrator to have add and modify permissions..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.OverrideExistingFiles">
+            <summary>
+              Looks up a localized string similar to Overwrite existing files.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.PropertiesEmpty">
+            <summary>
+              Looks up a localized string similar to Not all required properties have been configured..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.ShowErrorsCat">
+            <summary>
+              Looks up a localized string similar to Upload Settings.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.ShowErrorsDesc">
+            <summary>
+              Looks up a localized string similar to Provides error details in messages..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.ShowErrorsTitle">
+            <summary>
+              Looks up a localized string similar to Show Errors.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.SingleContentTypeHeader">
+            <summary>
+              Looks up a localized string similar to Content type available.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.SourceDocumentLibraryCat">
+            <summary>
+              Looks up a localized string similar to Upload Settings.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.SourceDocumentLibraryDesc">
+            <summary>
+              Looks up a localized string similar to Document library URL with custom content types to search for learning resources .
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.SourceDocumentLibraryTitle">
+            <summary>
+              Looks up a localized string similar to Source Document Library.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.StandardErrorMessage">
+            <summary>
+              Looks up a localized string similar to An unexpected error has occurred.  Please contact your administrator..
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.Upload">
+            <summary>
+              Looks up a localized string similar to Upload.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.XmlFilePathCat">
+            <summary>
+              Looks up a localized string similar to Upload Settings.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.XmlFilePathDesc">
+            <summary>
+              Looks up a localized string similar to Comma separated list of the supported metadata XML files.  These files are parsed for property values mapped to site column in the content type.
+            </summary>
+        </member>
+        <member name="P:MLG2007.Helper.MasterpageSetter.Strings.XmlFilePathTitle">
+            <summary>
+              Looks up a localized string similar to XML File Path.
+            </summary>
+        </member>
+    </members>
+</doc>

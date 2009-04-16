@@ -1,0 +1,16 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <Import Project="../MLG.targets"/>
+
+    <PropertyGroup>
+        <MakeSolution>false</MakeSolution>
+        <RootNamespace>MLG2007.Helper.UserPreferences</RootNamespace>
+        <AssemblyName>MLG2007.Helper.UserPreferences</AssemblyName>
+        <AssemblyOriginatorKeyFile>test.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="UserPreferences.cs" />
+        <Compile Include="UserPreferencesStore.cs" />
+    </ItemGroup>
+
+</Project>

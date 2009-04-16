@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MLG2007.Helper.Exchange {
+namespace MLG2007.Helper.CalendarStore {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MLG2007.Helper.Exchange {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MLG2007.Helper.Exchange.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MLG2007.Helper.CalendarStore.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,24 +57,6 @@ namespace MLG2007.Helper.Exchange {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ExchangeError.
-        /// </summary>
-        internal static string ErrExchError {
-            get {
-                return ResourceManager.GetString("ErrExchError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid email address or Exchange URL.
-        /// </summary>
-        internal static string ErrInvalidAddress {
-            get {
-                return ResourceManager.GetString("ErrInvalidAddress", resourceCulture);
             }
         }
     }

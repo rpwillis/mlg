@@ -1,0 +1,18 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <Import Project="../MLG.targets"/>
+
+    <PropertyGroup>
+        <MakeSolution>false</MakeSolution>
+        <RootNamespace>MLG2007.Helper.ListSearch</RootNamespace>
+        <AssemblyName>MLG2007.Helper.ListSearch</AssemblyName>
+        <AssemblyOriginatorKeyFile>keypair.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="ListData.cs" />
+        <Compile Include="ListPlannerData.cs" />
+        <Compile Include="Properties\Settings.Designer.cs" />
+        <Compile Include="Web References\edu.demo.portal\Reference.cs" />
+    </ItemGroup>
+
+</Project>

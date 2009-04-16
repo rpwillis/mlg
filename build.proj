@@ -1,0 +1,71 @@
+<Project DefaultTargets="Release" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Import  Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+    <PropertyGroup>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <TemplateProjects Include="MasterpageSetter.proj"/>
+        <TemplateProjects Include="MLGTeacher.proj"/>
+        <TemplateProjects Include="MLGClass.proj"/>
+        <TemplateProjects Include="MLGStudent.proj"/>
+        <TemplateProjects Include="MLGParent.proj"/>
+        <TemplateProjects Include="MLGSiteContainer.proj"/>
+        <TemplateProjects Include="MLGSchool.proj"/>
+        <WebPartProjects Include="LRUpload.proj"/>
+        <WebPartProjects Include="MetaSearch.proj"/>
+        <WebPartProjects Include="MyChildren.proj"/>
+        <WebPartProjects Include="MySites.proj"/>
+        <WebPartProjects Include="MyPlanner.proj"/>
+        <ListProjects Include="CalendarList.proj"/>
+        <ListProjects Include="UserPreferencesList.proj"/>
+        <InstallFiles Include="Install.cmd"/>
+        <InstallFiles Include="Uninstall.cmd"/>
+        <InstallFiles Include="Update.cmd"/>
+        <InstallFiles Include="Deploy.cmd"/>
+        <License Include="Install\license.txt"/>
+        <FullRelease Include="Release\**"/>
+    </ItemGroup>
+
+    <Target Name="Build" DependsOnTargets="BuildWebParts;BuildTemplates"/>
+
+    <Target Name="BuildTemplates">
+        <MSBuild Projects="@(TemplateProjects->'%(Filename)\%(Filename).proj')" Targets="Build" StopOnFirstFailure="true" Properties="Configuration=Release"/>
+    </Target>
+
+    <Target Name="Clean">
+        <MSBuild Projects="@(WebPartProjects->'%(Filename)\%(Filename).proj')" Targets="Clean" StopOnFirstFailure="true"/>
+        <MSBuild Projects="MasterpageSetter/MasterpageSetter.proj" Targets="Clean" StopOnFirstFailure="true"/>
+    </Target>
+
+    <Target Name="BuildWebParts">
+        <MSBuild Projects="@(WebPartProjects->'%(Filename)\%(Filename).proj')" Targets="Build" StopOnFirstFailure="true" Properties="Configuration=Release"/>
+        <MSBuild Projects="@(ListProjects->'%(Filename)\%(Filename).proj')" Targets="Build" StopOnFirstFailure="true" Properties="Configuration=Release"/>
+    </Target>
+
+    <Target Name="Release" DependsOnTargets="ReleaseWebParts;ReleaseTemplates"/>
+
+    <Target Name="ReleaseWebParts" DependsOnTargets="BuildWebParts">
+        <MakeDir Directories="Release"/>
+        <MakeDir Directories="Release/WebParts"/>
+        <MakeDir Directories="Release/WebParts/Solutions"/>
+        <Copy SourceFiles="@(WebPartProjects->'%(Filename)\bin\MLG2007.WebParts.%(Filename).wsp')" DestinationFolder="Release\WebParts\Solutions" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(ListProjects->'%(Filename)\MLG%(Filename).wsp')" DestinationFolder="Release\WebParts\Solutions" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(InstallFiles->'Install\%(Filename)WebParts%(Extension)')" DestinationFolder="Release\WebParts" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(License)" DestinationFolder="Release\WebParts" SkipUnchangedFiles="true"/>
+    </Target>
+
+    <Target Name="ReleaseTemplates" DependsOnTargets="BuildTemplates">
+        <MakeDir Directories="Release"/>
+        <MakeDir Directories="Release/Templates"/>
+        <MakeDir Directories="Release/Templates/Solutions"/>
+        <Copy SourceFiles="@(TemplateProjects->'%(Filename)\Release\%(Filename).wsp')" DestinationFolder="Release\Templates\Solutions" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(InstallFiles->'Install\%(Filename)Templates%(Extension)')" DestinationFolder="Release\Templates" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(License)" DestinationFolder="Release\Templates" SkipUnchangedFiles="true"/>
+    </Target>
+
+    <Target Name="DeployMoss" DependsOnTargets="Release">
+        <Copy SourceFiles="@(FullRelease)" DestinationFolder="\\moss\transfer\release\%(RecursiveDir)" SkipUnchangedFiles="true"/>
+    </Target>
+</Project>
+

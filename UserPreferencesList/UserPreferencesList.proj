@@ -1,0 +1,7 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+    <Target Name="Build" DependsOnTargets="MakeWsp"/>
+
+    <Target Name="MakeWsp" Condition="$(Configuration) == 'Release'">
+        <Exec Command="makecab /F cab.ddf "/>
+    </Target>
+</Project>

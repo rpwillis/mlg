@@ -1,0 +1,67 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+    <PropertyGroup>
+        <MakeSolution>true</MakeSolution>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <OutputType>Library</OutputType>
+        <SharePointReferencePath>../lib/</SharePointReferencePath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Resources Include="Strings.resx" />
+        <Reference Include="Microsoft.SharePoint.dll" />
+        <Compile Include="Strings.Designer.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Clean Include="bin" />
+    </ItemGroup>
+
+    <Target Name="Clean">
+        <RemoveDir Directories="@(Clean)"/>
+        <MSBuild Projects="@(ReferenceProjects->'..\%(Filename)\%(Filename).proj')" Targets="Clean" StopOnFirstFailure="true" />
+    </Target>
+
+    <Target Name="Build" DependsOnTargets="Compile;MakeWsp"/>
+
+    <Target Name="BuildResource">
+        <MakeDir Directories="$(OutputPath)"/>
+        <GenerateResource Sources="@(Resources)" OutputResources="@(Resources->'$(OutputPath)$(AssemblyName).%(Filename).resources')"
+            StronglyTypedFilename="@(Resources->'%(Filename).Designer.cs')" StronglyTypedClassName="@(Resources->'%(Filename)')" StronglyTypedLanguage="C#" StronglyTypedNamespace="$(AssemblyName)" />
+    </Target>
+
+    <Target Name="ReferenceCompile">
+        <MSBuild Projects="@(ReferenceProjects->'..\%(Filename)\%(Filename).proj')" Targets="Build" StopOnFirstFailure="true" Properties="Configuration=$(Configuration)"/>
+    </Target>
+
+    <Target Name="Compile" DependsOnTargets="BuildResource;ReferenceCompile" Inputs="@(Compile)" Outputs="$(OutputPath)$(AssemblyName).dll">
+        <MakeDir Directories="$(OutputPath)"/>
+        <Csc Sources="@(Compile)" OutputAssembly="$(OutputPath)$(AssemblyName).dll" TargetType="$(OutputType)"
+            References="@(Reference)"
+            AdditionalLibPaths="$(SharePointReferencePath)"
+            Resources="@(Resources->'$(OutputPath)$(AssemblyName).%(Filename).resources')"
+            DefineConstants="$(DefineConstants)"
+            TreatWarningsAsErrors="false"
+            KeyFile="$(AssemblyOriginatorKeyFile)"
+            DebugType="full"
+            DocumentationFile="$(OutputPath)$(AssemblyName).xml"/>
+    </Target>
+
+    <Target Name="MakeWsp" Condition="$(Configuration) == 'Release' and $(MakeSolution) == 'true'">
+        <Exec Command="makecab /F cab.ddf "/>
+    </Target>
+</Project>
