@@ -12,7 +12,7 @@
     <AssemblyName>MLG2007.WebParts.MyChildren</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
-    <AssemblyOriginatorKeyFile>Properties\Keypair.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\keypair.snk</AssemblyOriginatorKeyFile>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -62,7 +62,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Keypair.snk" />
+    <None Include="Properties\keypair.snk" />
     <None Include="Template\FEATURES\MyChildren\MyChildren.dwp" />
   </ItemGroup>
   <ItemGroup>
@@ -73,7 +73,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CreateCabDDF.vbs" />
     <Content Include="manifest.xml" />
     <Content Include="Template\FEATURES\MyChildren\elementManifest.xml" />
     <Content Include="Template\FEATURES\MyChildren\feature.xml" />
@@ -82,12 +81,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>cd "$(ProjectDir)"
-cd "$(ProjectDir)"
-CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
-
-cd "$(ProjectDir)"
-makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

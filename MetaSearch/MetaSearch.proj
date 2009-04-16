@@ -1,0 +1,22 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <Import Project="../MLG.targets"/>
+
+    <PropertyGroup>
+        <RootNamespace>MLG2007.WebParts.MetaSearch</RootNamespace>
+        <AssemblyName>MLG2007.WebParts.MetaSearch</AssemblyName>
+        <AssemblyOriginatorKeyFile>Properties\temporary.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Helper\Constants.cs" />
+        <Compile Include="Helper\QueryHelper\ContainsQueryField.cs" />
+        <Compile Include="Helper\QueryHelper\EqualsQueryField.cs" />
+        <Compile Include="Helper\SearchResultItemSettings.cs" />
+        <Compile Include="Helper\SearchResultItemTemplate.cs" />
+        <Compile Include="MetaSearch.cs" />
+        <Compile Include="Helper\QueryHelper\QueryFieldBase.cs" />
+        <Compile Include="Helper\QueryHelper\QueryManager.cs" />
+        <Compile Include="Helper\QueryHelper\ViewOnlyField.cs" />
+    </ItemGroup>
+
+</Project>

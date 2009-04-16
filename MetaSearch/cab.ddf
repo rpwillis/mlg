@@ -1,13 +1,13 @@
 ;
-.Set CabinetNameTemplate=MLG2007.WebParts.MetaSearch.wsp
+.Set CabinetNameTemplate=bin\MLG2007.WebParts.MetaSearch.wsp
 .set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
 .Set CompressionType=MSZIP;** All files are compressed in cabinet files
 .Set UniqueFiles='ON'
 .Set Cabinet=on
 .Set DiskDirectory1=.
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MetaSearch\TEMPLATE\FEATURES\MetaSearch\elementManifest.xml"	"MetaSearch\elementManifest.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MetaSearch\TEMPLATE\FEATURES\MetaSearch\feature.xml"	"MetaSearch\feature.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MetaSearch\TEMPLATE\FEATURES\MetaSearch\MetaSearch.dwp"	"MetaSearch\MetaSearch.dwp"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MetaSearch\manifest.xml"	manifest.xml
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MetaSearch\bin\Release\MLG2007.WebParts.MetaSearch.dll"	MLG2007.WebParts.MetaSearch.dll
+"TEMPLATE\FEATURES\MetaSearch\elementManifest.xml"	"MetaSearch\elementManifest.xml"
+"TEMPLATE\FEATURES\MetaSearch\feature.xml"	"MetaSearch\feature.xml"
+"TEMPLATE\FEATURES\MetaSearch\MetaSearch.dwp"	"MetaSearch\MetaSearch.dwp"
+"manifest.xml"	manifest.xml
+"bin\Release\MLG2007.WebParts.MetaSearch.dll"	MLG2007.WebParts.MetaSearch.dll
 ;*** <the end>

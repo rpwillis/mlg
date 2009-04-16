@@ -86,7 +86,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CreateCabDDF.vbs" />
     <Content Include="manifest.xml" />
     <Content Include="TEMPLATE\FEATURES\MetaSearch\elementManifest.xml" />
     <Content Include="TEMPLATE\FEATURES\MetaSearch\feature.xml" />
@@ -95,11 +94,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>cd "$(ProjectDir)"
-CreateCabDDF.vbs "$(ProjectDir)" "$(ProjectName)" "$(Configuration)"
-
-cd "$(ProjectDir)"
-makecab.exe /F "$(ProjectDir)cab.ddf"</PostBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

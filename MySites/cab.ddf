@@ -1,13 +1,13 @@
 ;
-.Set CabinetNameTemplate=MLG2007.WebParts.MySites.wsp
+.Set CabinetNameTemplate=bin\MLG2007.WebParts.MySites.wsp
 .set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
 .Set CompressionType=MSZIP;** All files are compressed in cabinet files
 .Set UniqueFiles='ON'
 .Set Cabinet=on
 .Set DiskDirectory1=.
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MySites\TEMPLATE\FEATURES\MySites\elementManifest.xml"	"MySites\elementManifest.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MySites\TEMPLATE\FEATURES\MySites\feature.xml"	"MySites\feature.xml"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MySites\TEMPLATE\FEATURES\MySites\MySites.dwp"	"MySites\MySites.dwp"
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MySites\manifest.xml"	manifest.xml
-"C:\MLG\MLG2007_SourceCode\MLG2007.root\MLG2007\MySites\bin\Release\MLG2007.WebParts.MySites.dll"	MLG2007.WebParts.MySites.dll
+"TEMPLATE\FEATURES\MySites\elementManifest.xml"	"MySites\elementManifest.xml"
+"TEMPLATE\FEATURES\MySites\feature.xml"	"MySites\feature.xml"
+"TEMPLATE\FEATURES\MySites\MySites.dwp"	"MySites\MySites.dwp"
+"manifest.xml"	manifest.xml
+"bin\Release\MLG2007.WebParts.MySites.dll"	MLG2007.WebParts.MySites.dll
 ;*** <the end>

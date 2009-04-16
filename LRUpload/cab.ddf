@@ -1,14 +1,14 @@
 ;
-.Set CabinetNameTemplate=MLG2007.WebParts.LRUpload.wsp
+.Set CabinetNameTemplate=bin\MLG2007.WebParts.LRUpload.wsp
 .set DiskDirectoryTemplate=CDROM ; All cabinets go in a single directory
 .Set CompressionType=MSZIP;** All files are compressed in cabinet files
 .Set UniqueFiles='ON'
 .Set Cabinet=on
 .Set DiskDirectory1=.
-"C:\working\lg\LRUpload\Template\FEATURES\LRUpload\elementManifest.xml"	"LRUpload\elementManifest.xml"
-"C:\working\lg\LRUpload\Template\FEATURES\LRUpload\feature.xml"	"LRUpload\feature.xml"
-"C:\working\lg\LRUpload\Template\FEATURES\LRUpload\LRUpload.dwp"	"LRUpload\LRUpload.dwp"
-"C:\working\lg\LRUpload\manifest.xml"	manifest.xml
-"C:\working\lg\LRUpload\bin\Debug\MLG2007.WebParts.LRUpload.dll"	MLG2007.WebParts.LRUpload.dll
-"C:\working\lg\LRUpload\DLLs\Microsoft.LearningComponents.Compression.dll"	Microsoft.LearningComponents.Compression.dll
+"Template\FEATURES\LRUpload\elementManifest.xml"	"LRUpload\elementManifest.xml"
+"Template\FEATURES\LRUpload\feature.xml"	"LRUpload\feature.xml"
+"Template\FEATURES\LRUpload\LRUpload.dwp"	"LRUpload\LRUpload.dwp"
+"manifest.xml"	manifest.xml
+"bin\Release\MLG2007.WebParts.LRUpload.dll"	MLG2007.WebParts.LRUpload.dll
+"..\lib\Microsoft.LearningComponents.Compression.dll"	Microsoft.LearningComponents.Compression.dll
 ;*** <the end>

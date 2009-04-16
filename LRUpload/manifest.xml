@@ -8,7 +8,5 @@
         <SafeControl Assembly="MLG2007.WebParts.LRUpload, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5" Namespace="MLG2007.WebParts.LRUpload" TypeName="LRUpload" Safe="True" />
       </SafeControls>
     </Assembly>
-    <Assembly Location="Microsoft.LearningComponents.Compression.dll" DeploymentTarget="GlobalAssemblyCache" >
-    </Assembly>
   </Assemblies>
 </Solution>

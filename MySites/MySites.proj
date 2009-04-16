@@ -1,0 +1,15 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <Import Project="../MLG.targets"/>
+
+    <PropertyGroup>
+        <RootNamespace>MLG2007.WebParts.MySites</RootNamespace>
+        <AssemblyName>MLG2007.WebParts.MySites</AssemblyName>
+        <AssemblyOriginatorKeyFile>Properties\key.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="MySites.cs" />
+    </ItemGroup>
+
+</Project>
