@@ -5,48 +5,43 @@ using Microsoft.SharePoint;
 
 namespace MLG2007.Helper.UserPreferences
 {
+    /// <summary>Represents a user preference store.</summary>
     public class UserPreferencesStore
     {
         private string userPreferencesStoreUrl;
 
+        /// <summary>The url of the store.</summary>
         public string UserPreferencesStoreUrl
         {
-            get
-            {
-                return userPreferencesStoreUrl;
-            }
-            set
-            {
-                userPreferencesStoreUrl = value;
-            }
+            get { return userPreferencesStoreUrl; }
+            set { userPreferencesStoreUrl = value; }
         }
 
+        /// <summary>Get the preferences for a user.</summary>
+        /// <param name="userName">The name of the user.</param>
+        /// <returns>A <see cref="UserPreferences"/> object.</returns>
         public UserPreferences GetUserPreferences(string userName)
         {
             UserPreferences preferences = null;
-            SPListItem preferencesItem = null;
-            SPUser userObject = null;
-            string userSID = string.Empty;
             try
             {
                 SPSecurity.RunWithElevatedPrivileges(new SPSecurity.CodeToRunElevated(delegate
                 {
-                    userObject = GetUserObject(userName);
+                    SPUser userObject = GetUserObject(userName);
                     if (userObject != null)
                     {
-                        userSID = userObject.Sid.ToString();
-                        preferencesItem = GetPreferencesItem(userSID);
+                        SPListItem preferencesItem = GetPreferencesItem(userObject.Sid.ToString());
                         preferences = new UserPreferences();
-                        if (preferencesItem != null)
+                        if (preferencesItem == null)
+                        {
+                            preferences = SaveUserPreferences(preferences, userName, true);
+                        }
+                        else
                         {
                             preferences.ShowAssignments = bool.Parse(preferencesItem["Show_Assignments"].ToString());
                             preferences.ShowPersonalCalendar = bool.Parse(preferencesItem["Show_Personal_Calendar"].ToString());
                             preferences.WssCalendars = (preferencesItem["WSS_Calendars"] != null) ? preferencesItem["WSS_Calendars"].ToString() : "";
                             preferences.ExchangeCalendars = (preferencesItem["Exchange_Calendars"] != null) ? preferencesItem["Exchange_Calendars"].ToString() : "";
-                        }
-                        else
-                        {
-                            preferences = SaveUserPreferences(preferences, userName, true);
                         }
 
                     }
@@ -60,74 +55,59 @@ namespace MLG2007.Helper.UserPreferences
             }
         }
 
+        /// <summary>Saves the preferences of a user.</summary>
+        /// <param name="preferencesObject">The preferences to save.</param>
+        /// <param name="userName">The user name of the user.</param>
+        /// <param name="IsFirstTime">Whether this is the first time or not.</param>
+        /// <returns></returns>
         public UserPreferences SaveUserPreferences(UserPreferences preferencesObject, string userName, bool IsFirstTime)
         {
 
-            string listName, siteUrl;
-            SPSite siteCollection = null;
-            SPWeb web;
-            SPList list;
-            SPQuery query;
-            SPListItemCollection preferencesListItems;
-            UserPreferences preferences = null;
-            string userSID = string.Empty;
-            SPUser userObject = null;
-            SPListItem preferencesItem;
             try
             {
-
-
                 SPSecurity.RunWithElevatedPrivileges(new SPSecurity.CodeToRunElevated(delegate
                 {
-                    userObject = GetUserObject(userName);
-                    userSID = userObject.Sid;
-                    siteUrl = ParseSiteUrl(userPreferencesStoreUrl, out listName);
-                    siteCollection = new SPSite(siteUrl);
-                    web = siteCollection.OpenWeb();
-                    web.AllowUnsafeUpdates = true;
-                    list = web.Lists[listName];
-                    if (!IsFirstTime)
+                    SPUser user = GetUserObject(userName);
+                    string userSID = user.Sid;
+                    string listName;
+                    string siteUrl = ParseSiteUrl(userPreferencesStoreUrl, out listName);
+                    using (SPSite siteCollection = new SPSite(siteUrl))
                     {
-                        query = new SPQuery();
-                        query.Query += "<Where><Eq><FieldRef Name=\"User_SID\" /><Value Type=\"Text\">" + userSID + "</Value></Eq></Where>";
-                        preferencesListItems = list.GetItems(query);
-                        if (preferencesListItems.Count > 0)
+                        using (SPWeb web = siteCollection.OpenWeb())
                         {
+                            web.AllowUnsafeUpdates = true;
+                            SPList list = web.Lists[listName];
 
-                            preferencesItem = preferencesListItems[0];
+                            SPListItem preferencesItem = null;
+                            if (IsFirstTime == false)
+                            {
+                                SPQuery query = new SPQuery();
+                                query.Query += "<Where><Eq><FieldRef Name=\"User_SID\" /><Value Type=\"Text\">" + userSID + "</Value></Eq></Where>";
+                                SPListItemCollection preferencesListItems = list.GetItems(query);
+                                if (preferencesListItems.Count > 0)
+                                {
+                                    preferencesItem = preferencesListItems[0];
+                                }
+                            }
+
+                            if (preferencesItem == null)
+                            {
+                                // Does not already exist so add it to the list.
+                                preferencesItem = list.Items.Add();
+                                preferencesItem["User_SID"] = userSID;
+                            }
+
                             preferencesItem["Show_Assignments"] = preferencesObject.ShowAssignments;
                             preferencesItem["Show_Personal_Calendar"] = preferencesObject.ShowPersonalCalendar;
                             preferencesItem["WSS_Calendars"] = preferencesObject.WssCalendars;
                             preferencesItem["Exchange_Calendars"] = preferencesObject.ExchangeCalendars;
                             preferencesItem.Update();
                         }
-                        else
-                        {
-                            preferencesItem = list.Items.Add();
-                            preferencesItem["Show_Assignments"] = preferencesObject.ShowAssignments;
-                            preferencesItem["Show_Personal_Calendar"] = preferencesObject.ShowPersonalCalendar;
-                            preferencesItem["WSS_Calendars"] = preferencesObject.WssCalendars;
-                            preferencesItem["Exchange_Calendars"] = preferencesObject.ExchangeCalendars;
-                            preferencesItem["User_SID"] = userSID;
-                            preferencesItem.Update();
-                        }
                     }
-                    else
-                    {
-                        preferencesItem = list.Items.Add();
-                        preferencesItem["Show_Assignments"] = preferencesObject.ShowAssignments;
-                        preferencesItem["Show_Personal_Calendar"] = preferencesObject.ShowPersonalCalendar;
-                        preferencesItem["WSS_Calendars"] = preferencesObject.WssCalendars;
-                        preferencesItem["Exchange_Calendars"] = preferencesObject.ExchangeCalendars;
-                        preferencesItem["User_SID"] = userSID;
-                        preferencesItem.Update();
-                    }
-                    web.Update();
                 }));
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                //siteCollection.Dispose();
                 return null;
             }
             return preferencesObject;
@@ -135,63 +115,61 @@ namespace MLG2007.Helper.UserPreferences
 
         private SPListItem GetPreferencesItem(string userSID)
         {
-            string listName, siteUrl;
-            SPSite siteCollection = null;
-            SPWeb web;
-            SPList list;
-            SPQuery query;
-            SPListItemCollection preferencesListItems = null;
+            SPListItem item = null;
 
-            try
-            {
-                SPSecurity.RunWithElevatedPrivileges(new SPSecurity.CodeToRunElevated(delegate
+            SPSecurity.RunWithElevatedPrivileges(new SPSecurity.CodeToRunElevated(delegate
+           {
+               SPQuery query = new SPQuery();
+               string listName;
+               string siteUrl = ParseSiteUrl(userPreferencesStoreUrl, out listName);
+               using (SPSite siteCollection = new SPSite(siteUrl))
                {
-                   query = new SPQuery();
-                   siteUrl = ParseSiteUrl(userPreferencesStoreUrl, out listName);
-                   siteCollection = new SPSite(siteUrl);
-                   web = siteCollection.OpenWeb();
-                   list = web.Lists[listName];
-                   query.Query += "<Where><Eq><FieldRef Name=\"User_SID\" /><Value Type=\"Text\">" + userSID + "</Value></Eq></Where>";
-                   preferencesListItems = list.GetItems(query);
-               }));
-                if (preferencesListItems.Count > 0)
-                    return preferencesListItems[0];
-                else
-                    return null;
-            }
-            catch (Exception exception)
-            {
-                siteCollection.Dispose();
-                return null;
-            }
+                   using (SPWeb web = siteCollection.OpenWeb())
+                   {
+                       try
+                       {
+                           SPList list = web.Lists[listName];
+                           query.Query += "<Where><Eq><FieldRef Name=\"User_SID\" /><Value Type=\"Text\">" + userSID + "</Value></Eq></Where>";
+                           SPListItemCollection preferencesListItems = list.GetItems(query);
+                           if (preferencesListItems.Count > 0)
+                           {
+                               item = preferencesListItems[0];
+                           }
+                       }
+                       catch (ArgumentException)
+                       {
+                           //List does not exist
+                           item = null;
+                       }
+                   }
+               }
+           }));
+
+            return item;
         }
 
         private SPUser GetUserObject(string userName)
         {
-            SPWeb webObject;
-            SPUser userobject;
             try
             {
-                webObject = SPContext.Current.Site.RootWeb;
-                userobject = webObject.AllUsers[userName];
-                //userobject = webObject.Users[userName];
-
-                if (userobject != null)
-                    return userobject;
-                else
-                    return null;
+                // TODO - Handle invalid username gracefully
+                return SPContext.Current.Site.RootWeb.AllUsers[userName];
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return null;
             }
 
         }
 
+        /// <summary>Parses the site url</summary>
+        /// <param name="listUrl">The url of the list.</param>
+        /// <param name="listName">The name of the list. An output parameter.</param>
+        /// <returns>The parsed url.</returns>
         public string ParseSiteUrl(string listUrl, out string listName)
         {
             string m_listUrl, m_SiteUrl, m_listName;
-            int m_LastIndex, m_listCharLength, m_urlength;
+            int m_LastIndex, m_urlength;
             System.Uri url = new Uri(new Uri(System.Web.HttpContext.Current.Request.Url.ToString()), listUrl);
 
             m_listUrl = url.OriginalString;
@@ -214,37 +192,47 @@ namespace MLG2007.Helper.UserPreferences
             return m_SiteUrl;
         }
 
+        /// <summary>Determines if the user preferences list exists.</summary>
+        /// <param name="userPerferencesStoreUrl">The url of the list.</param>
+        /// <returns>True if the list exists.</returns>
         public bool IsUserPerefencesExist(string userPerferencesStoreUrl)
         {
-            SPSite userPerferencesStoreSiteCollection = null;
-            SPWeb userPerferencesStoreWeb;
-            SPList userPerferencesStore = null;
+            bool storeExists = false;
 
-            string m_siteUrl, m_ListName;
             try
             {
                 if (userPerferencesStoreUrl.Length > 0)
                 {
-                    SPSecurity.RunWithElevatedPrivileges(new SPSecurity.CodeToRunElevated(delegate
-              {
-                  m_siteUrl = ParseSiteUrl(userPerferencesStoreUrl, out m_ListName);
+                    SPSecurity.RunWithElevatedPrivileges(
+                            new SPSecurity.CodeToRunElevated(
+                                delegate
+                                {
+                                    string listName;
+                                    string url = ParseSiteUrl(userPerferencesStoreUrl, out listName);
 
-                  userPerferencesStoreSiteCollection = new SPSite(m_siteUrl);
-                  userPerferencesStoreWeb = userPerferencesStoreSiteCollection.OpenWeb();
-                  userPerferencesStore = userPerferencesStoreWeb.Lists[m_ListName.Replace("%20", " ")];
-              }));
-                    if (userPerferencesStore != null)
-                        return true;
+                                    using (SPSite userPerferencesStoreSiteCollection = new SPSite(url))
+                                    {
+                                        using (SPWeb userPerferencesStoreWeb = userPerferencesStoreSiteCollection.OpenWeb())
+                                        {
+                                            try
+                                            {
+                                                storeExists = (userPerferencesStoreWeb.Lists[listName.Replace("%20", " ")] != null);
+                                            }
+                                            catch (ArgumentException)
+                                            {
+                                                storeExists = false;
+                                            }
+                                        }
+                                    }
+                                }
+                              )
+                            );
                 }
-                return false;
+                return storeExists;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return false;
-            }
-            finally
-            {
-                //userPerferencesStoreSiteCollection.Dispose();
             }
         }
     }
