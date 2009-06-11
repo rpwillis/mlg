@@ -50,11 +50,11 @@ namespace MLG2007.Helper.ListSearch
         private string pageinfo = "";
         private string orderby = "";
         private string dnsName = "";
-        private System.Net.NetworkCredential userCredential;
 
         // Get resource manager
         private ResourceManager rm = new ResourceManager("ListSearch.Strings", Assembly.GetExecutingAssembly());
 
+        /// <summary>Initializes a new instance of <see cref="ListData"/>.</summary>
         public ListData()
         {
             dt = new DataTable("Data");
@@ -65,235 +65,141 @@ namespace MLG2007.Helper.ListSearch
             selectFieldTypes = new ArrayList();
         }
 
+        /// <summary>The info for the next page.</summary>
         public string NextPageInfo
         {
-            get
-            {
-                return nextpage;
-            }
+            get { return nextpage; }
         }
 
+        /// <summary>The info for the previous page.</summary>
         public string PrevPageInfo
         {
-            get
-            {
-                return prevpage;
-            }
-
+            get { return prevpage; }
         }
 
+        /// <summary>The page info.</summary>
         public string PageInfo
         {
-            get
-            {
-                return pageinfo;
-            }
-            set
-            {
-                pageinfo = value;
-            }
+            get { return pageinfo; }
+            set { pageinfo = value; }
         }
 
+        /// <summary>Whether to output debug messages.</summary>
         public bool Debug
         {
-            get
-            {
-                return debug;
-            }
-            set
-            {
-                debug = value;
-            }
+            get { return debug; }
+            set { debug = value; }
         }
 
+        /// <summary>Not used.</summary>
         public string DebugXML
         {
-            get
-            {
-                return xml;
-            }
-            set
-            {
-                xml = value;
-            }
+            get { return xml; }
+            set { xml = value; }
         }
 
+        /// <summary>The order by statement.</summary>
         public string OrderBy
         {
-            get
-            {
-                return orderby;
-            }
-            set
-            {
-                orderby = value;
-            }
+            get { return orderby; }
+            set { orderby = value; }
         }
 
+        /// <summary>The field types to select.</summary>
         public ArrayList SelectFieldTypes
         {
-            get
-            {
-                return selectFieldTypes;
-            }
-            set
-            {
-                selectFieldTypes = value;
-            }
+            get { return selectFieldTypes; }
+            set { selectFieldTypes = value; }
         }
 
+        /// <summary>The conditions to use.</summary>
         public ArrayList Conditions
         {
-            get
-            {
-                return conditions;
-            }
-            set
-            {
-                conditions = value;
-            }
+            get { return conditions; }
+            set { conditions = value; }
         }
 
+        /// <summary>The values.</summary>
         public ArrayList Values
         {
-            get
-            {
-                return values;
-            }
-            set
-            {
-                values = value;
-            }
+            get { return values; }
+            set { values = value; }
         }
 
+        /// <summary>The select fields.</summary>
         public ArrayList SelectFields
         {
-            get
-            {
-                return selectFields;
-            }
-            set
-            {
-                selectFields = value;
-            }
+            get { return selectFields; }
+            set { selectFields = value; }
         }
 
+        /// <summary>Whether to recurse sub folders or not.</summary>
         public bool RecurseSubFolders
         {
-            get
-            {
-                return recurseSubFolders;
-            }
-            set
-            {
-                recurseSubFolders = value;
-            }
+            get { return recurseSubFolders; }
+            set { recurseSubFolders = value; }
         }
 
+        /// <summary>Whether an error occurred.</summary>
         public bool HasError
         {
-            get
-            {
-                return hasError;
-            }
-            set
-            {
-                hasError = value;
-            }
+            get { return hasError; }
+            set { hasError = value; }
         }
 
+        /// <summary>Any error message.</summary>
         public string ErrorMessage
         {
-            get
-            {
-                return errorMessage;
-            }
-            set
-            {
-                errorMessage = value;
-            }
+            get { return errorMessage; }
+            set { errorMessage = value; }
         }
+        /// <summary>The url to use.</summary>
         public string URL
         {
-            get
-            {
-                return url;
-            }
-            set
-            {
-                url = value;
-            }
+            get { return url; }
+            set { url = value; }
         }
 
+        /// <summary>The name of the list.</summary>
         public string ListName
         {
-            get
-            {
-                return listName;
-            }
-            set
-            {
-                listName = value;
-            }
+            get { return listName; }
+            set { listName = value; }
         }
+
+        /// <summary>The maximum number of rows to return.</summary>
         public int RowLimit
         {
-            get
-            {
-                return rowLimit;
-            }
-            set
-            {
-                rowLimit = value;
-            }
+            get { return rowLimit; }
+            set { rowLimit = value; }
         }
 
+        /// <summary>The user to connect as.</summary>
         public string UserName
         {
-            get
-            {
-                return username;
-            }
-            set
-            {
-                username = value;
-            }
+            get { return username; }
+            set { username = value; }
         }
 
+        /// <summary>The password to connect with.</summary>
         public string Password
         {
-            get
-            {
-                return password;
-            }
-            set
-            {
-                password = value;
-            }
+            get { return password; }
+            set { password = value; }
         }
 
+        /// <summary>The domain the user is in.</summary>
         public string Domain
         {
-            get
-            {
-                return domain;
-            }
-            set
-            {
-                domain = value;
-            }
+            get { return domain; }
+            set { domain = value; }
         }
+
+        /// <summary>The root of the url to use.</summary>
         public string DNSName
         {
-            get
-            {
-                return dnsName;
-            }
-
-            set
-            {
-                dnsName = value;
-            }
+            get { return dnsName; }
+            set { dnsName = value; }
         }
 
         private string GetWebServiceUrl(string serverName, string url)
@@ -321,6 +227,8 @@ namespace MLG2007.Helper.ListSearch
                                 }));
 
         }
+
+        /// <summary>Retrieves the data.</summary>
         public void GetData()
         {
             edu.demo.portal.Lists listService = new edu.demo.portal.Lists();
@@ -331,10 +239,10 @@ namespace MLG2007.Helper.ListSearch
                 listService.Credentials = System.Net.CredentialCache.DefaultCredentials;
             listService.Url = GetWebServiceUrl(this.DNSName, this.URL);
 
-            System.Xml.XmlDocument xmlDoc = new System.Xml.XmlDocument();
-            System.Xml.XmlElement query = xmlDoc.CreateElement("Query");
-            System.Xml.XmlElement viewFields = xmlDoc.CreateElement("ViewFields");
-            System.Xml.XmlElement queryOptions = xmlDoc.CreateElement("QueryOptions");
+            XmlDocument xmlDoc = new XmlDocument();
+            XmlElement query = xmlDoc.CreateElement("Query");
+            XmlElement viewFields = xmlDoc.CreateElement("ViewFields");
+            XmlElement queryOptions = xmlDoc.CreateElement("QueryOptions");
             int i = 0;
 
             if (SelectFields.Count == 0)
@@ -399,21 +307,17 @@ namespace MLG2007.Helper.ListSearch
             //Run the query
             try
             {
-                //get the webID
-                Microsoft.SharePoint.SPSite currentSite = new Microsoft.SharePoint.SPSite(URL);
-                Microsoft.SharePoint.SPWeb currenrWeb = currentSite.OpenWeb();
-
-                System.Xml.XmlNode nodeListItems = listService.GetListItems(ListName, viewName, query, viewFields, RowLimit.ToString(), queryOptions, currenrWeb.ID.ToString());
+                XmlNode nodeListItems = listService.GetListItems(ListName, viewName, query, viewFields, RowLimit.ToString(), queryOptions, WebId());
                 if (debug)
                     DebugXML = nodeListItems.OuterXml;
                 // Loop through each node in the XML response and display each item.
                 System.Data.DataRow dr;
-                foreach (System.Xml.XmlNode listItem in nodeListItems)
+                foreach (XmlNode listItem in nodeListItems)
                     if (listItem.HasChildNodes)
                     {
                         if (listItem.Attributes["ListItemCollectionPositionNext"] != null)
                             nextpage = listItem.Attributes["ListItemCollectionPositionNext"].Value;
-                        foreach (System.Xml.XmlNode nd in listItem.ChildNodes)
+                        foreach (XmlNode nd in listItem.ChildNodes)
                             if (nd.Attributes != null)
                             {
                                 dr = dt.NewRow();
@@ -437,6 +341,8 @@ namespace MLG2007.Helper.ListSearch
             }
         }
 
+        /// <summary>Builds the query.</summary>
+        /// <returns>The query.</returns>
         virtual protected string BuildQuery()
         {
             string query = "";
@@ -450,7 +356,6 @@ namespace MLG2007.Helper.ListSearch
             return query;
         }
 
-
         private void AndTerms(ref ArrayList terms, ref string query)
         {
             if (terms.Count == 0)
@@ -462,6 +367,19 @@ namespace MLG2007.Helper.ListSearch
             terms.RemoveAt(terms.Count - 1);
             AndTerms(ref terms, ref query);
             return;
+        }
+
+        /// <summary>Retrieves the ID of the site.</summary>
+        /// <returns>The ID of the site.</returns>
+        string WebId()
+        {
+            using (Microsoft.SharePoint.SPSite site = new Microsoft.SharePoint.SPSite(URL))
+            {
+                using (Microsoft.SharePoint.SPWeb web = site.OpenWeb())
+                {
+                    return web.ID.ToString();
+                }
+            }
         }
 
     }
