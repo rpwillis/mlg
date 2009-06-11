@@ -10,6 +10,7 @@ using System.Data;
 
 namespace MLG2007.Helper.SharePointLearningKit
 {
+    /// <summary>A collection of <see cref="Appointments"/> based on SLK assignments.</summary>
     public class SLKEvents : Appointments
     {
         #region Private Variables
@@ -18,95 +19,58 @@ namespace MLG2007.Helper.SharePointLearningKit
         private DateTime endDate;
         private bool hasError;
         private string errorDesc;
-        private bool hdMode;
         private AssignmentMode assignmentMode;
         private string classesUrl;
         #endregion
 
         #region Public Properties
+        /// <summary>The user's username.</summary>
         public string Username
         {
-            set
-            {
-                userName = value;
-            }
-            get
-            {
-                return userName;
-            }
+            get { return userName; }
+            set { userName = value; }
         }
 
+        /// <summary>The start of the period to get assignments for.</summary>
         public DateTime StartDate
         {
-            set
-            {
-                startDate = value;
-            }
-            get
-            {
-                return startDate;
-            }
+            get { return startDate; }
+            set { startDate = value; }
         }
 
+        /// <summary>The end of the period to get assignments for.</summary>
         public DateTime EndDate
         {
-            set
-            {
-                endDate = value;
-            }
-            get
-            {
-                return endDate;
-            }
+            get { return endDate; }
+            set { endDate = value; }
         }
 
+        /// <summary>Whether there was an error retrieving assignments.</summary>
         public bool HasError
         {
-            set
-            {
-                hasError = value;
-            }
-            get
-            {
-                return hasError;
-            }
+            get { return hasError; }
+            set { hasError = value; }
         }
 
+        /// <summary>The description of any error.</summary>
         public string ErrorDescription
         {
-            set
-            {
-                errorDesc = value;
-            }
-            get
-            {
-                return errorDesc;
-            }
+            get { return errorDesc; }
+            set { errorDesc = value; }
         }
 
+        /// <summary>The mode to retrieve assignments as.</summary>
         public AssignmentMode Mode
         {
-            get
-            {
-                return assignmentMode;
-            }
-
-            set
-            {
-                assignmentMode = value;
-            }
+            get { return assignmentMode; }
+            set { assignmentMode = value; }
         }
 
+        /// <summary>The url of the classes site.</summary>
         public string ClassesUrl
         {
-            get
-            {
-                return classesUrl;
-            }
-            set
-            {
-                classesUrl = value;
-            }
+            get { return classesUrl; }
+            set { classesUrl = value; }
         }
         #endregion
 
@@ -117,9 +81,9 @@ namespace MLG2007.Helper.SharePointLearningKit
         /// </summary>
         public SLKEvents()
         {
-
         }
 
+        /// <summary>Retrieves the data.</summary>
         public void GetData()
         {
             //Getting the SLKstore object
@@ -145,27 +109,27 @@ namespace MLG2007.Helper.SharePointLearningKit
         /// <returns>SLKStore Object stamped with the currently logged user</returns>
         private SlkStore GetSLKStore()
         {
-            //Declaration
-            SPSite _site1TempObject, _site2TempObject;
-            SPWeb _web1TempObject, _web2TempObject;
-            SPUser _userObject;
-            SlkStore _slkStoreObject;
-
             try
             {
                 //Getting User Object
-                _site1TempObject = new SPSite(classesUrl);
-                _web1TempObject = _site1TempObject.RootWeb;
-                _userObject = _web1TempObject.AllUsers[Username];
+                using (SPSite siteForUser = new SPSite(classesUrl))
+                {
+                    using (SPWeb webForUser = siteForUser.RootWeb)
+                    {
+                        //TODO: Does not handle invalid users gracefully.
+                        SPUserToken token = webForUser.AllUsers[Username].UserToken;
 
-                //ToDo: Read about how to optimizie the performance.
-                //Getting the SLKStore object
-                _site2TempObject = new SPSite(classesUrl, _userObject.UserToken);
-                _web2TempObject = _site2TempObject.OpenWeb();
-                _slkStoreObject = SlkStore.GetStore(_web2TempObject);
-                return _slkStoreObject;
+                        using (SPSite site = new SPSite(classesUrl ,token))
+                        {
+                            using (SPWeb web = site.OpenWeb())
+                            {
+                                return SlkStore.GetStore(web);
+                            }
+                        }
+                    }
+
+                }
             }
-
             catch (Exception exception)
             {
                 hasError = true;
@@ -277,12 +241,12 @@ namespace MLG2007.Helper.SharePointLearningKit
                     {
                         //Console.WriteLine(dr[AssignmentListForInstructors.AssignmentTitle].ToString());
                         _appointmentDataRow = this.Appointment.NewAppointmentRow();
-                        _appointmentDataRow.Title = (_rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle] != null) ? _rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle].ToString() : "";
-                        _assignmentItemIdentifier = (LearningStoreItemIdentifier)((_rowTempObject[LearnerAssignmentListForLearners.LearnerAssignmentId] != null) ? _rowTempObject[LearnerAssignmentListForLearners.LearnerAssignmentId] : "");
+                        _appointmentDataRow.Title = (_rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle] != null) ? _rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle].ToString() : string.Empty;
+                        _assignmentItemIdentifier = (LearningStoreItemIdentifier)((_rowTempObject[LearnerAssignmentListForLearners.LearnerAssignmentId] != null) ? _rowTempObject[LearnerAssignmentListForLearners.LearnerAssignmentId] : string.Empty);
                         _appointmentDataRow.ID = _assignmentItemIdentifier.GetKey().ToString();
                         _appointmentDataRow.BeginDate = (DateTime)((_rowTempObject[LearnerAssignmentListForLearners.AssignmentDueDate] != null) ? _rowTempObject[LearnerAssignmentListForLearners.AssignmentDueDate] : DateTime.MinValue);
                         _appointmentDataRow.EndDate = (DateTime)((_rowTempObject[LearnerAssignmentListForLearners.AssignmentDueDate] != null) ? _rowTempObject[LearnerAssignmentListForLearners.AssignmentDueDate] : DateTime.MinValue);
-                        _appointmentDataRow.Subject = (_rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle] != null) ? _rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle].ToString() : "";
+                        _appointmentDataRow.Subject = (_rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle] != null) ? _rowTempObject[LearnerAssignmentListForLearners.AssignmentTitle].ToString() : string.Empty;
                         _appointmentDataRow.Source = "ClassServerAssignment";
                         _appointmentDataRow.URL = "/_layouts/1033/LgUtilities/showSlkdetails.aspx?assignmentID=" + _appointmentDataRow.ID + "&UT=0" + "&classesURL=" + ClassesUrl + "&userName=" + userName.Replace(@"\", @"\\");
                         this.Appointment.AddAppointmentRow(_appointmentDataRow);
@@ -296,6 +260,9 @@ namespace MLG2007.Helper.SharePointLearningKit
             }
         }
 
+        /// <summary>Returns an assignment for a learner.</summary>
+        /// <param name="assignmentId">The is of the assignment.</param>
+        /// <returns>An <see cref="Assignment"/>.</returns>
         public Assignment GetAssignmentByIdForLearners(long assignmentId)
         {
             LearnerAssignmentProperties assignmentsProperties;
@@ -318,10 +285,10 @@ namespace MLG2007.Helper.SharePointLearningKit
                                         assignmentObject.Description = assignmentsProperties.Description;
                                         assignmentObject.Title = assignmentsProperties.Title;
                                         assignmentObject.DueDate = (DateTime)((assignmentsProperties.DueDate != null) ? assignmentsProperties.DueDate : DateTime.MinValue);
-                                        assignmentObject.CreateAt = (DateTime)((assignmentsProperties.StartDate != null) ? assignmentsProperties.StartDate : DateTime.MinValue);
+                                        assignmentObject.CreateAt = assignmentsProperties.StartDate;
                                         assignmentObject.CreatedBy = assignmentsProperties.CreatedByName;
                                         className = GetClassName(assignmentsProperties.SPSiteGuid, assignmentsProperties.SPWebGuid);
-                                        assignmentObject.SchoolClass = (className != null) ? className : "";
+                                        assignmentObject.SchoolClass = (className != null) ? className : string.Empty;
                                         assignmentObject.Status = GetAssignmentStatus(assignmentsProperties.Status);
                                         //assignmentObject.Score = assignmentsProperties.sc
                                     }
@@ -337,6 +304,9 @@ namespace MLG2007.Helper.SharePointLearningKit
             return assignmentObject;
         }
 
+        /// <summary>Returns an assignment for an instructor.</summary>
+        /// <param name="assignmentId">The is of the assignment.</param>
+        /// <returns>An <see cref="Assignment"/>.</returns>
         public Assignment GetAssignmentsByIdForInstructor(long assignmentId)
         {
             AssignmentProperties assignmentsProperties;
@@ -357,10 +327,10 @@ namespace MLG2007.Helper.SharePointLearningKit
                     assignmentObject.Description = assignmentsProperties.Description;
                     assignmentObject.Title = assignmentsProperties.Title;
                     assignmentObject.DueDate = (DateTime)((assignmentsProperties.DueDate != null) ? assignmentsProperties.DueDate : DateTime.MinValue);
-                    assignmentObject.CreateAt = (DateTime)((assignmentsProperties.StartDate != null) ? assignmentsProperties.StartDate : DateTime.MinValue);
+                    assignmentObject.CreateAt = assignmentsProperties.StartDate;
                     assignmentObject.Instructors = assignmentsProperties.Instructors;
                     className = GetClassName(assignmentsProperties.SPSiteGuid, assignmentsProperties.SPWebGuid);
-                    assignmentObject.SchoolClass = (className != null) ? className : "";
+                    assignmentObject.SchoolClass = (className != null) ? className : string.Empty;
 
                     //assignmentObject.Status = GetAssignmentStatus(assignmentsProperties.Status);
                 }
@@ -374,23 +344,23 @@ namespace MLG2007.Helper.SharePointLearningKit
             return assignmentObject;
         }
 
-        private string GetClassName(Guid siteCollectionGuid, Guid webGuid)
+        private static string GetClassName(Guid siteCollectionGuid, Guid webGuid)
         {
-            SPSite siteCollection;
-            SPWeb classWeb;
-            string classWebName = null;
             try
             {
-                siteCollection = new SPSite(siteCollectionGuid);
-                classWeb = siteCollection.OpenWeb(webGuid);
-                classWebName = classWeb.Title;
+                using (SPSite siteCollection = new SPSite(siteCollectionGuid))
+                {
+                    using (SPWeb classWeb = siteCollection.OpenWeb(webGuid))
+                    {
+                        return classWeb.Title;
+                    }
+                }
             }
             catch (Exception exception)
             {
-                classWebName = exception.Message;
+                return exception.Message;
             }
 
-            return classWebName;
 
         }
 
