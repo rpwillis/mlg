@@ -222,7 +222,28 @@
   <data name="UnitName" xml:space="preserve">
     <value>Unit Name</value>
   </data>
+  <data name="PermissionProperty" xml:space="preserve">
+    <value>Permission</value>
+  </data>
+  <data name="PermissionDescription" xml:space="preserve">
+    <value>The permission to get sites for.</value>
+  </data>
+  <data name="IncludeDescriptionProperty" xml:space="preserve">
+    <value>Include Description</value>
+  </data>
+  <data name="IncludeDescriptionDescription" xml:space="preserve">
+    <value>Whether to include the description in the list.</value>
+  </data>
+  <data name="PermissionProperty" xml:space="preserve">
+    <value>Permission</value>
+  </data>
   <data name="VeiwSitesForUser" xml:space="preserve">
     <value>Viewing {0} for the user {1}</value>
+  </data>
+  <data name="PermissionNotExist" xml:space="preserve">
+      <value>The permission {0} does not exist in the site collection.</value>
+  </data>
+  <data name="NoSiteDescription" xml:space="preserve">
+      <value>No site description.</value>
   </data>
 </root>

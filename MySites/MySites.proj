@@ -12,4 +12,8 @@
         <Compile Include="MySites.cs" />
     </ItemGroup>
 
+    <Target Name="Test" DependsOnTargets="Build">
+        <Copy SourceFiles="bin\$(AssemblyName).wsp" DestinationFolder="\\moss\transfer\release\WebParts\Solutions" SkipUnchangedFiles="true"/>
+    </Target>
+
 </Project>
