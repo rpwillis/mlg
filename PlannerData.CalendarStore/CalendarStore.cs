@@ -6,179 +6,153 @@ using System.Web;
 
 namespace MLG2007.Helper.CalendarStore
 {
+    /// <summary>A calendar store.</summary>
     public class CalendarStore
     {
         #region private fields
         private string m_calendarsListURL;
         private string m_calendarName;
-        private Calendars m_calendarsDS;
         #endregion
 
         #region Public Properties
+        /// <summary>The url of the calendar list.</summary>
         public string CalendarListURL
         {
-            get
-            {
-                return m_calendarsListURL.Trim();
-            }
-            set
-            {
-                m_calendarsListURL = value.Trim();
-            }
+            get { return m_calendarsListURL.Trim(); }
+            set { m_calendarsListURL = value.Trim(); }
         }
+
+        /// <summary>The name of the calendar list.</summary>
         public string CalendarListName
         {
-            get
-            {
-                return m_calendarName;
-            }
-            set
-            {
-                m_calendarName = value;
-            }
+            get { return m_calendarName; }
+            set { m_calendarName = value; }
         }
 
         #endregion
 
+        /// <summary>Retrieve a Calendar by id.</summary>
+        /// <param name="calendarID">The id of the calendar.</param>
+        /// <returns>A <see cref="Calendar"/>.</returns>
         public Calendar GetCalendarbyID(int calendarID)
         {
-            SPSite m_calendarListSiteCollection;
-            SPWeb m_calendarListWeb;
-            SPList m_calendarList;
-            SPListItem m_calendarListItem;
-            string m_siteUrl, m_ListName;
-            Calendar m_calendar = null;
-
             try
             {
-                m_siteUrl = ParseSiteUrl(m_calendarsListURL, out m_ListName);
+                string listName;
+                string url = ParseSiteUrl(m_calendarsListURL, out listName);
 
-                m_calendarListSiteCollection = new SPSite(m_siteUrl);
-                m_calendarListWeb = m_calendarListSiteCollection.OpenWeb();
-                m_calendarList = m_calendarListWeb.Lists[m_ListName.Replace("%20"," ")];
-
-                m_calendarListItem = m_calendarList.Items.GetItemById(calendarID);
-                if (m_calendarListItem != null)
+                using (SPSite site = new SPSite(url))
                 {
-                    m_calendar = new Calendar();
-                    m_calendar.CalendarDescription = (m_calendarListItem["Description"] != null) ? m_calendarListItem["Description"].ToString() : string.Empty;
-                    m_calendar.CalendarName = (m_calendarListItem["Title"] != null) ? m_calendarListItem["Title"].ToString() : string.Empty;
-                    m_calendar.CalendarUrl = (m_calendarListItem["URL"] != null) ? m_calendarListItem["URL"].ToString() : string.Empty;
-                    m_calendar.CalendarId = int.Parse(m_calendarListItem["ID"].ToString());
-                    m_calendar.CalendarRole = (m_calendarListItem["Role"] != null) ? m_calendarListItem["URL"].ToString() : string.Empty;
-                    m_calendar.CalendarType = (m_calendarListItem["Source"].ToString() != "SharePoint") ? CalendarType.Exchange : CalendarType.SharePoint;
+                    using (SPWeb m_calendarListWeb = site.OpenWeb())
+                    {
+                        SPList list = m_calendarListWeb.Lists[listName.Replace("%20"," ")];
+
+                        SPListItem calendarItem = list.Items.GetItemById(calendarID);
+                        if (calendarItem != null)
+                        {
+                            return CalendarFromListItem(calendarItem, true);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
                 }
-                return m_calendar;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return null;
             }
         }
 
+        /// <summary>Retrieves a collection of calendars by role.</summary>
+        /// <param name="roleName">The name of the role.</param>
+        /// <returns>A collection of calendars.</returns>
         public CalendarCollection GetCalendarByRole(string roleName)
         {
-            SPSite m_calendarListSiteCollection;
-            SPWeb m_calendarListWeb;
-            SPList m_calendarList;
-            SPListItem m_calendarListItem;
-            string m_siteUrl, m_ListName;
-            Calendar m_calendar = null;
-            CalendarCollection m_calendarCollection = null;
-            SPQuery m_query;
-            SPListItemCollection m_calendarListItems;
+            CalendarCollection collection = new CalendarCollection();
 
-            m_siteUrl = ParseSiteUrl(m_calendarsListURL, out m_ListName);
+            string listName;
+            string url = ParseSiteUrl(m_calendarsListURL, out listName);
 
-            m_calendarListSiteCollection = new SPSite(m_siteUrl);
-            m_calendarListWeb = m_calendarListSiteCollection.OpenWeb();
-            m_calendarList =  m_calendarListWeb.Lists[HttpContext.Current.Server.HtmlDecode ( m_ListName)];
-            m_query = new SPQuery();
-            //            query.Query = "<Where><Gt><FieldRef Name='Stock'/><Value Type='Number'>100</Value></Gt></Where>"; 
-
-            m_query.Query = "<Where><Contains><FieldRef Name='Role'/><Value Type='Text'>"+ roleName +"</Value></Contains></Where>";
-            m_calendarListItems = m_calendarList.GetItems(m_query);
-
-            if (m_calendarListItems.Count >0)
+            using (SPSite site = new SPSite(url))
             {
-                m_calendarCollection = new CalendarCollection ();
-                foreach (SPListItem item in m_calendarListItems)
+                using (SPWeb web = site.OpenWeb())
                 {
-                    m_calendar = new Calendar();
-                    m_calendar.CalendarDescription = (item["Description"] != null) ? item["Description"].ToString() : string.Empty;
-                    m_calendar.CalendarName = (item["Title"] != null) ? item["Title"].ToString() : string.Empty;
-                    m_calendar.CalendarUrl = (item["URL"] != null) ? item["URL"].ToString() : string.Empty;
-                    m_calendar.CalendarId = int.Parse(item["ID"].ToString());
-                    m_calendar.CalendarRole = (item["Role"] != null) ? item["Role"].ToString() : string.Empty;
-                    m_calendar.IsUserSelected = false;
-                    m_calendar.CalendarType = (item["Source"].ToString () != "SharePoint") ? CalendarType.Exchange : CalendarType.SharePoint;
-                    m_calendarCollection.Add(m_calendar);
-                }                
+                    SPList list =  web.Lists[HttpContext.Current.Server.HtmlDecode ( listName)];
+                    SPQuery query = new SPQuery();
+                    query.Query = "<Where><Contains><FieldRef Name='Role'/><Value Type='Text'>"+ roleName +"</Value></Contains></Where>";
+                    SPListItemCollection items = list.GetItems(query);
+
+                    if (items.Count >0)
+                    {
+                        foreach (SPListItem item in items)
+                        {
+                            Calendar calendar = CalendarFromListItem(item, true);
+                            calendar.IsUserSelected = false;
+                            collection.Add(calendar);
+                        }                
+                    }
+                }
             }
-            return m_calendarCollection;
-            //return null;
+            return collection;
         }      
 
+        /// <summary>Returns null.</summary>
+        [Obsolete]
         public Calendars GetAllCalendars()
         {
             return null;
         }
 
+        /// <summary>Gets a collection of user calendars.</summary>
+        /// <param name="calendarsIdList">A list of calendars.</param>
+        /// <returns>A <see cref="CalendarCollection"/>.</returns>
         public CalendarCollection GetUserCalendars(string calendarsIdList)
         {
-            SPSite m_calendarListSiteCollection;
-            SPWeb m_calendarListWeb;
-            SPList m_calendarList;
-            SPListItem m_calendarListItem;
-            string m_siteUrl, m_ListName;
-            Calendar m_calendar = null;
-            CalendarCollection m_calendarCollection = null;
-            SPQuery m_query;
-            SPListItemCollection m_calendarListItems;
-            string[] Idslist;
+            CalendarCollection collection = new CalendarCollection();
 
             if (calendarsIdList.Length > 0)
             {
-                m_siteUrl = ParseSiteUrl(m_calendarsListURL, out m_ListName);
+                string listName;
+                string url = ParseSiteUrl(m_calendarsListURL, out listName);
 
-                m_calendarListSiteCollection = new SPSite(m_siteUrl);
-                m_calendarListWeb = m_calendarListSiteCollection.OpenWeb();
-                m_calendarList = m_calendarListWeb.Lists[m_ListName.Replace("%20"," ")];
-                m_query = new SPQuery();
-
-                Idslist = calendarsIdList.Split(',');
-                m_query.Query = "<Where><Or>";
-                foreach (string tmp in Idslist)
+                using (SPSite site = new SPSite(url))
                 {
-                    m_query.Query += "<Eq><FieldRef Name='ID'/><Value>" + tmp;
-                    m_query.Query += "</value></Eq>";
-                }
-                m_query.Query += "</Or></Where>";
-
-                m_calendarListItems = m_calendarList.GetItems(m_query);
-
-                if (m_calendarListItems.Count > 0)
-                {
-                    m_calendarCollection = new CalendarCollection();
-                    foreach (SPListItem item in m_calendarListItems)
+                    using (SPWeb web = site.OpenWeb())
                     {
-                        m_calendar = new Calendar();
-                        m_calendar.CalendarDescription = (item["Description"] != null) ? item["Description"].ToString() : string.Empty;
-                        m_calendar.CalendarName = (item["Title"] != null) ? item["Title"].ToString() : string.Empty;
-                        m_calendar.CalendarUrl = (item["URL"] != null) ? item["URL"].ToString() : string.Empty;
-                        m_calendar.CalendarId = int.Parse(item["ID"].ToString());
-                        m_calendar.CalendarRole = (item["Role"] != null) ? item["Role"].ToString() : string.Empty;
-                        m_calendarCollection.Add(m_calendar);
+                        SPList list = web.Lists[listName.Replace("%20"," ")];
+                        string[] idslist = calendarsIdList.Split(',');
+
+                        SPQuery query = new SPQuery();
+                        query.Query = "<Where><Or>";
+                        foreach (string tmp in idslist)
+                        {
+                            query.Query += "<Eq><FieldRef Name='ID'/><Value>" + tmp;
+                            query.Query += "</value></Eq>";
+                        }
+                        query.Query += "</Or></Where>";
+
+                        SPListItemCollection items = list.GetItems(query);
+
+                        if (items.Count > 0)
+                        {
+                            foreach (SPListItem item in items)
+                            {
+                                collection.Add(CalendarFromListItem(item, false));
+                            }
+                        }
                     }
                 }
             }
-            return m_calendarCollection;
+            return collection;
         }
 
+        /// <summary>Parses the site url.</summary>
         public string ParseSiteUrl(string listUrl, out string listName)
         {
             string m_listUrl, m_SiteUrl, m_listName;
-            int m_LastIndex, m_listCharLength, m_urlength;
+            int m_LastIndex, m_urlength;
             System.Uri url = new Uri(new Uri(System.Web.HttpContext.Current.Request.Url.ToString()), listUrl);
            // System.Uri url = new Uri(new Uri(SPContext.Current.Web.Url.ToString()), listUrl); 
             //url.
@@ -203,64 +177,82 @@ namespace MLG2007.Helper.CalendarStore
             return m_SiteUrl;
         }
 
+        /// <summary>Checks to see if the role exists.</summary>
         public bool IsRoleExist(string role)
         {
-            SPSite m_calendarListSiteCollection;
-            SPWeb m_calendarListWeb;
-            SPList m_calendarList;
-            SPFieldMultiChoice  m_roleField;
-            int index;
-            string m_siteUrl, m_ListName;
             try
             {
                 if (m_calendarsListURL.Length > 0)
                 {
+                    string listName;
+                    string url = ParseSiteUrl(m_calendarsListURL, out listName);
 
-                    m_siteUrl = ParseSiteUrl(m_calendarsListURL, out m_ListName);
-
-                    m_calendarListSiteCollection = new SPSite(m_siteUrl);
-                    m_calendarListWeb = m_calendarListSiteCollection.OpenWeb();
-                    m_calendarList = m_calendarListWeb.Lists[m_ListName.Replace ("%20"," ")];
-                    m_roleField = (SPFieldMultiChoice)m_calendarList.Fields["Role"];
-                    index = m_roleField.Choices.IndexOf(role);
-                    if (index != -1)
-                        return true;
+                    using (SPSite site = new SPSite(url))
+                    {
+                        using (SPWeb web = site.OpenWeb())
+                        {
+                            SPList list = web.Lists[listName.Replace ("%20"," ")];
+                            SPFieldMultiChoice roleField = (SPFieldMultiChoice)list.Fields["Role"];
+                            int index = roleField.Choices.IndexOf(role);
+                            return (index != -1);
+                        }
+                    }
                 }
-                return false;
+                else
+                {
+                    return false;
+                }
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return false;
             }
         }
 
+        /// <summary>Check to see if the calendar store exists.</summary>
+        /// <param name="calendarStoreUrl">The url of the store.</param>
+        /// <returns>True if the store exists.</returns>
         public bool IsCalendarStoreExist(string calendarStoreUrl)
         {
-            SPSite m_calendarListSiteCollection;
-            SPWeb m_calendarListWeb;
-            SPList m_calendarList;
-            SPFieldMultiChoice m_roleField;
-            int index;
-            string m_siteUrl, m_ListName;
             try
             {
-                if (m_calendarsListURL.Length > 0)
+                if (calendarStoreUrl.Length > 0)
                 {
-
-                    m_siteUrl = ParseSiteUrl(m_calendarsListURL, out m_ListName);
-                    m_calendarListSiteCollection = new SPSite(m_siteUrl);
-                    m_calendarListWeb = m_calendarListSiteCollection.OpenWeb();
-                    m_calendarList = m_calendarListWeb.Lists[m_ListName.Replace("%20", " ")];                    
-                    if (m_calendarList != null)
-                        return true;
+                    string listName;
+                    string url = ParseSiteUrl(calendarStoreUrl, out listName);
+                    using (SPSite site = new SPSite(url))
+                    {
+                        using (SPWeb web = site.OpenWeb())
+                        {
+                            SPList list = web.Lists[listName.Replace("%20", " ")];                    
+                            return (list != null);
+                        }
+                    }
                 }
                 return false;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return false;
             }
         }
-    }
 
+#region private methods
+        /// <summary>Creates a Calendar from a list item.</summary>
+        Calendar CalendarFromListItem(SPListItem item, bool includeSource)
+        {
+            Calendar calendar = new Calendar();
+            calendar.CalendarDescription = (item["Description"] != null) ? item["Description"].ToString() : string.Empty;
+            calendar.CalendarName = (item["Title"] != null) ? item["Title"].ToString() : string.Empty;
+            calendar.CalendarUrl = (item["URL"] != null) ? item["URL"].ToString() : string.Empty;
+            calendar.CalendarId = int.Parse(item["ID"].ToString());
+            calendar.CalendarRole = (item["Role"] != null) ? item["Role"].ToString() : string.Empty;
+            if (includeSource)
+            {
+                calendar.CalendarType = (item["Source"].ToString() != "SharePoint") ? CalendarType.Exchange : CalendarType.SharePoint;
+            }
+            return calendar;
+        }
+#endregion private methods
+    }
 }
