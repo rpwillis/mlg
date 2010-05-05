@@ -75,8 +75,8 @@ namespace MLG2007.WebParts.MyChildren
     /// Directory did not need to have the schema extended to accommodate this 
     /// information.
     /// 
-    /// The photos are retrieved from the specified Picture Library <username>.jpg
-    /// Where <username> is the child's sign-on name (e.g. student01).
+    /// The photos are retrieved from the specified Picture Library %username%.jpg
+    /// Where %username% is the child's sign-on name (e.g. student01).
     /// </summary>
     [ToolboxData("<{0}:MyChildren runat=server></{0}:MyChildren>"),
    XmlRoot(Namespace = "MyChildren")]
@@ -465,7 +465,7 @@ WebPartStorage(Storage.Shared)]
             {
                 System.Uri url = new Uri(new Uri(Context.Request.Url.ToString()), _site);
                 SPWeb web = new SPSite(url.OriginalString).OpenWeb();
-                _validMember = web.DoesUserHavePermissions(_user, (SPBasePermissions)SPPermissionGroup64.Reader);
+                _validMember = web.DoesUserHavePermissions(_user, SPBasePermissions.Open);
             }
             catch (SPException ex)
             {
