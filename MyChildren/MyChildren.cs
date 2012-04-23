@@ -41,7 +41,7 @@
  *              :   Promoted IPPhone to a web part property in AD Settings category
  *              :   Added a property for AD Entry point in AD Settings category
  *              :   Added  picture library property that stores the studnent images in sharepoint settings category
- *              :   Added ShowErrors property to display error messages.  This aids in debugging the web part.  This property is in the MMMMMMMMisc category.
+ *              :   Added ShowErrors property to display error messages.  This aids in debugging the web part.  This property is in the Misc category.
  *              :   Displays error message when Student object not found
  * Reviewed by: 
  */
@@ -58,6 +58,7 @@ using System.Runtime.InteropServices;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Web.Hosting;
 using System.Xml.Serialization;
 using Microsoft.SharePoint.WebPartPages.Communication;
 using System.Drawing;
@@ -118,18 +119,18 @@ namespace MLG2007.WebParts.MyChildren
         private string _studentsSiteURL = "../../students";
         private bool _showErrors = false;
 
-        //web part communication variables
+        /// <summary>The event to show the cell is initialized.</summary>
+        [Obsolete]
         public event CellProviderInitEventHandler CellProviderInit;
+        /// <summary>The event to show the cell is ready.</summary>
+        [Obsolete]
         public event CellReadyEventHandler CellReady;
-
-        //Used to keep track of whether or not the connection will be running client-side
-        private bool _runAtClient = false;
 
         //Keep a count of ICell connections
         private int _cellConnectedCount = 0;
         //Cell information
-        private string _cellName;
-        private string _cellDisplayName;
+        private string _cellName = "child";
+        private string _cellDisplayName = string.Empty;
 
         //Used to keep track of whether or not the Button in the Web Part was clicked
         private bool _cellClicked = false;
@@ -185,6 +186,7 @@ WebPartStorage(Storage.Shared)]
             set { _pictureLibraryUrl = value; }
         }
 
+        /// <summary>The title of the picture library.</summary>
         [Browsable(true),
 ResourcesAttribute("PictureLibraryTitleName", "PicturesSettingsCategory", "PictureLibraryTitleDesc"),
 WebPartStorage(Storage.Shared)]
@@ -194,6 +196,7 @@ WebPartStorage(Storage.Shared)]
             set { _pictureLibraryTitle = value; }
         }
 
+        /// <summary>The default picture url.</summary>
         [Browsable(true),
 ResourcesAttribute("DefaultPictureURL", "PicturesSettingsCategory", "DefaultPictureDesc"),
 WebPartStorage(Storage.Shared)]
@@ -203,6 +206,7 @@ WebPartStorage(Storage.Shared)]
             set { _defaultPictureURL = value; }
         }
 
+        /// <summary>The number of children to show on a page.</summary>
         [Browsable(true),
 ResourcesAttribute("PageSizeTitle", "PicturesSettingsCategory", "PageSizeDesc"),
 WebPartStorage(Storage.Shared)]
@@ -212,6 +216,7 @@ WebPartStorage(Storage.Shared)]
             set { _pageSize = value; }
         }
 
+        /// <summary>The url to the students site.</summary>
         [Browsable(true),
 ResourcesAttribute("StudentSiteURLTitle", "MiscSettingsCategory", "StudentSiteURLDesc"),
 WebPartStorage(Storage.Shared)]
@@ -222,6 +227,7 @@ WebPartStorage(Storage.Shared)]
         }
 
 
+        /// <summary>Whether to show errors or not.</summary>
         [Browsable(true),
 ResourcesAttribute("ShowErrorsName", "MiscSettingsCategory", "ShowsErrorsDesc"),
 WebPartStorage(Storage.Shared)]
@@ -247,13 +253,22 @@ WebPartStorage(Storage.Shared)]
         #endregion
 
         #region "Public and Proteced Methods"
+        /// <summary>Gets the children of the logged in user.</summary>
+        /// <param name="result">The DataTable to fill with the results.</param>
+        protected virtual void GetChildrenOfUser(DataTable result)
+        {
+            GetPropertyFromAD(result);
+        }
 
+
+        /// <summary>Loads a resource.</summary>
         public override string LoadResource(string strId)
         {
 
             return _resourceManager.GetString(strId, CultureInfo.CurrentCulture);
         }
 
+        /// <summary>See <see cref="Control.CreateChildControls"/>.</summary>
         protected override void CreateChildControls()
         {
             try
@@ -293,14 +308,15 @@ WebPartStorage(Storage.Shared)]
 
         }
 
-        protected void GetChildRows()
+        void GetChildRows()
         {
             try
             {
                 if (ViewState["ChildrensTable"] == null)
                 {
                     //Get Children from the AD relationship
-                    DataTable childrenDataTable = GetChildrenOfUser();
+                    DataTable childrenDataTable = BuildTable();
+                    GetChildrenOfUser(childrenDataTable);
                     if (childrenDataTable == null)
                     {
                         return;
@@ -335,6 +351,16 @@ WebPartStorage(Storage.Shared)]
         #endregion
 
         #region Private Methods
+        DataTable BuildTable()
+        {
+            DataTable result = new DataTable("Children");
+            result.Columns.Add(UserNameColumnName, typeof(System.String));
+            result.Columns.Add(DisplayNameColumnName, typeof(System.String));
+            result.Columns.Add(ImageUrlColumnName, typeof(System.String));
+            result.Columns.Add(isSelectedColumnName, typeof(System.Boolean));
+            return result;
+        }
+
 
         private bool AllPropertiesSet()
         {
@@ -342,113 +368,100 @@ WebPartStorage(Storage.Shared)]
                 && _studentsSiteURL != String.Empty);
         }
 
-        private DataTable GetChildrenOfUser()
+        private void GetPropertyFromAD(DataTable result)
         {
-            DataTable result = new DataTable("Children");
-
-            //Build table columns
-            result.Columns.Add(UserNameColumnName, typeof(System.String));
-            result.Columns.Add(DisplayNameColumnName, typeof(System.String));
-            result.Columns.Add(ImageUrlColumnName, typeof(System.String));
-            result.Columns.Add(isSelectedColumnName, typeof(System.Boolean));
-
-            return GetPropertyFromAD(result);
-        }
-
-        private DataTable GetPropertyFromAD(DataTable result)
-        {
-            DirectoryEntry dirEntry = new DirectoryEntry(_adEntryPoint);
             string userName = this.Context.User.Identity.Name;
-            string studentName = "";
-
-            // Trim the domain name
-            if (userName.IndexOf("\\") != 0)
-                userName = userName.Substring(userName.LastIndexOf("\\") + 1);
-
-            // We are storing the Children of a Parent in the  property of Active Directory specified
-            System.DirectoryServices.DirectorySearcher mySearcher = new System.DirectoryServices.DirectorySearcher(dirEntry);
-            mySearcher.PropertiesToLoad.Add(_adChildAttribute);
-            //Set the filter for the current user
-            mySearcher.Filter = "(&(objectCategory=user)(samaccountname=" + userName + "))";
-
-            ResultPropertyValueCollection myResultPropColl = null;
-
-            try
+            using (HostingEnvironment.Impersonate())
             {
-                myResultPropColl = mySearcher.FindOne().Properties[_adChildAttribute];
-            }
-            catch (Exception ex)
-            {
-                ShowMessage(LoadResource(GenericErrMsg), String.Format(LoadResource("ErrorRetrievingChildren"), ex.Message));
-                return null;
-            }
-
-            //if null an error occured
-            if (myResultPropColl == null)
-            {
-                ShowMessage(LoadResource(GenericErrMsg));
-            }
-            //if count =0 then no childern
-            if (myResultPropColl.Count == 0)
-            {
-                ShowMessage(LoadResource("NoChild"));
-                return null;
-            }
-
-
-            // Loop through each found child, and return their Display Name , Image Url and First Name
-            foreach (object myCollection in myResultPropColl)
-            {
-                string orgStudentName = myCollection.ToString();
-
-                if (!IsMember(orgStudentName, _studentsSiteURL))
-                    continue;
-
-                DataRow studentRow = result.NewRow();
-                studentRow[isSelectedColumnName] = false;
-
-                studentRow[UserNameColumnName] = orgStudentName;
+                DirectoryEntry dirEntry = new DirectoryEntry(_adEntryPoint);
+                string studentName = "";
 
                 // Trim the domain name
-                if (orgStudentName.IndexOf("\\") != 0)
-                    studentName = orgStudentName.Substring(orgStudentName.LastIndexOf("\\") + 1);
+                if (userName.IndexOf("\\") != 0)
+                    userName = userName.Substring(userName.LastIndexOf("\\") + 1);
+
+                // We are storing the Children of a Parent in the  property of Active Directory specified
+                System.DirectoryServices.DirectorySearcher mySearcher = new System.DirectoryServices.DirectorySearcher(dirEntry);
+                mySearcher.PropertiesToLoad.Add(_adChildAttribute);
+                //Set the filter for the current user
+                mySearcher.Filter = "(&(objectCategory=user)(samaccountname=" + userName + "))";
+
+                ResultPropertyValueCollection myResultPropColl = null;
 
                 try
                 {
-                    //read display name property
-                    mySearcher.PropertiesToLoad.Add(DisplayNameColumnName);
-                    mySearcher.Filter = "(&(objectCategory=user)(samaccountname=" + studentName + "))";
-
-                    System.DirectoryServices.SearchResult SrchRes;
-                    SrchRes = mySearcher.FindOne();
-
-                    if (SrchRes != null)
-                    {
-                        studentRow[DisplayNameColumnName] = SrchRes.Properties[DisplayNameColumnName][0].ToString();
-                        string pictureURL = GetStudentImage(studentName);
-                        if (pictureURL == null)
-                        {
-                            System.Uri defaultpic = new Uri(new Uri(Context.Request.Url.ToString()), DefaultPictureURL);
-                            pictureURL = defaultpic.OriginalString.ToString();
-                        }
-                        studentRow[ImageUrlColumnName] = pictureURL;
-
-                        result.Rows.Add(studentRow);
-                    }
-                    else // No user object found for the attached child
-                    {
-                        ShowMessage(String.Format(LoadResource("NoChildFound"), studentName));
-                    }
+                    myResultPropColl = mySearcher.FindOne().Properties[_adChildAttribute];
                 }
                 catch (Exception ex)
                 {
-                    ShowMessage(LoadResource(GenericErrMsg), String.Format(LoadResource("ErrorRetrievingChildInfo"), studentName, ex.Message));
+                    ShowMessage(LoadResource(GenericErrMsg), String.Format(LoadResource("ErrorRetrievingChildren"), ex.ToString()));
+                    return;
                 }
+
+                //if null an error occured
+                if (myResultPropColl == null)
+                {
+                    ShowMessage(LoadResource(GenericErrMsg));
+                    return;
+                }
+                //if count =0 then no childern
+                if (myResultPropColl.Count == 0)
+                {
+                    ShowMessage(LoadResource("NoChild"));
+                }
+
+                // Loop through each found child, and return their Display Name , Image Url and First Name
+                foreach (object myCollection in myResultPropColl)
+                {
+                    string orgStudentName = myCollection.ToString();
+
+                    if (!IsMember(orgStudentName, _studentsSiteURL))
+                        continue;
+
+                    DataRow studentRow = result.NewRow();
+                    studentRow[isSelectedColumnName] = false;
+
+                    studentRow[UserNameColumnName] = orgStudentName;
+
+                    // Trim the domain name
+                    if (orgStudentName.IndexOf("\\") != 0)
+                        studentName = orgStudentName.Substring(orgStudentName.LastIndexOf("\\") + 1);
+
+                    try
+                    {
+                        //read display name property
+                        mySearcher.PropertiesToLoad.Add(DisplayNameColumnName);
+                        mySearcher.Filter = "(&(objectCategory=user)(samaccountname=" + studentName + "))";
+
+                        System.DirectoryServices.SearchResult SrchRes;
+                        SrchRes = mySearcher.FindOne();
+
+                        if (SrchRes != null)
+                        {
+                            studentRow[DisplayNameColumnName] = SrchRes.Properties[DisplayNameColumnName][0].ToString();
+                            string pictureURL = GetStudentImage(studentName);
+                            if (pictureURL == null)
+                            {
+                                System.Uri defaultpic = new Uri(new Uri(Context.Request.Url.ToString()), DefaultPictureURL);
+                                pictureURL = defaultpic.OriginalString.ToString();
+                            }
+                            studentRow[ImageUrlColumnName] = pictureURL;
+
+                            result.Rows.Add(studentRow);
+                        }
+                        else // No user object found for the attached child
+                        {
+                            ShowMessage(String.Format(LoadResource("NoChildFound"), studentName));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowMessage(LoadResource(GenericErrMsg), String.Format(LoadResource("ErrorRetrievingChildInfo"), studentName, ex.Message));
+                    }
+                }
+
+                mySearcher.Dispose();
             }
-
-            mySearcher.Dispose();
-
-            return result;
         }
 
         private bool IsMember(string userName, string siteURL)
@@ -591,14 +604,25 @@ WebPartStorage(Storage.Shared)]
         private void ShowMessage(string message, string exceptionModeMessage)
         {
             if (_showErrors)
-                error.Text = exceptionModeMessage;
+            {
+                ShowMessage(exceptionModeMessage);
+            }
             else
-                error.Text = message;
+            {
+                ShowMessage(message);
+            }
         }
 
         private void ShowMessage(string message)
         {
-            error.Text = message;
+            if (string.IsNullOrEmpty(error.Text))
+            {
+                error.Text = message;
+            }
+            else
+            {
+                error.Text = error.Text + "<br/>" + message;
+            }
         }
 
         #endregion
@@ -632,6 +656,8 @@ WebPartStorage(Storage.Shared)]
 
         #region ICellProvider Members
 
+        /// <summary>Part of the old style connection interface.</summary>
+        [Obsolete]
         public override void EnsureInterfaces()
         {
             //Registers an interface for the Web Part
@@ -645,19 +671,22 @@ WebPartStorage(Storage.Shared)]
                "Provides child username");               //Description
         }
 
+        /// <summary>Part of the old style connection interface.</summary>
+        [Obsolete]
         public override ConnectionRunAt CanRunAt()
         {
             //This Web Part can run on both the client and the server
             return ConnectionRunAt.Server;
         }
 
+        /// <summary>Part of the old style connection interface.</summary>
+        [Obsolete]
         public override void PartCommunicationConnect(string interfaceName, WebPart connectedPart, string connectedInterfaceName, ConnectionRunAt runAt)
         {
             //Check to see if this is a client-side part
             if (runAt == ConnectionRunAt.Client)
             {
                 //This is a client-side part
-                _runAtClient = true;
                 return;
             }
 
@@ -672,6 +701,8 @@ WebPartStorage(Storage.Shared)]
             }
         }
 
+        /// <summary>Part of the old style connection interface.</summary>
+        [Obsolete]
         public override void PartCommunicationInit()
         {
             //If the connection wasn't actually formed then don't want to send Init event
@@ -693,6 +724,8 @@ WebPartStorage(Storage.Shared)]
             }
         }
 
+        /// <summary>Part of the old style connection interface.</summary>
+        [Obsolete]
         public override void PartCommunicationMain()
         {
             //If the connection wasn't actually formed then don't want to send Ready event
@@ -730,6 +763,8 @@ WebPartStorage(Storage.Shared)]
             }
         }
 
+        /// <summary>Part of the old style connection interface.</summary>
+        [Obsolete]
         public void CellConsumerInit(object sender, CellConsumerInitEventArgs cellConsumerInitEventArgs)
         {
             //throw new Exception("The method or operation is not implemented.");
@@ -738,7 +773,7 @@ WebPartStorage(Storage.Shared)]
         #endregion
     }
 
-    public class ChildTemplate : System.Web.UI.ITemplate
+    class ChildTemplate : System.Web.UI.ITemplate
     {
         #region Private Variables
 

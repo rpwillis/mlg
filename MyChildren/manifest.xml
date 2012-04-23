@@ -5,7 +5,7 @@
   <Assemblies>
     <Assembly Location="MLG2007.WebParts.MyChildren.dll" DeploymentTarget="GlobalAssemblyCache" >
       <SafeControls>
-        <SafeControl Assembly="MLG2007.WebParts.MyChildren, Version=1.0.1.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5" Namespace="MLG2007.WebParts.MyChildren" TypeName="MyChildren" Safe="True" />
+        <SafeControl Assembly="MLG2007.WebParts.MyChildren, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5" Namespace="MLG2007.WebParts.MyChildren" TypeName="MyChildren" Safe="True" />
       </SafeControls>
     </Assembly>
   </Assemblies>
