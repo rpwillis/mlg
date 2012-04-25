@@ -87,11 +87,16 @@ namespace MLG2007.WebParts.MyChildren
 
         #region "Constants"
 
-        private const string UserNameColumnName = "username";
-        private const string DisplayNameColumnName = "displayName";
-        private const string ImageUrlColumnName = "imageUrl";
-        private const string isSelectedColumnName = "isSelected";
-        private const string GenericErrMsg = "GenericErr";
+        /// <summary>The name of the user name column in the children <see cref="DataTable"/>.</summary>
+        protected const string UserNameColumnName = "username";
+        /// <summary>The name of the user name column in the children <see cref="DataTable"/>.</summary>
+        protected const string DisplayNameColumnName = "displayName";
+        /// <summary>The name of the user name column in the children <see cref="DataTable"/>.</summary>
+        protected const string ImageUrlColumnName = "imageUrl";
+        /// <summary>The name of the user name column in the children <see cref="DataTable"/>.</summary>
+        protected const string IsSelectedColumnName = "isSelected";
+        /// <summary>The key to the generic error message resource.</summary>
+        protected const string GenericErrMsg = "GenericErr";
 
         #endregion
 
@@ -253,6 +258,35 @@ WebPartStorage(Storage.Shared)]
         #endregion
 
         #region "Public and Proteced Methods"
+        /// <summary>Shows an error message.</summary>
+        /// <param name="message">The message to show.</param>
+        /// <param name="exceptionModeMessage">The message to show if ShowErrors is true.</param>
+        protected void ShowMessage(string message, string exceptionModeMessage)
+        {
+            if (_showErrors)
+            {
+                ShowMessage(exceptionModeMessage);
+            }
+            else
+            {
+                ShowMessage(message);
+            }
+        }
+
+        /// <summary>Shows an error message.</summary>
+        /// <param name="message">The message to show.</param>
+        protected void ShowMessage(string message)
+        {
+            if (string.IsNullOrEmpty(error.Text))
+            {
+                error.Text = message;
+            }
+            else
+            {
+                error.Text = error.Text + "<br/>" + message;
+            }
+        }
+
         /// <summary>Gets the children of the logged in user.</summary>
         /// <param name="result">The DataTable to fill with the results.</param>
         protected virtual void GetChildrenOfUser(DataTable result)
@@ -331,7 +365,7 @@ WebPartStorage(Storage.Shared)]
                     childrenDataView.Sort = DisplayNameColumnName;
 
                     _passedUserName = (string)childrenDataView[0][UserNameColumnName];
-                    childrenDataView[0][isSelectedColumnName] = true;
+                    childrenDataView[0][IsSelectedColumnName] = true;
                     this.ViewState["_passedUserName"] = _passedUserName;
                     _cellClicked = true;
                     ViewState["ChildrensTable"] = childrenDataView.Table;
@@ -357,7 +391,7 @@ WebPartStorage(Storage.Shared)]
             result.Columns.Add(UserNameColumnName, typeof(System.String));
             result.Columns.Add(DisplayNameColumnName, typeof(System.String));
             result.Columns.Add(ImageUrlColumnName, typeof(System.String));
-            result.Columns.Add(isSelectedColumnName, typeof(System.Boolean));
+            result.Columns.Add(IsSelectedColumnName, typeof(System.Boolean));
             return result;
         }
 
@@ -419,7 +453,7 @@ WebPartStorage(Storage.Shared)]
                         continue;
 
                     DataRow studentRow = result.NewRow();
-                    studentRow[isSelectedColumnName] = false;
+                    studentRow[IsSelectedColumnName] = false;
 
                     studentRow[UserNameColumnName] = orgStudentName;
 
@@ -585,7 +619,7 @@ WebPartStorage(Storage.Shared)]
         {
             foreach (DataRow row in ((DataTable)ViewState["ChildrensTable"]).Rows)
             {
-                row[isSelectedColumnName] = (row[UserNameColumnName].ToString() == this.ViewState["_passedUserName"].ToString());
+                row[IsSelectedColumnName] = (row[UserNameColumnName].ToString() == this.ViewState["_passedUserName"].ToString());
             }
             childRepeater.DataBind();
         }
@@ -599,30 +633,6 @@ WebPartStorage(Storage.Shared)]
             }
             else
                 return URL;
-        }
-
-        private void ShowMessage(string message, string exceptionModeMessage)
-        {
-            if (_showErrors)
-            {
-                ShowMessage(exceptionModeMessage);
-            }
-            else
-            {
-                ShowMessage(message);
-            }
-        }
-
-        private void ShowMessage(string message)
-        {
-            if (string.IsNullOrEmpty(error.Text))
-            {
-                error.Text = message;
-            }
-            else
-            {
-                error.Text = error.Text + "<br/>" + message;
-            }
         }
 
         #endregion
