@@ -258,6 +258,33 @@ WebPartStorage(Storage.Shared)]
         #endregion
 
         #region "Public and Proteced Methods"
+        /// <summary>Get the student image given the student name.</summary>
+        /// <param name="studentName">The name of the student.</param>
+        /// <returns>The url to the image.</returns>
+        protected string GetStudentImage(string studentName)
+        {
+            try
+            {
+                System.Uri picLibURL = new Uri(new Uri(Context.Request.Url.ToString()), _pictureLibraryUrl);
+                SPWeb myWeb = new SPSite(picLibURL.OriginalString.ToString()).OpenWeb();
+                SPList pictureLibrary = myWeb.Lists[PictureLibraryTitle];
+
+                SPQuery q = new SPQuery();
+                q.Query = "<Where><Eq><FieldRef Name='Title'/><Value Type='Text'>" + studentName + "</Value></Eq></Where>";
+                SPListItemCollection studentImages = pictureLibrary.GetItems(q);
+                if (studentImages != null && studentImages.Count > 0)
+                    return myWeb.Url + "/" + studentImages[0].Url.ToString();
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(string.Format(LoadResource("LoadPicErr"), studentName), string.Format(LoadResource("LoadPicErr"), studentName) + " " + LoadResource(GenericErrMsg) + " " + ex.Message);
+                return null;
+            }
+
+        }
+
         /// <summary>Shows an error message.</summary>
         /// <param name="message">The message to show.</param>
         /// <param name="exceptionModeMessage">The message to show if ShowErrors is true.</param>
@@ -521,30 +548,6 @@ WebPartStorage(Storage.Shared)]
                 else
                     throw;
             }
-        }
-
-        private string GetStudentImage(string studentName)
-        {
-            try
-            {
-                System.Uri picLibURL = new Uri(new Uri(Context.Request.Url.ToString()), _pictureLibraryUrl);
-                SPWeb myWeb = new SPSite(picLibURL.OriginalString.ToString()).OpenWeb();
-                SPList pictureLibrary = myWeb.Lists[PictureLibraryTitle];
-
-                SPQuery q = new SPQuery();
-                q.Query = "<Where><Eq><FieldRef Name='Title'/><Value Type='Text'>" + studentName + "</Value></Eq></Where>";
-                SPListItemCollection studentImages = pictureLibrary.GetItems(q);
-                if (studentImages != null && studentImages.Count > 0)
-                    return myWeb.Url + "/" + studentImages[0].Url.ToString();
-                else
-                    return null;
-            }
-            catch (Exception ex)
-            {
-                ShowMessage(string.Format(LoadResource("LoadPicErr"), studentName), string.Format(LoadResource("LoadPicErr"), studentName) + " " + LoadResource(GenericErrMsg) + " " + ex.Message);
-                return null;
-            }
-
         }
 
         private void MainDraw(DataTable users)
