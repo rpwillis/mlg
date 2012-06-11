@@ -266,16 +266,24 @@ WebPartStorage(Storage.Shared)]
             try
             {
                 System.Uri picLibURL = new Uri(new Uri(Context.Request.Url.ToString()), _pictureLibraryUrl);
-                SPWeb myWeb = new SPSite(picLibURL.OriginalString.ToString()).OpenWeb();
-                SPList pictureLibrary = myWeb.Lists[PictureLibraryTitle];
-
-                SPQuery q = new SPQuery();
-                q.Query = "<Where><Eq><FieldRef Name='Title'/><Value Type='Text'>" + studentName + "</Value></Eq></Where>";
-                SPListItemCollection studentImages = pictureLibrary.GetItems(q);
-                if (studentImages != null && studentImages.Count > 0)
-                    return myWeb.Url + "/" + studentImages[0].Url.ToString();
-                else
-                    return null;
+                using (SPSite site = new SPSite(picLibURL.OriginalString.ToString()))
+                {
+                    using (SPWeb web = site.OpenWeb())
+                    {
+                        SPList pictureLibrary = web.Lists[PictureLibraryTitle];
+                        SPQuery q = new SPQuery();
+                        q.Query = "<Where><Eq><FieldRef Name='Title'/><Value Type='Text'>" + studentName + "</Value></Eq></Where>";
+                        SPListItemCollection studentImages = pictureLibrary.GetItems(q);
+                        if (studentImages != null && studentImages.Count > 0)
+                        {
+                            return web.Url + "/" + studentImages[0].Url.ToString();
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -342,15 +350,13 @@ WebPartStorage(Storage.Shared)]
                 }
                 else
                 {
-                    System.Uri url = new Uri(new Uri(Context.Request.Url.ToString()), _studentsSiteURL);
-                    SPWeb web = new SPSite(url.OriginalString).OpenWeb();
-                    if (String.Compare(url.OriginalString, web.Url, true) != 0)
+                    if (CheckStudentSiteExists())
                     {
-                        throw new Exception(LoadResource("InvalidStudentURL"));
+                        GetChildRows();
                     }
                     else
                     {
-                        GetChildRows();
+                        throw new Exception(LoadResource("InvalidStudentURL"));
                     }
                 }
             }
@@ -368,6 +374,21 @@ WebPartStorage(Storage.Shared)]
             }
 
         }
+
+        bool CheckStudentSiteExists()
+        {
+            
+            Uri url = new Uri(new Uri(Context.Request.Url.ToString()), _studentsSiteURL);
+            using (SPSite site = new SPSite(url.OriginalString))
+            {
+                using (SPWeb web = site.OpenWeb())
+                {
+                    Uri webUrl = new Uri(web.Url);
+                    return (String.Compare(url.AbsolutePath, webUrl.AbsolutePath, true) == 0);
+                }
+            }
+        }
+
 
         void GetChildRows()
         {
@@ -538,8 +559,13 @@ WebPartStorage(Storage.Shared)]
             try
             {
                 System.Uri url = new Uri(new Uri(Context.Request.Url.ToString()), _site);
-                SPWeb web = new SPSite(url.OriginalString).OpenWeb();
-                _validMember = web.DoesUserHavePermissions(_user, SPBasePermissions.Open);
+                using (SPSite site = new SPSite(url.OriginalString))
+                {
+                    using (SPWeb web = site.OpenWeb())
+                    {
+                        _validMember = web.DoesUserHavePermissions(_user, SPBasePermissions.Open);
+                    }
+                }
             }
             catch (SPException ex)
             {
