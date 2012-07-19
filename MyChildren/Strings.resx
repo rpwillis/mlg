@@ -201,6 +201,12 @@
   <data name="Prvtext" xml:space="preserve">
     <value>&lt;</value>
   </data>
+  <data name="ShowDebugDesc" xml:space="preserve">
+    <value>Display debug messages in web part</value>
+  </data>
+  <data name="ShowDebugName" xml:space="preserve">
+    <value>Show debug</value>
+  </data>
   <data name="ShowErrorsDesc" xml:space="preserve">
     <value>Display error messages in web part</value>
   </data>

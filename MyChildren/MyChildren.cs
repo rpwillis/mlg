@@ -48,6 +48,7 @@
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebPartPages;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.DirectoryServices;
 using System.Data;
@@ -104,6 +105,7 @@ namespace MLG2007.WebParts.MyChildren
 
         //Carries any error messages that might occur
         private Label error = new Label();
+        private Label debugLabel = new Label();
         
         //The repeater item that is used to render the child items
         private Repeater childRepeater;
@@ -123,6 +125,7 @@ namespace MLG2007.WebParts.MyChildren
         //private member for holding students site url to check the children member of this site
         private string _studentsSiteURL = "../../students";
         private bool _showErrors = false;
+        bool debug;
 
         /// <summary>The event to show the cell is initialized.</summary>
         [Obsolete]
@@ -240,6 +243,18 @@ WebPartStorage(Storage.Shared)]
         {
             get { return _showErrors; }
             set { _showErrors = value; }
+        }
+
+        /// <summary>Whether to show debug messages.</summary>
+        /*
+        [Browsable(true),
+ResourcesAttribute("ShowDebugName", "MiscSettingsCategory", "ShowsDebugDesc"),
+WebPartStorage(Storage.Shared)]
+*/
+        public bool ShowDebug
+        {
+            get { return debug; }
+            set { debug = value; }
         }
 
         private int CurrentPage
@@ -371,6 +386,10 @@ WebPartStorage(Storage.Shared)]
             finally
             {
                 Controls.Add(error);
+                if (ShowDebug)
+                {
+                    Controls.Add(debugLabel);
+                }
             }
 
         }
@@ -476,6 +495,7 @@ WebPartStorage(Storage.Shared)]
                 }
                 catch (Exception ex)
                 {
+                    Debug(ex.ToString());
                     ShowMessage(LoadResource(GenericErrMsg), String.Format(LoadResource("ErrorRetrievingChildren"), ex.ToString()));
                     return;
                 }
@@ -497,8 +517,13 @@ WebPartStorage(Storage.Shared)]
                 {
                     string orgStudentName = myCollection.ToString();
 
+                    Debug("{0} in AD attribute", orgStudentName);
+
                     if (!IsMember(orgStudentName, _studentsSiteURL))
+                    {
+                        Debug("Not member");
                         continue;
+                    }
 
                     DataRow studentRow = result.NewRow();
                     studentRow[IsSelectedColumnName] = false;
@@ -564,6 +589,10 @@ WebPartStorage(Storage.Shared)]
                     using (SPWeb web = site.OpenWeb())
                     {
                         _validMember = web.DoesUserHavePermissions(_user, SPBasePermissions.Open);
+                        if (_validMember == false)
+                        {
+                            _validMember = web.DoesUserHavePermissions("i:0#.w|" + _user, SPBasePermissions.Open);
+                        }
                     }
                 }
             }
@@ -662,6 +691,14 @@ WebPartStorage(Storage.Shared)]
             }
             else
                 return URL;
+        }
+
+        void Debug(string message, params object[] arguments)
+        {
+            if (ShowDebug)
+            {
+                debugLabel.Text = debugLabel.Text + "<br />" + string.Format(message, arguments);
+            }
         }
 
         #endregion
